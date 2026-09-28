@@ -1,0 +1,186 @@
+{
+  "logos": [
+    [
+      "principal_blanco.png",
+      "LCI wordmark apilado \u00b7 blanco",
+      1361,
+      580
+    ],
+    [
+      "principal_beige.png",
+      "LCI wordmark apilado \u00b7 beige",
+      1361,
+      580
+    ],
+    [
+      "principal_gold.png",
+      "LCI wordmark apilado \u00b7 oro",
+      1361,
+      580
+    ],
+    [
+      "principal_navy.png",
+      "LCI wordmark apilado \u00b7 navy",
+      1361,
+      580
+    ],
+    [
+      "principal_fondo_oscuro.png",
+      "LCI wordmark \u00b7 para fondos oscuros",
+      1361,
+      580
+    ],
+    [
+      "sello_beige.png",
+      "LCI sello circular \u00b7 beige",
+      723,
+      731
+    ],
+    [
+      "sello_claro.png",
+      "LCI sello circular \u00b7 claro",
+      723,
+      731
+    ],
+    [
+      "sello_dorado.png",
+      "LCI sello circular \u00b7 oro",
+      723,
+      731
+    ],
+    [
+      "sello_navy.png",
+      "LCI sello circular \u00b7 navy",
+      723,
+      731
+    ],
+    [
+      "terciario_beige.png",
+      "LCI monograma+wordmark \u00b7 beige",
+      761,
+      587
+    ],
+    [
+      "terciario_claro.png",
+      "LCI monograma+wordmark \u00b7 claro",
+      761,
+      587
+    ],
+    [
+      "terciario_dorado.png",
+      "LCI monograma+wordmark \u00b7 oro",
+      761,
+      587
+    ],
+    [
+      "terciario_navy.png",
+      "LCI monograma+wordmark \u00b7 navy",
+      761,
+      587
+    ],
+    [
+      "cr_sello_claro.png",
+      "CR monograma \u00b7 navy (fondo claro)",
+      507,
+      513
+    ],
+    [
+      "cr_sello_oscuro.png",
+      "CR monograma \u00b7 beige (fondo oscuro)",
+      900,
+      900
+    ],
+    [
+      "cr_wordmark_claro.png",
+      "Carolina Rodr\u00edguez MD \u00b7 navy (fondo claro)",
+      833,
+      309
+    ],
+    [
+      "cr_wordmark_oscuro.png",
+      "Carolina Rodr\u00edguez MD \u00b7 beige (fondo oscuro)",
+      900,
+      900
+    ]
+  ],
+  "fonts": [
+    [
+      "poppins-300.ttf",
+      "Poppins",
+      "300",
+      "normal"
+    ],
+    [
+      "poppins-300-italic.ttf",
+      "Poppins",
+      "300",
+      "italic"
+    ],
+    [
+      "poppins-400.ttf",
+      "Poppins",
+      "400",
+      "normal"
+    ],
+    [
+      "poppins-400-italic.ttf",
+      "Poppins",
+      "400",
+      "italic"
+    ],
+    [
+      "poppins-500.ttf",
+      "Poppins",
+      "500",
+      "normal"
+    ],
+    [
+      "poppins-500-italic.ttf",
+      "Poppins",
+      "500",
+      "italic"
+    ],
+    [
+      "poppins-700.ttf",
+      "Poppins",
+      "700",
+      "normal"
+    ],
+    [
+      "poppins-700-italic.ttf",
+      "Poppins",
+      "700",
+      "italic"
+    ],
+    [
+      "mencken-std-400.otf",
+      "Mencken Std",
+      "400",
+      "normal"
+    ],
+    [
+      "mencken-std-700.otf",
+      "Mencken Std",
+      "700",
+      "normal"
+    ],
+    [
+      "mencken-std-800.otf",
+      "Mencken Std",
+      "800",
+      "normal"
+    ],
+    [
+      "mencken-std-head-400-italic.otf",
+      "Mencken Std Head",
+      "400",
+      "italic"
+    ],
+    [
+      "mencken-std-head-800-italic.otf",
+      "Mencken Std Head",
+      "800",
+      "italic"
+    ]
+  ]
+}

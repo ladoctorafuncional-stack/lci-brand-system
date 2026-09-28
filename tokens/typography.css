@@ -1,0 +1,30 @@
+/* Tipografías embebidas — ver ../fonts/ para los archivos reales,
+   decodificados desde la skill lci-piezas-graficas (fonts_brand.json). */
+
+@font-face { font-family: "Mencken Std";      src: url("../fonts/mencken-std-400.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mencken Std";      src: url("../fonts/mencken-std-700.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mencken Std";      src: url("../fonts/mencken-std-800.otf") format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mencken Std Head"; src: url("../fonts/mencken-std-head-400-italic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mencken Std Head"; src: url("../fonts/mencken-std-head-800-italic.otf") format("opentype"); font-weight: 800; font-style: italic; font-display: swap; }
+
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-300.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-300-italic.ttf") format("truetype"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-400.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-400-italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-500.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-500-italic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-700.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-700-italic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root {
+  --font-display: "Mencken Std", Georgia, serif;      /* cifras, títulos grandes */
+  --font-display-italic: "Mencken Std Head", Georgia, serif; /* acentos itálicos */
+  --font-body: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body-light: "Poppins", "Helvetica Neue", Arial, sans-serif; /* peso 300 */
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+}
