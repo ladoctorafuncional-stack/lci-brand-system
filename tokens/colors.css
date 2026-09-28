@@ -1,0 +1,25 @@
+:root {
+  /* Institucionales */
+  --navy:      #2A3649;
+  --lightblue: #CAD3DD;
+  --azul:      #5D768C; /* azul medio */
+  --gold:      #D2B58A; /* acento, NO semáforo */
+  --cream:     #EDE5DA;
+  --paper:     #FBF9F6;
+  --line:      #E3DACE;
+
+  /* Semaforización (saturada) */
+  --sem-ok:  #12A66B; /* verde */
+  --sem-mid: #F0A72B; /* ámbar */
+  --sem-bad: #E8503A; /* coral */
+
+  /* Semánticos */
+  --text-heading: var(--navy);
+  --text-body:    var(--navy);
+  --text-muted:   var(--azul);
+  --surface-page: var(--paper);
+  --surface-card: #FFFFFF;
+  --surface-cream: var(--cream);
+  --border-hairline: var(--line);
+  --accent-gold: var(--gold);
+}
