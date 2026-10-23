@@ -16,6 +16,7 @@ brand/
   logos/                          17 logos oficiales (PNG transparente)
   papeleria/                      membrete institucional
   fondos/                         38 fondos de marca en 9 familias (ver FONDOS.md)
+  equipo/                         retratos y firmas de correo del equipo (ver EQUIPO.md)
   piezas-referencia/              30 piezas maestras de Paola Londoño (Ikigai)
   referencias-estilo/             35 referencias externas de layout/estilo (Pinterest)
   referencias-ilustracion-anatomica/  3 renders 3D de anatomía para animaciones

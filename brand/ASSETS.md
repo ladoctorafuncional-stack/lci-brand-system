@@ -31,6 +31,16 @@ tratamiento de marca (7), vidrio estriado (3) y movimiento (2). Inventario
 completo, nombres originales y reglas de uso en `fondos/FONDOS.md`.
 **`12-bokeh-nunca-en-portadas` nunca va en portadas.**
 
+## Equipo — `equipo/`
+
+- `retratos/` — 11 retratos de 9 integrantes (1200×1200, escala de grises; Juliana
+  además en recorte redondo y a color).
+- `firmas-correo/` — 6 firmas de correo (Carolina, Iván Felipe, Bethany, Juliana,
+  Stefania, Tibisay).
+
+Inventario, cargos y nombres originales en `equipo/EQUIPO.md`. Los carnets con
+número de documento no se suben al repo.
+
 ## Piezas de referencia — `piezas-referencia/` (30 JPG)
 
 Piezas maestras diseñadas por Paola Londoño (Ikigai): banners, posts, stories,
