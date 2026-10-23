@@ -15,6 +15,8 @@ integración externa (como Claude Design).
 brand/
   logos/                          17 logos oficiales (PNG transparente)
   papeleria/                      membrete institucional
+  fondos/                         38 fondos de marca en 9 familias (ver FONDOS.md)
+  equipo/                         retratos y firmas de correo del equipo (ver EQUIPO.md)
   piezas-referencia/              30 piezas maestras de Paola Londoño (Ikigai)
   referencias-estilo/             35 referencias externas de layout/estilo (Pinterest)
   referencias-ilustracion-anatomica/  3 renders 3D de anatomía para animaciones
@@ -34,6 +36,10 @@ Todo el contenido de `brand/logos/`, `fonts/`, `brand/piezas-referencia/` y
 `guidelines/` viene decodificado o copiado directamente de las skills
 `lci-design-system` y `lci-piezas-graficas`, que ya traían el kit de marca
 embebido. No se inventó ni se resumió nada.
+
+`brand/fondos/` viene de `Fondos-LCI-todas-las-opciones.zip`, copiado byte a
+byte; solo se reorganizó por familia y se normalizaron los nombres (la
+equivalencia con los nombres originales está en `brand/fondos/FONDOS.md`).
 
 ## Referencias externas — `brand/referencias-estilo/` y `referencias-ilustracion-anatomica/`
 
