@@ -264,8 +264,9 @@ def _resolver_logos(body, fondo):
         return luz + _logo(kind, 'blanco', pos, h, xl)
     return re.sub(r'§LOGOAUTO§(\w+)§(\w+)§(\d+)§([\d.]*)§', rep, body)
 
-def _doc(body, fondo, light=False, soporte=None):
+def _doc(body, fondo, light=False, soporte=None, acento=None):
     body = _resolver_logos(body, fondo)
+    if acento: body = f'<!--ACENTO:{acento.lower()}-->' + body
     if soporte: body = f'<!--SOPORTE:{soporte}-->' + body
     html = M.lienzo('story' if H > 1500 else 'carrusel', '<div style="position:absolute;inset:0;z-index:2;">' + body + '</div>',
                     fondo=fondo, theme='light' if light else 'navy')
@@ -442,25 +443,33 @@ def soporte(modo, H_=None):
 VIDRIO_CSS = ("backdrop-filter:blur(22px) saturate(.9);-webkit-backdrop-filter:blur(22px);background:rgba(24,31,44,.68);"
               "border:1.2px solid rgba(202,211,221,.32);border-radius:22px;box-shadow:0 18px 40px rgba(0,0,0,.25);padding:44px 48px;")
 
-def r_natural(bold, it=None, sub=None, fondo=None, logo=("principal", "blanco", "tl"), lado="izq", bottom=0.145, soporte_=None, resaltar=False, col=None, escala=1.0, acc_col="#dfe8f1", luz_sup=False):
-    """soporte_: None | 'mitad' | 'vidrio' | 'velo' — ver soporte(). Si el auditor marca F3 sobre la foto, usar 'mitad' o 'vidrio'.
+def r_natural(bold, it=None, sub=None, fondo=None, logo=("principal", "blanco", "tl"), lado="izq", bottom=0.145, soporte_=None, resaltar=False, col=None, escala=1.0, acc_col=None, luz_sup=False, vinetas=None):
+    """soporte_: None (texto directo) | 'linea' | 'tarjeta' | 'blur' | 'recuadro' | 'vidrio' | 'velo' | 'columna_izq/der' | 'mitad' — ver soporte().
+    'mitad' (panel a media pieza) es la EXCEPCIÓN, no el defecto: máx. 1 de cada 4 piezas (auditar_soportes lo bloquea).
+    vinetas: lista de textos cortos para 'linea' (conector de nodos de Paola) y 'tarjeta' (tarjeta con viñetas y filete).
+    acc_col: color del acento en cursiva; None → crema. ROTAR en la tanda (ver ACENTOS y plan_variedad); no siempre azul claro. Si el auditor marca F3 sobre la foto, usar 'mitad' o 'vidrio'.
     col: ancho de la lámina vertical (fracción de W, def. 0.58). La Dra. (10-oct-2026): si la foto es protagonista, lámina
     más angosta (≈0.48) para aprovechar la foto; el titular se reduce en proporción para caber."""
     global COLW
     COLW = col or 0.58
+    if soporte_ == 'mitad':
+        import warnings; warnings.warn("soporte 'mitad' = EXCEPCIÓN (se repetía demasiado): justificar por escrito por qué ninguno de directo/linea/tarjeta/blur/resaltado/recuadro sirve para esta foto.", stacklevel=2)
     """R8 'Inside LCI' — foto REAL de la clínica a color (tratar 'natural'), sin efecto. Solo un velo
     bajo el texto (25% inferior) para leer. Titular más pequeño que en las piezas de concepto: la foto
     es la protagonista. lado: izq | der."""
     al = "left" if lado == "izq" else "right"
-    fs = round(84 * min(1, (COLW - .12) / .46)) if soporte_ in ('columna_izq', 'columna_der') else 80 if soporte_ else 66   # con soporte el titular sube (jerarquía ≥ 2.4 × cuerpo)
+    acc_col = acc_col or CREAM
+    fs = round(84 * min(1, (COLW - .12) / .46)) if soporte_ in ('columna_izq', 'columna_der') else 80 if soporte_ else 84   # con soporte el titular sube; texto directo 84 (F8: titular ≥ 2.4 × subtítulo de 34) (jerarquía ≥ 2.4 × cuerpo)
     fs = round(fs * escala)
+    if soporte_ in ('linea', 'blur'): fs = round(88 * escala)       # jerarquía F8: titular ≥ 2.4 × subtítulo (88 / 34 = 2.6)
+    if soporte_ == 'tarjeta': fs = round(80 * escala)               # tarjeta con viñetas: titular 80 / subtítulo 32 = 2.5
     # Regla de la Dra. (10-oct-2026): si el bloque lleva RESALTADO, el interlineado sube un poco para que la barra no
     # invada la línea de arriba ni la de abajo (aire ≈ 0.27 × fs antes de la barra; titular a 1.08).
     blk = f'<div style="{MEN}font-weight:700;font-size:{fs}px;color:#fff;line-height:{1.08 if (it and resaltar) else 1}">{bold}</div>'
     if it and resaltar:   # resaltado que ABRAZA la palabra gancho (ref. «are cellular messengers» de Exosomes, Paola)
         blk += f'<div style="margin-top:{round(fs*.27)}px">{M.barra(it, fs, M.it_css("acento", fs, "#26313f"), fondo="rgba(202,211,221,.92)", alinear=("der" if lado=="der" else True))}</div>'
     elif it: blk += f'<div style="{M.it_css("hero_oscuro",fs,acc_col)}line-height:1.05">{it}</div>'   # acc_col: variar color del acento (p. ej. azul claro #CAD3DD) — regla de color
-    fsub = 38 if soporte_ in ("columna_izq", "columna_der") else 36 if soporte_ else 34
+    fsub = 38 if soporte_ in ("columna_izq", "columna_der") else 32 if soporte_ == 'tarjeta' else 34 if soporte_ in ('linea', 'blur') else 36 if soporte_ else 34
     fsub = max(30, round(fsub * (1 - (1 - escala) * .6)))   # escala<1: panel y texto más compactos (la Dra., 10-oct-2026)
     if sub: blk += f'<div style="{POP}font-style:italic;font-weight:300;font-size:{fsub}px;color:#f1ede6;line-height:1.35;margin-top:{22 if soporte_ else 14}px;text-wrap:balance;text-wrap:balance">{_fl(sub)}</div>'
     m = M.margen(W, H)
@@ -484,10 +493,28 @@ def r_natural(bold, it=None, sub=None, fondo=None, logo=("principal", "blanco", 
                     f'backdrop-filter:blur(26px) saturate(.85);-webkit-backdrop-filter:blur(26px);'
                     f'background:linear-gradient(180deg,rgba(26,33,46,.62),rgba(20,26,37,.78));border-top:1.2px solid rgba(202,211,221,.35);'
                     f'text-align:{al}">{blk}<!--REFS--></div>')
+        elif soporte_ == 'linea':   # Paola «Reclaim the energy»: texto DIRECTO sobre la foto + línea vertical con nodos y viñetas cortas, sin panel
+            vin = M.conector(vinetas or [], fs=27, color="#f1ede6", linea="rgba(175,202,228,.85)", arriba_em=1.6, col_em=12.5) if vinetas else ''
+            cont = (f'<div style="position:absolute;left:{m}px;right:{m}px;bottom:{round(H*bottom)}px;text-align:{al}">{blk}'
+                    f'<div style="margin-top:34px;text-align:left;display:inline-block">{vin}</div></div>')
+        elif soporte_ == 'tarjeta':   # Paola «Somos expertos»: tarjeta redondeada de vidrio con filo, titular + filete + viñetas
+            vin = M.bullets(vinetas or []) if vinetas else ''
+            caja = (f'<div data-caja style="display:inline-block;box-sizing:border-box;min-width:{round((W-2*m)*.70)}px;text-align:left;'
+                    f'backdrop-filter:blur(18px) saturate(.9);-webkit-backdrop-filter:blur(18px);background:rgba(14,20,32,.40);'
+                    f'border:1.2px solid rgba(175,202,228,.45);border-radius:26px;padding:40px 46px 38px">{blk}'
+                    f'<div style="height:1.5px;background:rgba(210,181,138,.8);margin:26px 0 22px;width:46%"></div>'
+                    f'<div style="font-family:Poppins,sans-serif;font-weight:300;font-size:29px;line-height:1.4;color:#f1ede6">{vin}</div></div>')
+            cont = f'<div style="position:absolute;left:{m}px;right:{m}px;bottom:{round(H*bottom)}px;text-align:{al}">{caja}</div>'
+        elif soporte_ == 'blur':   # DESENFOQUE local del fondo, ajustado al titular (sin tinte oscuro ni borde): la foto se difumina solo detrás del texto
+            cont = (f'<div style="position:absolute;left:{m}px;right:{m}px;bottom:{round(H*bottom)}px;text-align:{al}">'
+                    f'<div data-caja style="display:inline-block;text-align:left;padding:34px 44px 38px;border-radius:30px;'
+                    f'backdrop-filter:blur(20px) saturate(1.05);-webkit-backdrop-filter:blur(20px);'
+                    f'background:linear-gradient(180deg,rgba(14,20,32,.46),rgba(14,20,32,.66))">{blk}</div></div>')
         else:
             cont = f'<div style="position:absolute;left:{m}px;right:{m}px;bottom:{round(H*bottom)}px;text-align:{al}">{blk}</div>'
     velo = (_veil("radial-gradient(70% 40% at 50% 85%,rgba(14,18,26,.70) 0%,rgba(14,18,26,0) 100%)") if soporte_ == 'velo'
-            else _veil("linear-gradient(0deg,rgba(14,18,26,.80) 0%,rgba(14,18,26,.35) 24%,rgba(14,18,26,0) 42%)") if not soporte_ else "")
+            else _veil("linear-gradient(0deg,rgba(14,18,26,.80) 0%,rgba(14,18,26,.35) 24%,rgba(14,18,26,0) 42%)") if (not soporte_ or soporte_ == 'linea')
+            else _veil("linear-gradient(0deg,rgba(14,18,26,.46) 0%,rgba(14,18,26,.18) 26%,rgba(14,18,26,0) 46%)") if soporte_ in ('blur', 'tarjeta') else "")
     if luz_sup:   # caída de luz AMPLIA y natural arriba para que el logo blanco se lea (nunca un difuminado solo alrededor del logo)
         velo += _veil("linear-gradient(180deg,rgba(14,18,26,.62) 0%,rgba(14,18,26,.30) 14%,rgba(14,18,26,0) 30%)")
     if logo and soporte_ in ('columna_izq', 'columna_der'):
@@ -511,7 +538,7 @@ def r_natural(bold, it=None, sub=None, fondo=None, logo=("principal", "blanco", 
     else:
         pie = _pill()
     body = (velo + (soporte(soporte_) if soporte_ != 'mitad' else '') + logo_html + cont + pie)
-    return _doc(body, fondo, soporte=soporte_)
+    return _doc(body, fondo, soporte=('resaltado' if (resaltar and not soporte_) else soporte_ or 'directo'), acento=acc_col)
 
 def r_retrato(bold, it=None, sub=None, retrato=None, fondo=None, logo=("sello", "claro", "tl"), h=1010, x=0.40):
     """R9 'Founder' — retrato recortado (PNG con alfa) sobre fondo oscuro; texto a la izquierda a media
@@ -924,12 +951,16 @@ def r_panel_claro(bold, acc, cuerpo, fondo, lado="der", logo=("principal", "navy
 
 
 # ───────── AUDITOR DE TANDA (la Dra., 11-oct-2026: «¿por qué sigues haciendo todas las fotos con el mismo efecto?») ─────────
-SOPORTES_FOTO = ('mitad', 'vidrio', 'columna_izq', 'columna_der', 'recuadro', 'panel_claro', 'velo')
+# 25-oct-2026: el panel de vidrio a media pieza se estaba repitiendo. Ahora es EXCEPCIÓN y los soportes de Paola (texto directo,
+# línea con nodos, tarjeta con viñetas, resaltado, recuadro, desenfoque local) son la norma.
+SOPORTES_FOTO = ('directo', 'linea', 'tarjeta', 'blur', 'resaltado', 'recuadro', 'panel_claro', 'velo', 'vidrio', 'columna_izq', 'columna_der', 'mitad')
+ACENTOS = {'azul_paola': AZUL_PAOLA, 'crema': CREAM, 'dorado': GOLD, 'acero': STEEL, 'blanco': '#ffffff', 'azul_claro': '#dfe8f1'}
 def auditar_soportes(secuencias):
     """secuencias: {perfil: [(nombre, html), ...]} en ORDEN de publicación. Falla (AssertionError) si un soporte de foto
-    se repite en dos piezas SEGUIDAS del mismo perfil, si un perfil usa el mismo soporte más de 2 veces en la tanda, o si
-    la lámina «ducha» (columna_*) aparece más de 1 vez. Se llama SIEMPRE antes de entregar una tanda."""
-    import re, collections
+    se repite en dos piezas SEGUIDAS del mismo perfil, si un perfil usa el mismo soporte más de 2 veces en la tanda, si la
+    lámina «ducha» (columna_*) aparece más de 1 vez, o si el panel a media pieza ('mitad') supera 1 de cada 4 piezas.
+    Se llama SIEMPRE antes de entregar una tanda (también un par ES/EN: cada idioma es su propio perfil)."""
+    import re, math, collections
     errores = []
     for perfil, piezas in secuencias.items():
         sops = []
@@ -939,7 +970,35 @@ def auditar_soportes(secuencias):
             if sa and sa == sb: errores.append(f'{perfil}: «{sa}» seguido en {a} y {b}')
         cnt = collections.Counter(s_ for _, s_ in sops if s_)
         for s_, n in cnt.items():
-            lim = 1 if s_.startswith('columna') else 2
+            lim = 1 if s_.startswith('columna') else max(1, math.ceil(len(sops) / 4)) if s_ == 'mitad' else 2
             if n > lim: errores.append(f'{perfil}: «{s_}» {n} veces (máx. {lim})')
     assert not errores, 'VARIEDAD DE SOPORTES — corregir antes de entregar:\n  ' + '\n  '.join(errores)
     return True
+
+def auditar_acentos(secuencias):
+    """Regla de color (10-oct-2026, reforzada 25-oct-2026): los acentos NO son siempre azul claro. Falla si un mismo color de
+    acento se usa en más de la mitad de las piezas con acento de la tanda (mín. 2) o en 3 seguidas. secuencias igual que arriba."""
+    import re, math, collections
+    errores = []
+    for perfil, piezas in secuencias.items():
+        cols = [(n, (re.search(r'<!--ACENTO:(#[0-9a-f]{6})-->', h) or [None, None])[1]) for n, h in piezas]
+        cols = [(n, c) for n, c in cols if c]
+        cnt = collections.Counter(c for _, c in cols)
+        for c, k in cnt.items():
+            if len(cols) >= 3 and k > math.ceil(len(cols) / 2): errores.append(f'{perfil}: acento {c} en {k} de {len(cols)} piezas (máx. la mitad)')
+        for a, b, d in zip(cols, cols[1:], cols[2:]):
+            if a[1] == b[1] == d[1]: errores.append(f'{perfil}: acento {a[1]} en 3 seguidas ({a[0]}, {b[0]}, {d[0]})')
+    assert not errores, 'VARIEDAD DE ACENTOS — corregir antes de entregar:\n  ' + '\n  '.join(errores)
+    return True
+
+def plan_variedad(n, semilla=0):
+    """Tabla «pieza → soporte → acento» lista para n piezas (paso 1 del bloque obligatorio del SKILL). Rota los soportes de Paola
+    y NO incluye 'mitad' (panel a media pieza): si una foto lo exige, se cambia a mano y se justifica en la tabla. Devuelve [{'soporte':…, 'acento':…, 'resaltar':bool}].
+    Es una propuesta: si la foto manda otra cosa (cara a un lado, zona libre arriba…), se cambia, pero sin romper auditar_soportes."""
+    base = ['directo', 'linea', 'tarjeta', 'blur', 'resaltado', 'recuadro', 'vidrio', 'panel_claro', 'velo']
+    acs = ['crema', 'azul_paola', 'dorado', 'acero', 'blanco', 'azul_claro']
+    out = []
+    for i in range(n):
+        sop = base[(i + semilla) % len(base)]
+        out.append({'soporte': sop if sop != 'resaltado' else None, 'resaltar': sop == 'resaltado', 'acento': ACENTOS[acs[(i + semilla) % len(acs)]]})
+    return out

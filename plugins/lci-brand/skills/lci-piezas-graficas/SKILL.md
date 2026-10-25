@@ -7,10 +7,27 @@ description: "Motor de DISEÑO GRÁFICO y diagramación del Longevity Clinical I
 
 ## 🛑 ANTES DE DISEÑAR Y ANTES DE ENTREGAR — OBLIGATORIO EN CADA TANDA (la Dra., 11-oct-2026)
 Este bloque manda sobre todo lo demás. Se relee COMPLETO al empezar cada tanda, aunque sea en la misma conversación.
-1. **Un soporte distinto por pieza.** Antes de diseñar, escribir la tabla «pieza → soporte → fondo». Soportes de foto:
-   panel a media pieza (`mitad`), tarjeta de vidrio (`vidrio`), lámina «ducha» (`columna_izq/der`, máx. 1 por tanda),
-   recuadro de Paola (`recuadro`), panel crema (`r_panel_claro`), velo localizado, resaltado. Nunca el mismo en dos piezas
-   seguidas del mismo perfil ni más de 2 veces en la tanda. `R.auditar_soportes()` lo verifica y DETIENE el render.
+1. **Un soporte distinto por pieza — y el panel de vidrio a media pieza (`mitad`) es la EXCEPCIÓN (la Dra., 25-oct-2026: «se está repitiendo mucho»).**
+   Antes de diseñar, correr `R.plan_variedad(n)` (propone la tabla «pieza → soporte → acento») y ajustarla a cada foto.
+   Los soportes de Paola, por orden de preferencia — **son la norma**:
+   | Soporte (`soporte_=`) | Qué es | Referencia de Paola |
+   |---|---|---|
+   | `None` (directo) | titular directo sobre la foto con caída de luz natural, sin panel | «Your body knows how to heal» |
+   | `linea` | texto directo + línea vertical con nodos y viñetas cortas (`vinetas=[…]`, usa `M.conector`) | «Reclaim the energy» |
+   | `tarjeta` | tarjeta redondeada de vidrio con filo, titular + filete dorado + viñetas (`vinetas=[…]`) | «Somos expertos en…» |
+   | `resaltar=True` | resaltado que abraza la palabra gancho (`M.barra`) | «are cellular messengers» |
+   | `recuadro` | recuadro de filo fino alrededor del titular | «The brain ages too» |
+   | `blur` | desenfoque del fondo solo detrás del titular (ajustado al bloque, sin llenar media pieza) | fondos desenfocados de Paola |
+   | `vidrio`, `panel_claro`, `velo` | tarjeta de vidrio · panel crema · velo localizado | |
+   | `columna_izq/der` | lámina «ducha» (máx. 1 por tanda) | |
+   | `mitad` | panel a media pieza — **solo si ningún otro sirve para esa foto; justificarlo por escrito en la tabla** (máx. 1 de cada 4 piezas) | |
+   Ejemplo visual verificado con los auditores: `references/estandar-visual-2026/variedad-soportes-2026-10-25.jpg`.
+   Nunca el mismo soporte en dos piezas seguidas del mismo perfil ni más de 2 veces en la tanda. `R.auditar_soportes({perfil:[(nombre, html)…]})`
+   (es una FUNCIÓN, no un script) lo verifica y DETIENE el render; ES y EN de un mismo par son perfiles distintos, así que **además hay que
+   mirar el feed ya publicado**: si las últimas piezas usaron `mitad`, no repetirlo.
+1b. **El acento NO es siempre azul claro.** Rotar en la tanda: crema · azul Paola `#AFCAE4` · dorado · azul acero · blanco · azul claro
+   (`R.ACENTOS`, parámetro `acc_col=`). Máx. la mitad de las piezas con el mismo color, nunca 3 seguidas: `R.auditar_acentos(...)`.
+   Sobre foto clara, un acento claro no pasa el contraste (F3): usar crema/blanco con soporte `blur`/`tarjeta`, o navy sobre claro.
 2. **El soporte se elige por la foto, no por costumbre:** primero se mira dónde están la cara, la cabeza y el objeto
    protagonista; el texto va en la zona libre. Si la persona está a un lado → lámina o tarjeta al lado contrario; si la
    zona libre es arriba → panel crema arriba; si es abajo → panel o tarjeta abajo.

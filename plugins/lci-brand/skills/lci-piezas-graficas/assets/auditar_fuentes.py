@@ -6,13 +6,15 @@ marca no tiene (✦ ◂ ▸ ₂ &#8209; flechas, emojis…) → reemplazar por S
 Uso: python3 auditar_fuentes.py pieza1.html pieza2.html ...   (o importar auditar(lista_de_html_str))"""
 import asyncio, sys
 from playwright.async_api import async_playwright
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from _navegador import lanzar as _lanzar
 JS = """() => { const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n,i=0,o=[];
  while(n=w.nextNode()){ if(!n.textContent.trim()) continue; const e=n.parentElement;
  if(!e.hasAttribute('data-a')) e.setAttribute('data-a',i++); o.push([e.getAttribute('data-a'),n.textContent.trim().slice(0,50)]);} return o;}"""
 async def _run(htmls):
     malos = []
     async with async_playwright() as p:
-        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
+        b = await _lanzar(p); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
         cdp = await pg.context.new_cdp_session(pg); await cdp.send('DOM.enable'); await cdp.send('CSS.enable')
         for k, h in enumerate(htmls):
             await pg.set_content(h); await pg.wait_for_timeout(300)
