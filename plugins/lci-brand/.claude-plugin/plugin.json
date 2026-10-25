@@ -1,0 +1,7 @@
+{
+  "name": "lci-brand",
+  "version": "1.0.0",
+  "description": "Motor de marca del Longevity Clinical Institute: sistema de diseño para documentos clínicos HTML y piezas gráficas de redes con la identidad visual de LCI.",
+  "author": { "name": "Dra. Carolina Rodríguez — Longevity Clinical Institute" },
+  "license": "Uso interno del Longevity Clinical Institute."
+}

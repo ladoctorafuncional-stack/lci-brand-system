@@ -1,0 +1,20 @@
+{
+  "name": "lci-brand-system",
+  "owner": { "name": "Dra. Carolina Rodríguez — Longevity Clinical Institute" },
+  "metadata": {
+    "description": "Marketplace de marca de LCI. Este repositorio es la fuente única; Cowork, Claude Code y Claude Design se actualizan desde aquí.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "lci-brand",
+      "source": "./plugins/lci-brand",
+      "description": "Motor de marca LCI: lci-design-system (documentos clínicos HTML) y lci-piezas-graficas (piezas de redes estilo Paola)."
+    },
+    {
+      "name": "lci-fotos",
+      "source": "./plugins/lci-fotos",
+      "description": "Banco de fotos oficial de LCI, piezas originales de Paola y catálogo de efectos de marca."
+    }
+  ]
+}
