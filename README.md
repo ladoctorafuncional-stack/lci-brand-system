@@ -25,17 +25,22 @@ tokens/
   typography.css                  Mencken Std + Poppins, @font-face -> fonts/
 fonts/                            13 archivos de fuente reales (otf/ttf)
 guidelines/                       manual de marca, catálogo de piezas, recetas de diseño
-.claude/skills/
-  lci-design-system/              motor de documentos clínicos HTML (copia completa)
-  lci-piezas-graficas/            motor de piezas gráficas estilo Paola (copia completa)
+.claude-plugin/marketplace.json   marketplace: lci-brand + lci-fotos
+plugins/
+  lci-brand/skills/               lci-design-system (documentos HTML) · lci-piezas-graficas (piezas estilo Paola)
+  lci-fotos/                      banco de fotos oficial
+.claude/skills/                   symlinks a plugins/lci-brand/skills (carga directa en Claude Code)
+VERSION · CHANGELOG.md · MIGRACION.md
 ```
+
+**Fuente única:** los skills viven en `plugins/`. Ver `MIGRACION.md` para instalar en Cowork y actualizar Claude Design.
 
 ## Origen del material
 
 Todo el contenido de `brand/logos/`, `fonts/`, `brand/piezas-referencia/` y
 `guidelines/` viene decodificado o copiado directamente de las skills
 `lci-design-system` y `lci-piezas-graficas`, que ya traían el kit de marca
-embebido. No se inventó ni se resumió nada.
+embebido. Desde 1.0.0 los skills vigentes (lci-suite v1.58.0) viven en `plugins/lci-brand/`. No se inventó ni se resumió nada.
 
 `brand/fondos/` viene de `Fondos-LCI-todas-las-opciones.zip`, copiado byte a
 byte; solo se reorganizó por familia y se normalizaron los nombres (la
