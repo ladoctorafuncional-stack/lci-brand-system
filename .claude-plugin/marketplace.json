@@ -3,7 +3,7 @@
   "owner": { "name": "Dra. Carolina Rodríguez — Longevity Clinical Institute" },
   "metadata": {
     "description": "Marketplace de marca de LCI. Este repositorio es la fuente única; Cowork, Claude Code y Claude Design se actualizan desde aquí.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {

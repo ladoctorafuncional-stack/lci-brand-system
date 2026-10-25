@@ -28,6 +28,8 @@ import sys, os, json, asyncio
 import numpy as np
 from PIL import Image, ImageDraw
 from playwright.async_api import async_playwright
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from _navegador import lanzar as _lanzar
 
 PISO = {"gen": 19, "ref": 20, "label": 22, "body": 27}
 
@@ -222,7 +224,7 @@ async def _audit_async(html, out_png, pg):
 
 async def _many(items):
     async with async_playwright() as p:
-        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
+        b = await _lanzar(p); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
         res = []
         for html, out in items: res.append(await _audit_async(html, out, pg))
         await b.close(); return res
