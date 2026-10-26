@@ -162,7 +162,9 @@ h1.dh{font-family:'Mencken Std',serif;font-weight:700;color:#fff;font-size:92px;
 .body strong{color:#fff;font-weight:500;} .body.it{font-style:italic;}
 
 /* hairline / reglas */
-.hairline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;opacity:.8;}
+/* línea LIMPIA de marca (la Dra., 25-oct-2026: nada de destello/difuminado ni degradado de color) */
+.hairline{height:1.5px;background:rgba(255,255,255,.72);border:0;opacity:1;}
+.theme-light .hairline{background:rgba(42,54,73,.42);}
 .rule-left{width:84px;height:2px;background:var(--gold);border:0;}
 .rule-w{height:2px;background:#fff;border:0;opacity:.85;}
 
@@ -600,13 +602,14 @@ def t_concepto_hero(term, bar, body=None, fondo=None, formato="poster_v", theme=
 def t_story(eyebrow_txt, head_spans, sub=None, cta_pill=True, fondo=None, formato="story",
             theme="navy", sello="principal", sello_theme="blanco"):
     """Story editorial: sello/wordmark arriba · titular display abajo · pill."""
-    top=logo(sello,sello_theme,h=120 if sello!='principal' else 70)
+    # Logo al estándar de marca (la Dra., 25-oct-2026: en historias quedaba muy pequeño): principal ~22% del ancho.
+    top=logo(sello,sello_theme,h=120 if sello!='principal' else 108)
     blk=eyebrow(eyebrow_txt)+'<div style="height:22px;"></div>'+titular(head_spans,size=86)
     if sub: blk+='<div style="height:24px;"></div>'+subhead(sub)
     blk+='<div style="height:38px;"></div>'+hairline()
     inner=(top+f'<div style="margin-top:auto;">{blk}</div>'
            +(f'<div style="margin-top:48px;">{pill()}</div>' if cta_pill else ''))
-    return lienzo(formato, content(inner), fondo=fondo, theme=theme)
+    return lienzo(formato, content(inner, pad="108px"), fondo=fondo, theme=theme)
 
 def t_seal_hero(head_reg, head_it, lista=None, fondo=None, formato="story_hero",
                 theme="navy", sello_theme="claro", acc="#9aacbb", pill_radius=16):
