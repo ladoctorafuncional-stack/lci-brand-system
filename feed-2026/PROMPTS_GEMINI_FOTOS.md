@@ -7,6 +7,7 @@ Cómo usarlos
 4. Si la cara sale sonriendo o mirando a cámara, repite con: `not smiling, eyes on the task, never looking at the camera`.
 5. Para una serie con la misma persona, sube como referencia adicional la primera foto aprobada.
 Regla de marca: personas serias, elegantes, enfocadas en lo suyo. Las fotos de IA no se presentan como pacientes reales ni como testimonios.
+Regla de equilibrio: **alternar hombres y mujeres** entre piezas — no pedir todo con hombres. En ciencia/abstractos, el **fondo también rota**: negro, blanco, gris y azul, no siempre negro.
 
 ---
 
