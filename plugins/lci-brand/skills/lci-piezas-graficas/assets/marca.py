@@ -609,7 +609,12 @@ def t_story(eyebrow_txt, head_spans, sub=None, cta_pill=True, fondo=None, format
     blk+='<div style="height:38px;"></div>'+hairline()
     inner=(top+f'<div style="margin-top:auto;">{blk}</div>'
            +(f'<div style="margin-top:48px;">{pill()}</div>' if cta_pill else ''))
-    return lienzo(formato, content(inner, pad="108px"), fondo=fondo, theme=theme)
+    html=lienzo(formato, content(inner, pad="108px"), fondo=fondo, theme=theme)
+    # Historias: texto más grande y legible (la Dra., 25-oct-2026: «muy pequeños, casi no se ven»).
+    ov=("<style>.eyebrow{font-size:21px;}"
+        ".subhead{font-size:42px;font-weight:400;line-height:1.32;color:#eaeff4;}"
+        ".theme-light .subhead{color:#3a4352;}</style>")
+    return html.replace("</head>", ov+"</head>", 1)
 
 def t_seal_hero(head_reg, head_it, lista=None, fondo=None, formato="story_hero",
                 theme="navy", sello_theme="claro", acc="#9aacbb", pill_radius=16):
