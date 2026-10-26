@@ -599,37 +599,71 @@ def t_concepto_hero(term, bar, body=None, fondo=None, formato="poster_v", theme=
     bg=fondo if fondo is not None else (GRAD_BLUE if light else GRAD_NAVY_DEEP)
     return lienzo(formato, inner, fondo=bg, theme=theme)
 
-def _eye_story(txt, estilo="gold"):
-    """Eyebrow de historia con ROTACIÓN de color/tratamiento (la Dra., 25-oct-2026: «no siempre dorado,
-    rotar para que el feed no se vea igual; la parte de arriba puede ir en un resaltado»).
-    estilo: 'gold' | 'blue' | 'white' | 'navy' (solo tinta) · 'band-gold' | 'band-navy' | 'band-blue'
-    | 'band-cream' (resaltado que abraza la palabra). El resaltado baja la tracking y suma pad a la
-    derecha para que el letter-spacing no abra el borde."""
-    base='font-size:21px;letter-spacing:.42em;text-transform:uppercase;font-weight:500;display:inline-block;'
-    tinta={'gold':'#D2B58A','blue':'#CAD3DD','white':'#FFFFFF','navy':'#2A3649'}
+def _eye_story(txt, estilo="blue"):
+    """Eyebrow de historia con ROTACIÓN de color/tratamiento (la Dra., 25-oct-2026).
+    Paleta protagonista: AZUL CLARO (#CAD3DD) y BEIGE/CREMA (#EDE5DA); blanco y navy de apoyo.
+    El DORADO NO es protagonista: solo detalles muy puntuales → no se usa de eyebrow por defecto.
+    estilo: 'blue' | 'cream' | 'white' | 'navy' (tinta) · 'band-blue' | 'band-cream' | 'band-navy'
+    (resaltado que abraza la palabra) · 'gold'/'band-gold' quedan disponibles solo para casos puntuales.
+    Eyebrow MÁS GRANDE para jerarquía (la Dra.: «los títulos de arriba muy pequeños»): 27px."""
+    base='font-size:27px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;display:inline-block;'
+    tinta={'blue':'#CAD3DD','cream':'#EDE5DA','white':'#FFFFFF','navy':'#2A3649','gold':'#D2B58A'}
     if estilo in tinta:
         return f'<div class="eyebrow" style="{base}color:{tinta[estilo]};">{txt}</div>'
-    bandas={'band-gold':('#D2B58A','#1B2430'),'band-navy':('#2A3649','#EDE5DA'),
-            'band-blue':('#CAD3DD','#1B2430'),'band-cream':('#EDE5DA','#2A3649')}
+    bandas={'band-blue':('#CAD3DD','#1B2430'),'band-cream':('#EDE5DA','#2A3649'),
+            'band-navy':('#2A3649','#EDE5DA'),'band-gold':('#D2B58A','#1B2430')}
     bg,fg=bandas[estilo]
-    b='font-size:21px;letter-spacing:.30em;text-transform:uppercase;font-weight:600;display:inline-block;'
+    b='font-size:26px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;display:inline-block;'
     return (f'<div><span class="eyebrow" style="{b}color:{fg};background:{bg};'
-            f'padding:8px 12px 7px 16px;border-radius:3px;">{txt}</span></div>')
+            f'padding:9px 13px 8px 17px;border-radius:3px;">{txt}</span></div>')
 
 def t_story(eyebrow_txt, head_spans, sub=None, cta_pill=True, fondo=None, formato="story",
-            theme="navy", sello="principal", sello_theme="blanco", eye="gold"):
-    """Story editorial: sello/wordmark arriba · titular display abajo · pill.
-    eye = tratamiento del eyebrow (ver _eye_story): rotar entre piezas para que el feed no se vea igual."""
-    # Logo al estándar de marca (la Dra., 25-oct-2026: en historias quedaba muy pequeño): principal ~22% del ancho.
-    top=logo(sello,sello_theme,h=120 if sello!='principal' else 108)
-    blk=_eye_story(eyebrow_txt,eye)+'<div style="height:22px;"></div>'+titular(head_spans,size=86)
+            theme="navy", sello="principal", sello_theme="blanco", eye="blue", acc=None,
+            pos="bottom", align="left", logo_pos=None, font="mencken", size=86):
+    """Story editorial con EJES DE VARIACIÓN para que el feed no se vea igual (la Dra., 25-oct-2026:
+    «no todas con el mismo alineado, mismo lado, misma tipografía; variar logos, su posición, y el texto
+    arriba/centro/abajo»).
+      eye   = tratamiento del eyebrow (ver _eye_story). acc = color del acento itálico (nunca dorado por defecto).
+      pos   = 'bottom' | 'top' | 'center' (dónde va el bloque de texto).
+      align = 'left' | 'right' | 'center'.
+      logo_pos = 'tl'|'tr'|'tc'|'bl'|'br'|'bc' (por defecto se deriva de pos: texto abajo→logo arriba, etc.).
+      font  = 'mencken' (titular display) | 'poppins' (titular sans, la palabra gancho va en color, no en itálica).
+    La cápsula de contacto siempre va al pie. Interlineado del titular FIJO (se iguala el alto de la itálica)."""
+    if acc is None: acc = '#CAD3DD' if theme != 'light' else '#3E5268'
+    if logo_pos is None: logo_pos = {'bottom':'tl','top':'bl','center':'tc'}[pos]
+    lg_h = 120 if sello!='principal' else 108
+    lh = {'tr':'right','br':'right','tc':'center','bc':'center'}.get(logo_pos,'left')
+    lgdiv = f'<div style="text-align:{lh};">{logo(sello,sello_theme,h=lg_h)}</div>'
+    if font=='poppins':
+        tit=(f'<h1 class="dh" style="font-family:\'Poppins\',sans-serif;font-weight:800;'
+             f'letter-spacing:-.012em;font-size:{size-8}px;line-height:1.04;">{head_spans}</h1>')
+    else:
+        tit=titular(head_spans,size=size)
+    al={'left':'left','right':'right','center':'center'}[align]
+    blk=_eye_story(eyebrow_txt,eye)+'<div style="height:24px;"></div>'+tit
     if sub: blk+='<div style="height:24px;"></div>'+subhead(sub)
     blk+='<div style="height:38px;"></div>'+hairline()
-    inner=(top+f'<div style="margin-top:auto;">{blk}</div>'
-           +(f'<div style="margin-top:48px;">{pill()}</div>' if cta_pill else ''))
-    html=lienzo(formato, content(inner, pad="108px"), fondo=fondo, theme=theme)
-    # Historias: texto más grande y legible (la Dra., 25-oct-2026: «muy pequeños, casi no se ven»).
-    ov=("<style>.eyebrow{font-size:21px;}"
+    blkdiv=f'<div style="text-align:{al};">{blk}</div>'
+    pilldiv=(f'<div style="margin-top:44px;text-align:{al};">{pill()}</div>' if cta_pill else '')
+    logo_top = logo_pos[0]=='t'
+    SP='<div style="flex:1 1 auto;"></div>'
+    rows=[]
+    if logo_top: rows.append(lgdiv)
+    if pos=='top': rows.append('<div style="height:48px;"></div>'+blkdiv)
+    rows.append(SP)
+    if pos=='center': rows.append(blkdiv); rows.append(SP)
+    if pos=='bottom': rows.append(blkdiv)
+    if not logo_top: rows.append('<div style="height:44px;"></div>'+lgdiv)
+    rows.append(pilldiv)
+    col=('<div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;'
+         'padding:108px;">'+''.join(rows)+'</div>')
+    html=lienzo(formato, col, fondo=fondo, theme=theme)
+    # Interlineado del titular FIJO: la itálica Mencken Head no debe agrandar su línea (la Dra.: «Los exosomas
+    # muy alejado de son mensajeros»). Acento itálico fuera del dorado. Subhead grande y legible.
+    ov=("<style>"
+        "h1.dh{line-height:1.0;}"
+        "h1.dh .it{line-height:1.0;display:inline-block;}"
+        f"#lienzo .it{{color:{acc};}}"
         ".subhead{font-size:42px;font-weight:400;line-height:1.32;color:#eaeff4;}"
         ".theme-light .subhead{color:#3a4352;}</style>")
     return html.replace("</head>", ov+"</head>", 1)
