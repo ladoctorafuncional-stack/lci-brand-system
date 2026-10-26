@@ -599,12 +599,30 @@ def t_concepto_hero(term, bar, body=None, fondo=None, formato="poster_v", theme=
     bg=fondo if fondo is not None else (GRAD_BLUE if light else GRAD_NAVY_DEEP)
     return lienzo(formato, inner, fondo=bg, theme=theme)
 
+def _eye_story(txt, estilo="gold"):
+    """Eyebrow de historia con ROTACIÓN de color/tratamiento (la Dra., 25-oct-2026: «no siempre dorado,
+    rotar para que el feed no se vea igual; la parte de arriba puede ir en un resaltado»).
+    estilo: 'gold' | 'blue' | 'white' | 'navy' (solo tinta) · 'band-gold' | 'band-navy' | 'band-blue'
+    | 'band-cream' (resaltado que abraza la palabra). El resaltado baja la tracking y suma pad a la
+    derecha para que el letter-spacing no abra el borde."""
+    base='font-size:21px;letter-spacing:.42em;text-transform:uppercase;font-weight:500;display:inline-block;'
+    tinta={'gold':'#D2B58A','blue':'#CAD3DD','white':'#FFFFFF','navy':'#2A3649'}
+    if estilo in tinta:
+        return f'<div class="eyebrow" style="{base}color:{tinta[estilo]};">{txt}</div>'
+    bandas={'band-gold':('#D2B58A','#1B2430'),'band-navy':('#2A3649','#EDE5DA'),
+            'band-blue':('#CAD3DD','#1B2430'),'band-cream':('#EDE5DA','#2A3649')}
+    bg,fg=bandas[estilo]
+    b='font-size:21px;letter-spacing:.30em;text-transform:uppercase;font-weight:600;display:inline-block;'
+    return (f'<div><span class="eyebrow" style="{b}color:{fg};background:{bg};'
+            f'padding:8px 12px 7px 16px;border-radius:3px;">{txt}</span></div>')
+
 def t_story(eyebrow_txt, head_spans, sub=None, cta_pill=True, fondo=None, formato="story",
-            theme="navy", sello="principal", sello_theme="blanco"):
-    """Story editorial: sello/wordmark arriba · titular display abajo · pill."""
+            theme="navy", sello="principal", sello_theme="blanco", eye="gold"):
+    """Story editorial: sello/wordmark arriba · titular display abajo · pill.
+    eye = tratamiento del eyebrow (ver _eye_story): rotar entre piezas para que el feed no se vea igual."""
     # Logo al estándar de marca (la Dra., 25-oct-2026: en historias quedaba muy pequeño): principal ~22% del ancho.
     top=logo(sello,sello_theme,h=120 if sello!='principal' else 108)
-    blk=eyebrow(eyebrow_txt)+'<div style="height:22px;"></div>'+titular(head_spans,size=86)
+    blk=_eye_story(eyebrow_txt,eye)+'<div style="height:22px;"></div>'+titular(head_spans,size=86)
     if sub: blk+='<div style="height:24px;"></div>'+subhead(sub)
     blk+='<div style="height:38px;"></div>'+hairline()
     inner=(top+f'<div style="margin-top:auto;">{blk}</div>'
