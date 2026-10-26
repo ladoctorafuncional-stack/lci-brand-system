@@ -20,6 +20,7 @@ for L in ('EN','ES'):
     for i,(d,slug,note) in enumerate(cal,1):
         if slug:
             fs=sorted(glob.glob(f'FEED_LCI/{L}/{i:02d}_{d}_{slug}/*.png'))
+            if not fs: items.append({'d':d.replace('-','/'),'slug':None,'note':'Pieza de Paola: versión en español por subir'}); continue
             items.append({'d':d.replace('-','/'),'slug':slug,'files':[thumb(f) for f in fs]})
         else: items.append({'d':d.replace('-','/'),'slug':None,'note':note})
     data[L]={'items':items,'live':live}
