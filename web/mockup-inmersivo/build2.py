@@ -2,6 +2,9 @@
 """Immersive LCI website direction: self-contained HTML (fonts + images base64)."""
 import base64, io, os, re
 from PIL import Image
+import sys
+sys.path.insert(0, '/home/user/lci-brand-system/plugins/lci-brand/skills/lci-design-system/assets')
+from lci_treat import treat_cool
 
 R = '/home/user/lci-brand-system'
 FOT = f'{R}/plugins/lci-fotos/skills/lci-banco-fotos/fotos'
@@ -9,12 +12,13 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 b64 = lambda b: base64.b64encode(b).decode()
 
 
-def img(path, w, q=72):
+def img(path, w, q=72, cool=None):
     im = Image.open(path)
     if im.mode in ('RGBA', 'LA', 'P'):
         bg = Image.new('RGB', im.size, (255, 255, 255)); im = im.convert('RGBA'); bg.paste(im, mask=im.split()[3]); im = bg
     im = im.convert('RGB')
     if im.width > w: im = im.resize((w, int(im.height * w / im.width)), Image.LANCZOS)
+    if cool is not None: im = treat_cool(im, **cool)
     buf = io.BytesIO(); im.save(buf, 'JPEG', quality=q, optimize=True, progressive=True)
     return f'data:image/jpeg;base64,{b64(buf.getvalue())}'
 
@@ -27,17 +31,19 @@ def logo(name, w):
 
 
 IMGS = {
-    'hall': img(f'{FOT}/clinica/pasillo-luces-doradas.jpg', 760, 74),
-    'adn': img(f'{FOT}/clinica/sala-medicion-adn.jpg', 760, 74),
-    'consul': img(f'{FOT}/clinica/consultorio-calido.jpg', 760, 74),
+    'hall': img(f'{FOT}/clinica/pasillo-luces-doradas.jpg', 760, 74, cool={}),
+    'adn': img(f'{FOT}/clinica/sala-medicion-adn.jpg', 760, 74, cool={}),
+    'consul': img(f'{FOT}/clinica/consultorio-calido.jpg', 760, 74, cool={}),
     'cerebro': img(f'{FOT}/cientificas/cerebro-cristal-azul.jpg', 760, 72),
-    'sillon': img(f'{FOT}/clinica/sillon-terapia-claro.jpg', 700, 72),
-    'noche': img(f'{FOT}/clinica/sala-terapia-noche-ciudad.jpg', 700, 72),
-    'viaje': img(f'{FOT}/clinica-real/real-salas-terapia-dobles.jpg', 1500, 70),
-    'espera': img(f'{FOT}/clinica-real/real-sala-espera-amplia.jpg', 1100, 70),
-    'dra': img(f'{R}/brand/equipo/retratos/carolina-rodriguez.png', 900, 76),
+    'sillon': img(f'{FOT}/clinica/sillon-terapia-claro.jpg', 700, 72, cool={}),
+    'noche': img(f'{FOT}/clinica/sala-terapia-noche-ciudad.jpg', 700, 72, cool={}),
+    'viaje': img(f'{FOT}/clinica-real/real-salas-terapia-dobles.jpg', 1500, 70, cool={}),
+    'espera': img(f'{FOT}/clinica-real/real-sala-espera-amplia.jpg', 1100, 70, cool={}),
+    'dra': img(f'{R}/brand/equipo/retratos/carolina-rodriguez.png', 900, 76, cool=dict(tint=0.0)),
     'bg_mesh1': img(f'{R}/brand/fondos/mesh-oscuro/19-mesh-oscuro-1.jpg', 900, 62),
     'bg_malla': img(f'{R}/brand/fondos/mallas/17-malla-2-intensidad-38.jpg', 1100, 66),
+    'bg_galaxia': img(f'{R}/brand/fondos/galaxias/13-galaxia-1.jpg', 900, 60),
+    'bg_noche': img(f'{R}/brand/fondos/degradados-clasicos/02-noche-espejo.jpg', 900, 60),
     'bg_claro': img(f'{R}/brand/fondos/mesh-claro/22-mesh-claro-1.jpg', 900, 60),
     'sello': logo('sello_beige', 360),
     'logo_w': logo('principal_blanco', 640),
@@ -88,7 +94,7 @@ mq_items = [('2 h+', T('Primera consulta: mediciones y evaluación médica', 'Fi
             ('ES · EN', T('Equipo y atención bilingües', 'Bilingual team and care')),
             ('In house', T('Muestras procesadas en Colombia y en laboratorios de EE. UU.', 'Samples processed in Colombia and in U.S. laboratories')),
             ('IA', T('Clínica propia, siempre revisada por el médico', 'Our own clinical AI, always reviewed by the physician'))]
-mq_one = '<div>' + '<i>◦</i>'.join(f'<span><b>{n}</b>{t}</span>' for n, t in mq_items) + '<i>◦</i></div>'
+mq_one = '<div>' + '<i></i>'.join(f'<span><b>{n}</b>{t}</span>' for n, t in mq_items) + '<i></i></div>'
 MQ = mq_one + mq_one
 
 # ---- chapters ----
@@ -159,7 +165,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
   <canvas id="helix" aria-hidden="true"></canvas>
   <div class="tag t1"><b>{T('Edad biológica', 'Biological age')}</b>{T('Estimados preliminares con varios relojes biológicos', 'Preliminary estimates with several biological clocks')}</div>
   <div class="tag t2"><b>{T('Laboratorio', 'Laboratory')}</b>{T('In house · Colombia y EE. UU.', 'In house · Colombia and U.S.')}</div>
-  <div class="in"><div class="eyebrow"><span class="star">✦</span>THE MEDICINE OF THE FUTURE.</div>
+  <div class="in"><div class="eyebrow"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>THE MEDICINE OF THE FUTURE.</div>
     <h1 class="split">{T('Más años <em>saludables</em>, diseñados desde tu <em>biología</em>.', 'More <em>healthy</em> years, designed around your <em>biology</em>.')}</h1>
     <p class="lead">{T('Medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de tu biología.', 'Precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around your biology.')}</p>
     <div class="cta"><a class="btn cream" href="#agenda" data-mag>{T('Agendar valoración', 'Book an assessment')} {ARW}</a><a class="btn ghost" href="#metodo" data-mag>{T('Cómo trabajamos', 'How we work')}</a></div>
