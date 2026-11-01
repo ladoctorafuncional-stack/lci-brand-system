@@ -5,6 +5,25 @@ description: "Motor de DISEÑO GRÁFICO y diagramación del Longevity Clinical I
 
 # LCI — Piezas Gráficas (clon de Diana Paola Londoño)
 
+## ⭐ PIEZAS ES GEMELAS DE UNA EN + FOTOS FUENTE (la Dra., 25-oct-2026 — «errores de principiante» que NO se repiten)
+Al producir la versión ES de una pieza EN ya aprobada, el español es más largo y descuadra la pieza; **que el EN pase NO garantiza el ES**. Mirar el PNG de CADA pieza ES contra el original de Paola (`references/estandar-visual-2026/posts/NN-*.jpg`) antes de entregar o subir. Reglas duras:
+1. **Una sola línea de alineación izquierda:** titular, statement y body caen en el MISMO borde; solo el filete/borde-acento sobresale a la izquierda. Nunca tres sangrías distintas.
+2. **El sello NUNCA toca el texto:** si el cuerpo ES llega al sello, se mueve el sello a su rincón (como el original de Paola), no se deja encima de la última línea.
+3. **Palabra estrella = ancho EXACTO del resaltado de abajo** (regla «abraza»): la palabra Mencken itálica mide lo mismo que la barra-resaltado de debajo. Se mide en el render (`fontSize *= anchoBarra/anchoEstrella` tras `document.fonts.ready`), nunca se deja sobresalir.
+4. **Re-romper las líneas** para el largo del español; no heredar los `<br>` del inglés. Respetar el MISMO interlineado y ritmo de Paola (ver INTERLINEADO-BLINDADO): eyebrow/«Years/Años»/unidad PEGADOS a su línea, y aire real entre el statement y el body (no pegar «de longevidad.» con el cuerpo).
+5. **Fotos: usar la FUENTE limpia del banco/carpeta de marca, NUNCA reconstruir el fondo por inpaint** (deja franjas grises y bordes azules borrosos). Fondos limpios confirmados en `…04.LINEA GRAFICA/…_Carpeta/Links/`: Exosomas → `AdobeStock_516988423.jpeg`; ADN «Tu cuerpo sabe» → `AdobeStock_1640564733.jpeg`; fuerza/músculo (espalda) → `AdobeStock_130404751.jpeg`.
+6. **Contraste sobre foto con VIÑETEADO radial en coordenadas de la pieza** (como Paola en Músculo y ADN), no bajando la luz de toda la foto: inyectar `radial-gradient(ellipse W% H% at x% y%, rgba(oscuro,.9) 0%, …, rgba(oscuro,0) ~75%)` como PRIMERA capa del `fondo`, antes de la `url('…')` (`_bg` admite capas apiladas: `"radial-…, linear-…, url('…')|cover|center|1.0"`). Oscurece solo detrás del texto/sello.
+
+## ⭐ ESTILO FOTOGRÁFICO DE LA MARCA (guía oficial 6.1–6.2, la Dra. 25-oct-2026) — OBLIGATORIO en TODA foto y TODO prompt de IA
+Un consultorio claro, con ropa casual y sonrisas NO es la marca. Toda foto —de banco o generada— sigue este estilo:
+- **Expresiones neutras:** rostros tranquilos, SIN sonrisas ni gestos fuertes; iluminación neutra o dramática, nunca plana.
+- **Iluminación bioluminiscente:** priorizar luz que brilla (azules/cian) para transmitir tecnología e innovación.
+- **Close-ups de biología:** neuronas, células, ADN, cuerpo humano y sus sistemas (macro/micro con brillo).
+- **Lifestyle = atlético y cinematográfico:** fuerza/movimiento, luz oscura y dramática, contrapicado, premium — NO escenas de consultorio brillante ni casual.
+- **Producto:** viales/kits sobre fondo limpio, dorado/blanco, premium.
+- **Tonos neutros:** ondas de partículas bioluminiscentes azules; humo o redes neuronales etéreas con destellos cálidos.
+Prompts de IA: SIEMPRE luz dramática/bioluminiscente, expresión neutra, estética clínica-premium oscura. Las fotos NB/NC generadas antes (consultorio claro, casual) quedaron FUERA de estilo y deben rehacerse. Fuentes limpias que SÍ calzan: `Links/AdobeStock_516988423` (molécula), `AdobeStock_1640564733` (ADN), `AdobeStock_130404751` (espalda).
+
 ## 🛑 ANTES DE DISEÑAR Y ANTES DE ENTREGAR — OBLIGATORIO EN CADA TANDA (la Dra., 11-oct-2026)
 Este bloque manda sobre todo lo demás. Se relee COMPLETO al empezar cada tanda, aunque sea en la misma conversación.
 1. **Un soporte distinto por pieza — y el panel de vidrio a media pieza (`mitad`) es la EXCEPCIÓN (la Dra., 25-oct-2026: «se está repitiendo mucho»).**
