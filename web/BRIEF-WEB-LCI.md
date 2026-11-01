@@ -137,6 +137,27 @@ Plan por niveles, del más simple al más integrado:
 - Móvil primero: probar a 375, 768 y 1440 px con capturas antes de cada entrega.
 - **Licencia de Mencken Std**: confirmar que incluye uso web (webfont) antes de publicar. Poppins es de licencia abierta (OFL).
 
+## 9b. Experiencia inmersiva (requisito de la Dra.)
+
+El sitio debe verse espectacular, académico, técnico y de lujo, y ser interactivo. La referencia ya construida está en `web/mockup-inmersivo/` (artifact publicado; fuentes `immersive.css`, `immersive.js`, `build2.py`).
+
+| Momento | Efecto | Notas técnicas |
+|---|---|---|
+| Hero | Hélice de ADN 3D en canvas, reactiva al cursor y al scroll; titular que aparece palabra a palabra; etiquetas flotantes | Canvas 2D propio, pausa fuera de pantalla, DPR máx. 2, menos partículas en móvil |
+| Cómo trabajamos | Capítulos con scroll fijado: foto en arco que cambia, anillos y contador por paso | `position: sticky` + IntersectionObserver |
+| Ciencia | Mapa orbital interactivo de la evaluación (6 nodos, partículas por las líneas, panel que cambia) | Canvas + botones accesibles |
+| Misión | Texto que se ilumina palabra a palabra con el scroll, y marca de agua "LONGEVITY" en paralaje | Scroll ligado a progreso |
+| Dra. | Retrato en arco con inclinación 3D al mover el cursor | Solo con puntero fino |
+| Clínica | Galería arrastrable con paralaje y flechas | Scroll nativo + drag |
+| Global | Cursor propio, botones magnéticos, barra de progreso, cabecera que se vuelve cristal, grano sutil | Cursor y magnetismo solo en escritorio |
+
+Reglas:
+- **Rendimiento**: sin librerías pesadas por defecto (vanilla + Astro). Si se necesita más (Three.js, GSAP), cargarlas solo en la sección que las usa. Presupuesto: LCP < 2,5 s en 4G, JS inicial < 150 KB, canvas a 60 fps en un portátil medio.
+- **Accesibilidad**: `prefers-reduced-motion` apaga animaciones, la hélice queda estática y la misión se ve completa. Todo el contenido es legible sin JS. Foco visible, navegación por teclado y contraste ≥ 4,5:1.
+- **Móvil**: sin cursor ni magnetismo, capítulos apilados con su foto, barra inferior fija con "Agendar" y WhatsApp, menú a pantalla completa.
+- **Contenido**: la espectacularidad es visual; los textos usan solo datos confirmados. Las etiquetas y gráficos decorativos no muestran cifras clínicas inventadas.
+- **Fase 2 posible**: hélice en WebGL con Three.js, recorrido 3D de la clínica y línea de tiempo animada de la evaluación.
+
 ## 10. Calidad
 
 - Accesibilidad WCAG 2.1 AA: teclado, foco visible, alt en imágenes, `lang` correcto por página.
