@@ -14,7 +14,7 @@ P={'meas_w':'ChatGPT Image Sep 30, 2026, 12_14_10 chatgpt.png','meas_dna':'ChatG
    'p_cut':'Fotos y Logos Academia/foto Carolina sin fondo.png',
    'mri':'Gemini_Generated_Image_4dgn7s4dgn7s4dgn.jpg','lab':'Gemini_Generated_Image_8wq5uk8wq5uk8wq5.jpg',
    'brain_w':'Gemini_Generated_Image_awffmiawffmiawff.jpg','brain_b':'Gemini_Generated_Image_g8hu0zg8hu0zg8hu.jpg',
-   'face':'S03-precision-medicine.webp','n_rope':'nuevas/cuerda.png','n_cons':'nuevas/consultorio.png','n_age':'nuevas/edades.png','n_mus':'nuevas/musculo_d.png','n_dyn':'nuevas/dinamometro.png','n_doc':'nuevas/10.png','n_check':'nuevas/11.png','n_juice':'nuevas/12.png','n_juiced':'nuevas/12_d.png','n_juiceg':'nuevas/12_g.png','n_fit':'nuevas/13.png','n_fitd':'nuevas/13_dark.png','oxi':'oximetro.png','g_sofa':'gafas_sofa.png','g_det':'gafas_detalle.png','ph_edan':'IMG_20260929_195814.jpg.jpeg','vlab':'Gemini_Generated_Image_p084w0p084w0p084.png','ph_mask':'IMG_20260929_194625.jpg.jpeg','ph_room':'IMG_20260929_195540.jpg.jpeg','ph_chair':'IMG_20260929_194548.jpg.jpeg','hands':'Gemini_Generated_Image_5a9th85a9th85a9t.jpg','ibdisp':'Gemini_Generated_Image_9us0io9us0io9us0.jpg','brain_l':'Gemini_Generated_Image_vdh1j1vdh1j1vdh1.jpg','brain_h':'Gemini_Generated_Image_bg1cxmbg1cxmbg1c.jpg'}
+   'face':'S03-precision-medicine.webp','n_rope':'nuevas/cuerda.png','n_cons':'nuevas/consultorio.png','n_age':'nuevas/edades.png','n_mus':'nuevas/musculo_d.png','n_dyn':'nuevas/dinamometro.png','n_doc':'nuevas/10.png','n_check':'nuevas/11.png','n_juice':'nuevas/12.png','n_juiced':'nuevas/12_d.png','n_juiceg':'nuevas/12_g.png','n_fit':'nuevas/13.png','n_fitd':'nuevas/13_dark.png','oxi':'oximetro.png','run1':'run1.jpg','run2':'run2.jpg','g_sofa':'gafas_sofa.png','g_det':'gafas_detalle.png','ph_edan':'IMG_20260929_195814.jpg.jpeg','vlab':'Gemini_Generated_Image_p084w0p084w0p084.png','ph_mask':'IMG_20260929_194625.jpg.jpeg','ph_room':'IMG_20260929_195540.jpg.jpeg','ph_chair':'IMG_20260929_194548.jpg.jpeg','hands':'Gemini_Generated_Image_5a9th85a9th85a9t.jpg','ibdisp':'Gemini_Generated_Image_9us0io9us0io9us0.jpg','brain_l':'Gemini_Generated_Image_vdh1j1vdh1j1vdh1.jpg','brain_h':'Gemini_Generated_Image_bg1cxmbg1cxmbg1c.jpg'}
 F=lambda k,m,c=None,bl=0,pos='center': M.foto(R.tratar(D+P[k],m,crop=c,blur=bl),None,pos=pos)
 def BR(k,m,c=None,f=1.4):
     import base64,io
@@ -117,10 +117,10 @@ POSTS={
  lambda: R.r_claro("VO<span style='font-size:.62em;vertical-align:-.1em'>2</span>max","oxygen, under effort","How well your heart, lungs and muscles<br>take up and use oxygen during exercise.",fondo=GR('niebla',16),logo=("principal","navy","tl")),
  lambda: R.r_articulo("JAMA Network Open","2018 · 1(6):e183605","Association of Cardiorespiratory Fitness With Long-term Mortality Among Adults Undergoing Exercise Treadmill Testing",
           "Mandsager K, Harb S, Cremer P, Phelan D, Nissen SE, Jaber W",[("Design","Retrospective cohort, Cleveland Clinic"),("Participants","122,007 adults"),("Follow-up","Median 8.4 years")],
-          "Low vs elite fitness: adjusted HR <b>5.04</b> for all-cause mortality.","10.1001/jamanetworkopen.2018.3605",fondo=F('meas_w','azul',None,8),logo=("principal","blanco","tl")),
+          "Low vs elite fitness: adjusted HR <b>5.04</b> for all-cause mortality.","10.1001/jamanetworkopen.2018.3605",fondo=F('run1','azul',(0,0.1,1,0.9),8),logo=("principal","blanco","tl")),
  lambda: R.r_centrado("Low fitness vs elite:","5× mortality.","Comparable to, or greater than,<br>smoking or diabetes. [1]",None,fondo=M.foto(R.movimiento(D+P['face'],'azul',(0.30,0,0.78,1)),None),logo=("terciario","beige","tc"),y=0.36),
  lambda: R.r_derecha("The good news:","it's modifiable.","No upper limit of benefit was<br>observed in this cohort. [1]",None,fondo=GR('noche',17),logo=("sello","claro","tl"),fs=70),
- lambda: R.con_refs(R.r_titulo_arriba("Measure it.","Don't guess it.","Book your longevity assessment —<br>link in bio.",fondo=F('inbody','ambar'),logo=("principal","gold","bl")),
+ lambda: R.con_refs(R.r_titulo_arriba("Measure it.","Don't guess it.","Book your longevity assessment —<br>link in bio.",fondo=F('run2','ambar',(0,0,1,1)),logo=("principal","gold","bl")),
           "[1] Mandsager K, Harb S, Cremer P, Phelan D, Nissen SE, Jaber W. JAMA Netw Open. 2018;1(6):e183605. doi:10.1001/jamanetworkopen.2018.3605"),
 ],
 'E02-antioxidants':[
