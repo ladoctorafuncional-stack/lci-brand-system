@@ -145,6 +145,24 @@ El video de Veo **no necesita acelerarse solo**. Se entrega como un clip normal 
 
 Es la misma técnica de la página del LRI. Por eso basta con **un solo clip normal de 8–10 s**, sin loop especial. Resolución mínima del clip: 1920×1080, porque se ve a todo el ancho.
 
+## 6f. Rediseño cinematográfico de toda la página (v12)
+
+Lenguaje tomado de la estructura del anuncio deportivo (solo la estructura, no su material): poca luz, sombras azul grafito, luz de borde acero, tomas macro, barrido borroso, figura que emerge, primer plano y cierre negro con el logo.
+
+| Escena | Qué hace | Clip que la reemplaza (prompts de la página de prompts) |
+|---|---|---|
+| Bienvenida (7 pantallas de scroll fijadas) | Toma 1 macro con el titular de revista, barrido borroso a la toma 2, pasillo, primer plano del rostro, cierre negro con logo y llamado a la acción | P1 manos en el dinamómetro, P2 pies en la plataforma, P3 figura al fondo del pasillo, P4 primer plano de perfil |
+| Inmersión | Células madre y exosomas a ancho completo, con frases cortas | V9 |
+| Cómo trabajamos | Fotos fijas de borde a borde con el texto encima | Fotos o clips reales |
+| Ciencia | Mapa orbital sobre malla | n/a |
+| Edad biológica | Anillos en relieve, ahora oscuros | n/a |
+| Misión | Texto que se ilumina con el scroll | n/a |
+| La Dra. | Foto de borde a borde en la mitad izquierda | Retrato real, serio |
+| Recorrido de la clínica | Visor con transición de entrar y salir | Fotos 360° reales |
+| Viajeros, agenda y pie | Oscuros, con vidrio y nombre gigante | n/a |
+
+Hoy las tomas del hero usan fotos del banco como marcador de posición. El anuncio deportivo de referencia es de otra marca y **no se publica** en el sitio ni en Meta; se generan clips originales con los prompts P1–P5.
+
 ## 7. Orden de trabajo propuesto
 
 1. **Prototipo de inmersión** (artifact): hero → ventana que se expande → vaso sanguíneo → células madre → ADN, con frases por scroll, anillos y etiquetas flotantes.

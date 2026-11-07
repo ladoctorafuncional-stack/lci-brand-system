@@ -31,6 +31,9 @@ def logo(name, w):
 
 
 IMGS = {
+    'dina': img(f'{FOT}/lifestyle/dinamometro.jpg', 1300, 72, cool={}),
+    'medi': img(f'{FOT}/clinica-real/real-sala-medicion-inbody.jpg', 900, 74, cool={}),
+    'rostro': img(f'{FOT}/lifestyle/rostro-deportista.jpg', 1700, 70, cool={}),
     'hall': img(f'{FOT}/clinica/pasillo-luces-doradas.jpg', 760, 74, cool={}),
     'adn': img(f'{FOT}/clinica/sala-medicion-adn.jpg', 760, 74, cool={}),
     'consul': img(f'{FOT}/clinica/consultorio-calido.jpg', 760, 74, cool={}),
@@ -172,9 +175,26 @@ for r in _TOUR_ROOMS:
     for h in r['hs']: h['les']=_names[h['to']]['es']; h['len']=_names[h['to']]['en']
 TOURJSON=_j.dumps(dict(rooms=_TOUR_ROOMS),ensure_ascii=False)
 TOUR = f"""<section class="tour" id="clinica" aria-label="{A('Recorrido por la clínica', 'Clinic walkthrough')}"><canvas id="tourgl" aria-hidden="true"></canvas><div id="hots"></div>
-<div class="thead"><div class="eyebrow">{T('La clínica', 'The clinic')}</div><h2 class="h2 rv">{T('Recorre la <em>clínica</em>', 'Walk through the <em>clinic</em>')}</h2><p class="tip">{T('Arrastra para mirar · toca los puntos para avanzar', 'Drag to look around · tap the dots to move')}</p></div>
+<div class="thead"><div class="eyebrow">{T('La clínica', 'The clinic')}</div><h2 class="mag rv">{T('<span class="m1">Recorre la</span><span class="m2"><em>clínica</em></span>', '<span class="m1">Walk through the</span><span class="m2"><em>clinic</em></span>')}</h2><p class="tip">{T('Arrastra para mirar · toca los puntos para avanzar', 'Drag to look around · tap the dots to move')}</p></div>
 <ol class="tlist" id="tlist"></ol><p class="tcap" id="tcap"></p>
 <script type="application/json" id="tourdata">{TOURJSON}</script></section>"""
+
+CINE = f"""<section class="cine" id="top" aria-label="{A('Bienvenida', 'Welcome')}"><div class="cstk">
+  <div class="shot s1"></div><div class="shot s2"></div><div class="shot s3"></div><div class="shot s4"></div><div class="cveil"></div>
+  <div class="cinein"><div class="eyebrow">THE MEDICINE OF THE FUTURE.</div>
+    <h1>{T('<span class="k1">Más años</span><span class="k2"><em>saludables</em>,</span><span class="k3">diseñados desde tu <em class="k4">biología</em>.</span>', '<span class="k1">More</span><span class="k2"><em>healthy</em></span><span class="k3">years, designed around your <em class="k4">biology</em>.</span>')}</h1>
+    <p class="lead">{T('Medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de tu biología.', 'Precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around your biology.')}</p>
+    <p class="micro">{T('Medellín, Colombia · Atención bilingüe', 'Medellín, Colombia · Bilingual care')}</p></div>
+  <p class="ccap">{T('Mediciones de <em>grado clínico</em>', '<em>Clinical-grade</em> measurements')}</p>
+  <p class="ccap">{T('Una primera consulta de <em>mínimo 2 horas</em>', 'A first visit of <em>at least 2 hours</em>')}</p>
+  <p class="ccap">{T('IA clínica propia, <em>revisada por el médico</em>', 'Our own clinical AI, <em>reviewed by the physician</em>')}</p>
+  <p class="ccap">{T('Un plan <em>hecho a tu medida</em>', 'A plan <em>built around you</em>')}</p>
+  <div class="cprog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="cue" aria-hidden="true">{T('Desplaza', 'Scroll')}<i></i></div>
+  <div class="cend"><span class="logo w cl" role="img" aria-label="Longevity Clinical Institute"></span><p>{T('Agenda tu valoración', 'Schedule your assessment')}</p>
+    <a class="btn cream" href="#agenda" data-mag>{T('Agendar valoración', 'Book an assessment')} {ARW}</a><span class="ct">{TEL}</span></div>
+</div></section>
+"""
 
 STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
 DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><script type="application/json" id="zframes">{FRAMES}</script><div class="vg"></div>
@@ -182,7 +202,7 @@ DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Im
   <p class="beat">{T('Evidencia científica <em>rigurosa</em>', '<em>Rigorous</em> scientific evidence')}</p>
   <p class="beat">{T('Atención diseñada alrededor de tu <em>biología</em>', 'Care designed around your <em>biology</em>')}</p>
   <span class="ill">{T('Ilustración · células madre y exosomas', 'Illustration · stem cells and exosomes')}</span></div>
-  <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2>{T('Todo empieza en tu <em>biología</em>', 'It all starts in your <em>biology</em>')}</h2></div>
+  <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2 class="mag">{T('<span class="m1">Todo empieza en tu</span><span class="m2"><em>biología</em></span>', '<span class="m1">It all starts in your</span><span class="m2"><em>biology</em></span>')}</h2></div>
   <div class="chip">{T('Desplaza para sumergirte', 'Scroll to dive in')}<i></i></div></div></section>
 '''
 RINGS = f'''<section class="rings-s" id="edad"><div class="rg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><div class="core"><b></b></div></div>
@@ -203,17 +223,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
 <div class="mnav"><div class="mt"><span class="logo w" role="img" aria-label="Longevity Clinical Institute"></span><button class="mclose" type="button" aria-label="Cerrar / Close">×</button></div><ul>{mnav}</ul><div class="ft">{LANG}<a class="btn cream" href="#agenda">{T('Agendar valoración', 'Book an assessment')}</a></div></div>
 
 <main>
-<section class="hero" id="top">
-  <canvas id="helix" aria-hidden="true"></canvas>
-  <div class="tag t1"><b>{T('Edad biológica', 'Biological age')}</b>{T('Estimados preliminares con varios relojes biológicos', 'Preliminary estimates with several biological clocks')}</div>
-  <div class="tag t2"><b>{T('Laboratorio', 'Laboratory')}</b>{T('In house · Colombia y EE. UU.', 'In house · Colombia and U.S.')}</div>
-  <div class="in"><div class="eyebrow"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>THE MEDICINE OF THE FUTURE.</div>
-    <h1 class="split">{T('<span class="k1">Más años</span><span class="k2"><em>saludables</em>,</span><span class="k3">diseñados desde tu <em class="k4">biología</em>.</span>', '<span class="k1">More</span><span class="k2"><em>healthy</em></span><span class="k3">years, designed around your <em class="k4">biology</em>.</span>')}</h1>
-    <p class="lead">{T('Medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de tu biología.', 'Precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around your biology.')}</p>
-    <div class="cta"><a class="btn cream" href="#agenda" data-mag>{T('Agendar valoración', 'Book an assessment')} {ARW}</a><a class="btn ghost" href="#metodo" data-mag>{T('Cómo trabajamos', 'How we work')}</a></div>
-    <p class="micro">{T('Medellín, Colombia · Atención bilingüe', 'Medellín, Colombia · Bilingual care')}</p></div>
-  <div class="cue" aria-hidden="true">{T('Desplaza', 'Scroll')}<i></i></div>
-</section>
+{CINE}
 
 
 {DIVE}<section class="chap" id="metodo"><div class="in">
