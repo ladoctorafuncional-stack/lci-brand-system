@@ -214,7 +214,7 @@ _G = f'<div class="g"><span>LONGEVITY</span>{STAR}<span class="o">MEDELLÍN</spa
 BIG = f'<section class="bigmq" aria-hidden="true"><div class="tr">{_G*4}</div></section>\n'
 
 BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
-<div class="intro" id="intro" aria-hidden="true"><div class="ibg"></div><div class="iw" id="iw"><span class="il" id="il"></span><span class="ish"></span><i class="irl"></i></div></div>
+<div class="intro" id="intro" aria-hidden="true"><div class="ibg"></div><div class="iw" id="iw"><span class="il" id="il"></span><span class="ish"></span></div></div>
 <header class="top"><div class="in">
   <a href="#top" aria-label="Longevity Clinical Institute"><span class="logo w" role="img" aria-label="Longevity Clinical Institute"></span></a>
   <nav class="nav" aria-label="Principal">{nav}</nav>

@@ -22,7 +22,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance}
 em{font-family:var(--serifi);font-style:italic;font-weight:800}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
-:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+:focus-visible{outline:2px solid var(--cream);outline-offset:4px}
 [data-lang="es"] .en,[data-lang="en"] .es{display:none!important}
 .in{width:100%;max-width:1360px;margin:0 auto;padding-inline:max(24px,env(safe-area-inset-left,0px)) max(24px,env(safe-area-inset-right,0px))}
 section{position:relative;scroll-margin-top:64px}
@@ -185,7 +185,7 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 .scrub span{color:var(--dim);transition:color .35s}
 .scrub span.lit{color:var(--cream)}
 .mis .by{margin-top:50px;display:flex;align-items:center;gap:20px;font:400 13px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
-.mis .by i{width:64px;height:2px;background:var(--gold)}
+.mis .by i{width:64px;height:1px;background:var(--steel)}
 
 /* doctor */
 .dra{background:var(--cream);color:var(--navy);padding-block:150px}
@@ -478,7 +478,6 @@ html.js-intro{overflow:hidden}
 .iw::before{content:"";position:absolute;inset:-60% -40%;background:radial-gradient(closest-side,rgba(148,180,204,.32),rgba(148,180,204,0) 70%);opacity:0;animation:iglow 3.2s ease-in-out .5s forwards;pointer-events:none}
 .il{display:block;aspect-ratio:1361/580;background:url({{IMG:logo_w}}) center/contain no-repeat;clip-path:inset(0 100% 0 0);filter:blur(14px);opacity:0;transform:scale(1.07)}
 .ish{position:absolute;inset:0;-webkit-mask:url({{IMG:logo_w}}) center/contain no-repeat;mask:url({{IMG:logo_w}}) center/contain no-repeat;background:linear-gradient(100deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 62%) 130% 0/260% 100% no-repeat;opacity:0}
-.irl{position:absolute;left:0;right:0;bottom:-4%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:50% 50%;opacity:0}
 @keyframes iglow{0%{opacity:0}50%{opacity:1}100%{opacity:.55}}
 .js-intro .top .logo{opacity:0}
 .js-intro .top .nav,.js-intro .top .rt{opacity:0;transform:translateY(-10px)}
