@@ -16,6 +16,24 @@ Siguen las lecciones del documento de fotos de LCI (`PROMPTS_FOTOS_LCI_NanoBanan
 5. **Variantes.** Genera 3–4 por escena. Descarta las que tengan formas que se deforman, texto, caras o logos.
 6. **Entrega.** Pásame los MP4 con estos nombres: `B1-cerebro`, `V2-sangre`, `V3-celulas-madre`, `V4-nucleo-adn`, `V5-laboratorio`, `V6-clinica`, `V7-medellin`. Yo les ajusto el color a la paleta, quito el audio, los codifico para que se muevan con el scroll y creo la versión móvil.
 
+## 1b. Formatos y proporciones de cada pieza
+
+| Pieza | Proporción | Tamaño mínimo (ideal) | Fondo | Notas |
+|---|---|---|---|---|
+| Video del vial (anuncio) | **9:16 vertical** | 1080×1920 (ideal 4K) | Oscuro, de marca | 16 s en total. En Veo se suelen generar clips de unos 8 s: 2 clips por toma |
+| Giro 360° del vial | **9:16** y también **16:9** | 1080×1920 y 1920×1080 (ideal 4K) | **Negro puro liso** | Vial centrado, ~50 % del alto. En 16:9 el vial va a la derecha y el tercio izquierdo queda vacío. 8 s a velocidad constante |
+| Foto fija del vial | **4:5** y también **1:1** | 1080×1350 (ideal 2160×2700); 1:1 de 2000×2000 | Negro puro o transparente | Margen libre de ~12 %. Si no hay 4:5, usar 3:4 y se recorta |
+| Macro de la etiqueta | **9:16** | 1080×1920 | Oscuro | La etiqueta llena el ancho, sin cortar el logo |
+| Dentro del líquido (G1–G4) | **9:16** y repetir en **16:9** | 1080×1920 y 1920×1080 | Azul abisal | Sin texto ni elementos encima |
+| Archivo plano de la etiqueta | **~2,27 : 1** | 4000×1760 px o vector | Esquinas transparentes | PDF o SVG si existe |
+| Células, glóbulos, ADN, organismo celular (F1–F3, V8) | **16:9** | 1920×1080 (ideal 3840×2160) | **Negro puro** | Tercio izquierdo vacío |
+| Fotos de clínica y personas (F6–F9) | **4:5**; la de clínica también **16:9** | 1080×1350 / 1920×1080 | Fondo real | |
+| Retratos del equipo | **4:5** | 2160×2700 | Natural | Reales, no generadas |
+
+- Videos en MP4, sin audio, a 24 o 30 fps. Imágenes en PNG o JPG de máxima calidad, sin comprimir.
+- Para la web los videos se convierten a secuencias de fotogramas: 1280×720 en escritorio y 720×1280 en móvil.
+- Si el generador no da la proporción exacta, pide la más cercana (16:9, 9:16, 3:4, 1:1) y se recorta.
+
 ## 2. Bloque de estilo fijo (se pega SIEMPRE al final de cada prompt)
 
 ```
