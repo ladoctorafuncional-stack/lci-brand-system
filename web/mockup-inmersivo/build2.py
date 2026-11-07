@@ -243,7 +243,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
     <div class="panel" aria-live="polite">{PDS}<p class="src">{T('Explora cada punto de la evaluación.', 'Explore each point of the assessment.')}</p></div>
   </div></div></section>
 
-<section class="mis" aria-label="{A('Misión', 'Mission')}"><div class="wm" aria-hidden="true">LONGEVITY</div><div class="in">
+<section class="mis" aria-label="{A('Misión', 'Mission')}"><div class="in">
   <p class="eyebrow" style="margin-bottom:34px">{T('Misión', 'Mission')}</p>
   <p class="scrub">{T('<span>Dar a cada paciente más años saludables mediante la medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de su biología.</span>', '')}{T('', '<span>To give every patient more healthy years through precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around their biology.</span>')}</p>
   <div class="by"><i></i>Longevity Clinical Institute</div></div></section>
