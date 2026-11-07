@@ -158,6 +158,8 @@ Reglas:
 - **Contenido**: la espectacularidad es visual; los textos usan solo datos confirmados. Las etiquetas y gráficos decorativos no muestran cifras clínicas inventadas.
 - **Fase 2 posible**: hélice en WebGL con Three.js, recorrido 3D de la clínica y línea de tiempo animada de la evaluación.
 
+Referencia de estilo y de movimiento aprobada por la Dra.: la página del Longevity Research Institute. Análisis y traducción a LCI en `web/REFERENCIA-LRI.md`.
+
 ## 10. Calidad
 
 - Accesibilidad WCAG 2.1 AA: teclado, foco visible, alt en imágenes, `lang` correcto por página.
