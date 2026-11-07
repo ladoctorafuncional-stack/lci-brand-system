@@ -44,6 +44,14 @@ ES: mundo de color navy, azul acero, crema, con chispas doradas mínimas; elegan
 
 ---
 
+## 2b. Bloque de estilo BIOLÓGICO REALISTA (para sangre, células madre y ADN)
+
+La sangre y los vasos van en **colores reales y cálidos**: pared rosada-rojiza, plasma ámbar translúcido, glóbulos rojos de un rojo escarlata vivo. **Nada gris ni azul grisáceo.** La paleta de marca no se aplica a estas escenas. Este bloque reemplaza al de la sección 2 en los prompts V2, V3, F1 y F2.
+
+```realista
+Photorealistic medical-animation visualization in the quality of a top science documentary, true-to-life natural color with a warm, living look. Inside a living blood vessel: the vessel wall is warm pink-red tissue with a glistening, wet endothelial texture and fine capillary detail; the plasma is a translucent warm amber-yellow; red blood cells are a vivid, saturated scarlet red with soft natural highlights and a darker concave center. Warm light glows from deep inside the vessel with soft volumetric haze, shallow depth of field, tiny floating platelets and particles, subtle film grain. Accurate anatomy, glossy wet surfaces, subsurface scattering. One slow, smooth, continuous camera move with no cuts. No text, no logos, no people, silent. Avoid: grey, blue-grey or desaturated colors, blue or purple cells, cold lighting, cartoon or plastic look, neon colors, watermark.
+```
+
 ## 3. Escenas
 
 ### B1 · Cerebro principal (hero, loop de 8 s)
@@ -58,28 +66,39 @@ Use the attached image as the first frame. A slow cinematic push-in with a gentl
 ES: cerebro translúcido con neuronas que se encienden, cámara que avanza y rodea lentamente; el tercio izquierdo queda oscuro para el texto.
 
 ### V2 · Torrente sanguíneo con glóbulos rojos (12–16 s, se mueve con el scroll)
+Usa el **bloque realista** (sección 2b), no el de marca.
+
 **Imagen clave:**
 ```
-First-person view inside a large blood vessel, a luminous tunnel ahead. Hundreds of biconcave red blood cells with accurate disc shape and soft concave centers drift at different depths, some close to the camera and softly out of focus. The red is a deep muted crimson that sits within the navy and steel-blue environment. Translucent vessel walls, tiny particles in the plasma, soft cream backlight from the far end. [BLOQUE DE ESTILO]
+First-person view inside a large blood vessel, a luminous tunnel ahead. Hundreds of biconcave red blood cells in a vivid, saturated scarlet red, with accurate disc shape and darker concave centers, drift at different depths, some close to the camera and softly out of focus. The vessel walls are warm pink-red endothelial tissue with a wet glistening sheen, the plasma is translucent warm amber with tiny platelets, and a single white blood cell drifts far in the distance. Warm light glows from the far end of the vessel. [BLOQUE REALISTA]
 ```
 **Video:**
 ```
-Use the attached image as the first frame. The camera glides forward slowly through the vessel, passing red blood cells that drift and gently rotate at different depths, some brushing past the lens in soft focus. The luminous opening ahead grows gradually brighter as we approach. Continuous forward motion, no cuts. [BLOQUE DE ESTILO]
+Use the attached image as the first frame. The camera glides forward slowly through the vessel, passing red blood cells that drift and gently rotate at different depths, some brushing past the lens in soft focus. The luminous opening ahead grows gradually brighter as we approach. Continuous forward motion, no cuts. [BLOQUE REALISTA]
 ```
-ES: viaje en primera persona por un vaso con glóbulos rojos bicóncavos; avanza hacia una luz.
+ES: viaje en primera persona por un vaso, con glóbulos rojos en su rojo natural. Para que el video responda al scroll, pide el **recorrido continuo** y además un **loop de flujo** de 8 s (ver 3d).
+
+### 3d · Videos que cambian de velocidad con el scroll
+
+Para que el flujo de sangre acelere o frene según cuánto scrolleas, hacen falta **dos videos por escena**:
+1. **Recorrido** (V2): la cámara avanza de principio a fin. La página lo reproduce con el scroll: si subes o bajas, el video va y viene.
+2. **Loop de flujo** de 8 s: los glóbulos fluyen siempre en el mismo sitio, empieza y termina igual. La página lo reproduce solo, y su velocidad sube cuando scrolleas rápido y baja casi a cero cuando te detienes.
+Prompt del loop (usa el bloque realista):
+```
+Use the attached image as the first frame. Red blood cells flow steadily past the camera in a straight vessel, drifting and rotating gently at different depths, the camera completely still. The motion is seamless so that the last frame matches the first frame and the clip can loop. [BLOQUE REALISTA]
+```
 
 ### V3 · Células madre (12–16 s, se mueve con el scroll)
+Usa el **bloque realista** (sección 2b).
+
 **Imagen clave:**
 ```
-A cluster of about a dozen round, translucent, pearl-like stem cells floating in a clear nutrient fluid, each with a faintly visible nucleus and a delicate shimmering membrane. Soft out-of-focus cells in the distance, dark navy background, steel-blue and cream light, subtle champagne-gold glints on the membranes. [BLOQUE DE ESTILO]
+A cluster of about a dozen human stem cells floating in clear culture medium, each cell round and pale pearl-white with a faint warm-grey cytoplasm, a clearly visible nucleus with nucleoli, and a delicate membrane with fine microvilli catching the light. Soft out-of-focus cells in the distance, dark surroundings, gentle cool rim light with warm fill. [BLOQUE REALISTA]
 ```
 **Video:**
 ```
-Use the attached image as the first frame. The camera orbits slowly around the cluster. One cell gently elongates and divides into two in a smooth, realistic mitosis while the others drift with a soft breathing motion. Delicate light ripples across the membranes. [BLOQUE DE ESTILO]
+Use the attached image as the first frame. The camera orbits slowly around the cluster. One cell gently elongates and divides into two in a smooth, realistic mitosis while the others drift with a soft breathing motion. Delicate light ripples across the membranes. [BLOQUE REALISTA]
 ```
-ES: cúmulo de células madre translúcidas; una se divide con suavidad mientras la cámara las rodea.
-
-> Estas imágenes son ilustrativas. No indican que LCI ofrezca un tratamiento con células madre. Los textos de esta escena los define la Dra.
 
 ### V4 · Del núcleo al ADN (10 s, se mueve con el scroll)
 **Imagen clave:**
@@ -157,14 +176,16 @@ Las fotos del banco `clinica/…` son de la serie generada con IA. Para el sitio
 Se generan en Gemini (imagen / Nano Banana) o ChatGPT (imágenes). Las de células y ADN se piden **sobre fondo negro puro**: así se mezclan con el fondo navy de la página en modo "screen" y no necesitan recorte. Las escenas de clínica llevan una **foto real adjunta** (ver 3b). Las de personas usan la fórmula v3 del documento de fotos de LCI.
 
 ### F1 · Glóbulos rojos aislados (formato 16:9)
+Usa el **bloque realista** (sección 2b).
 ```
-Hyper-realistic 3D render of five biconcave red blood cells floating at different depths, isolated on a pure black background for compositing, accurate disc shape with soft concave centers, muted deep crimson with a subtle steel-blue rim light, glossy translucent membrane, shallow depth of field with the nearest cell softly out of focus, left third of the frame empty. [BLOQUE DE ESTILO]
+Photorealistic render of five biconcave red blood cells floating at different depths, isolated on a pure black background for compositing, in a rich, natural hemoglobin red with a darker concave center, glossy wet translucent surfaces, accurate disc shape, soft rim light, shallow depth of field with the nearest cell softly out of focus, left third of the frame empty. [BLOQUE REALISTA]
 ```
-ES: glóbulos rojos 3D sobre fondo negro, para mezclar con la página.
+ES: glóbulos rojos en su rojo natural sobre fondo negro, para mezclar con la página.
 
 ### F2 · Células madre aisladas (16:9)
+Usa el **bloque realista** (sección 2b).
 ```
-Hyper-realistic 3D render of a cluster of about ten round, translucent, pearl-like stem cells with faintly visible nuclei and delicate shimmering membranes, isolated on a pure black background for compositing, steel-blue and cream light with subtle champagne-gold glints, shallow depth of field. [BLOQUE DE ESTILO]
+Photorealistic render of a cluster of about ten human stem cells, round and pale pearl-white with a visible nucleus and a delicate membrane with fine microvilli, isolated on a pure black background for compositing, soft cool rim light with warm fill, shallow depth of field. [BLOQUE REALISTA]
 ```
 
 ### F3 · Doble hélice de ADN (16:9)
@@ -259,6 +280,57 @@ Vertical 9:16 macro cinematic shot inside a clear liquid. A burst of tiny transl
 ```
 
 > La etiqueta se vuelve a hacer siempre en 3D. Nunca pidas a Gemini que dibuje el vial con el texto.
+
+## 6. Video publicitario cinematográfico (web e Instagram/Meta)
+
+Referencia: un anuncio deportivo vertical de 11 s. Mismo tinte que la marca: **sombras azul grafito, luz de borde azul acero, bruma, color frío con tonos de piel reales**. Estructura del anuncio: detalles en macro (pie, mano, balón) → barrido borroso → figura completa que aparece de la oscuridad → primerísimo primer plano del rostro, serio → pantalla negra con logo y llamado a la acción.
+
+### Guion para LCI (15 s, 9:16)
+| Seg. | Toma | Origen |
+|---|---|---|
+| 0–2 | Macro: manos de un paciente sobre el dinamómetro de agarre | Veo (P1) |
+| 2–4 | Macro: pies descalzos subiendo a la plataforma de composición corporal | Veo (P2) |
+| 4–5 | Barrido borroso hacia la oscuridad | Montaje |
+| 5–8 | Una paciente de pie al fondo del pasillo de la clínica, entre bruma, y luego su rostro en primerísimo primer plano, serio, de perfil | Veo (P3, P4) |
+| 8–11 | Pantalla de medición con la hélice de ADN encendiéndose | Veo (P5) |
+| 11–15 | Pantalla negra: sello LCI, "Agenda tu valoración", teléfono e Instagram del idioma | **Yo**, al montar |
+
+### Bloque de estilo cinematográfico (se pega al final de P1–P5)
+```cine
+Cinematic low-key commercial look: deep navy-graphite shadows, a cool steel-blue rim light, soft volumetric haze, desaturated cool color grade with true-to-life natural skin tones, shallow depth of field, fine film grain. Slow, smooth camera move. Serious, composed and elegant mood. No text, no logos, no watermark, silent. Avoid: smiling, looking at the camera, bright colors, neon, cartoon look.
+```
+
+### P1 · Manos en el dinamómetro (9:16, 8 s)
+Adjunta `lifestyle/dinamometro.jpg`.
+```
+Extreme macro of a 48-year-old man's hands gripping a hand dynamometer, tendons and fine skin texture visible, a slow push-in, dark background with a thin steel-blue rim light on the knuckles. [BLOQUE CINEMATOGRÁFICO]
+```
+
+### P2 · Pies en la plataforma de medición (9:16, 8 s)
+Adjunta `clinica-real/real-sala-medicion-inbody.jpg`.
+```
+Use the attached photo as the exact location reference. Extreme macro of bare feet stepping slowly onto the body-composition scale platform, the camera low to the floor, warm wood slats softly out of focus behind, a thin steel-blue rim light on the ankles. [BLOQUE CINEMATOGRÁFICO]
+```
+
+### P3 · Figura al fondo del pasillo (9:16, 8 s)
+Adjunta `clinica/pasillo-luces-doradas.jpg`.
+```
+Use the attached photo as the exact location reference: keep the same corridor and materials. A 47-year-old Colombian woman from Medellín (paisa), Latin American mestizo features, chestnut hair pulled back, dark navy clothing, stands motionless at the far end of the corridor in soft haze, serious and composed, her gaze lowered, not smiling. A very slow dolly forward. [BLOQUE CINEMATOGRÁFICO]
+```
+
+### P4 · Primerísimo primer plano, de perfil (9:16, 6 s)
+```
+Extreme close-up of the profile of a 47-year-old Colombian woman from Medellín, Latin American mestizo features, chestnut hair pulled back, serious and composed, eyes focused on something out of frame, not smiling, not looking at the camera, natural skin texture with fine pores, a thin steel-blue rim light along her cheekbone. A very slow push-in. [BLOQUE CINEMATOGRÁFICO]
+```
+
+### P5 · Pantalla con la hélice de ADN (9:16, 6 s)
+Adjunta `clinica/sala-medicion-adn.jpg`.
+```
+Use the attached photo as the exact location reference. A macro shot of the vertical screen in the measurement room, a luminous DNA double helix slowly lighting up from bottom to top, soft glow on the wood slats around it. No readable text on the screen. [BLOQUE CINEMATOGRÁFICO]
+```
+
+> Las personas generadas con IA no son pacientes reales ni se presentan como testimonios. Las fotos y los videos de los médicos del equipo son siempre reales.
+> **Antes de pautar en Meta:** revisa las políticas de salud (sin sugerir una condición de la persona, sin antes y después, sin promesas de resultado). Los videos generados con IA pueden llevar la etiqueta "Info de IA".
 
 ## 4. Revisión de calidad antes de enviármelos
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Immersive LCI website direction: self-contained HTML (fonts + images base64)."""
-import base64, io, os, re
+import base64, io, os, re, glob
 from PIL import Image
 import sys
 sys.path.insert(0, '/home/user/lci-brand-system/plugins/lci-brand/skills/lci-design-system/assets')
@@ -154,8 +154,11 @@ BOOK = f'''<div class="book" data-book>
   <p class="fine">{T('La primera consulta dura mínimo 2 horas.', 'The first visit lasts at least 2 hours.')}</p></div>'''
 
 
+import json as _json
+_FR=[]  # sin video hasta tener el nuevo clip realista
+FRAMES=_json.dumps(['data:image/jpeg;base64,'+b64(open(f,'rb').read()) for f in _FR])
 STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
-DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><div class="vg"></div>
+DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><script type="application/json" id="zframes">{FRAMES}</script><div class="vg"></div>
   <p class="beat">{T('Medición de <em>grado clínico</em>', '<em>Clinical-grade</em> measurement')}</p>
   <p class="beat">{T('Evidencia científica <em>rigurosa</em>', '<em>Rigorous</em> scientific evidence')}</p>
   <p class="beat">{T('Atención diseñada alrededor de tu <em>biología</em>', 'Care designed around your <em>biology</em>')}</p>
