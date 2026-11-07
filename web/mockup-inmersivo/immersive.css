@@ -19,7 +19,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 img{display:block}
 h1,h2,h3,p{margin:0}
 h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance}
-em{font-family:var(--serifi);font-style:italic;font-weight:800}
+em{font-family:var(--serifi);font-style:italic;font-weight:800;font-size:.95em}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
 :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
@@ -466,3 +466,22 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 .dive .cap h2{font-size:clamp(46px,7.4vw,118px);line-height:1.0}
 .dive .chip{font-size:clamp(14px,1.1vw,16px)}
 @media (max-width:1000px){.dive .cap h2{font-size:clamp(42px,12vw,72px)}.dive .cap .eyebrow{font-size:15px}}
+
+
+/* ---------- entrada: el logo carga a pantalla completa y vuela al header ---------- */
+.intro{position:fixed;inset:0;z-index:200;display:none;place-items:center}
+.js-intro .intro{display:grid}
+html.js-intro{overflow:hidden}
+.ibg{position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 50%,#1D3347 0%,#0C141E 72%)}
+.ibg::before{content:"";position:absolute;inset:0;background:url({{IMG:bg_mesh1}}) center/cover;opacity:.38;mix-blend-mode:screen}
+.iw{position:relative;width:min(640px,76vw);transform-origin:0 0}
+.iw::before{content:"";position:absolute;inset:-60% -40%;background:radial-gradient(closest-side,rgba(148,180,204,.32),rgba(148,180,204,0) 70%);opacity:0;animation:iglow 3.2s ease-in-out .5s forwards;pointer-events:none}
+.il{display:block;aspect-ratio:1361/580;background:url({{IMG:logo_w}}) center/contain no-repeat;clip-path:inset(0 100% 0 0);filter:blur(14px);opacity:0;transform:scale(1.07)}
+.ish{position:absolute;inset:0;-webkit-mask:url({{IMG:logo_w}}) center/contain no-repeat;mask:url({{IMG:logo_w}}) center/contain no-repeat;background:linear-gradient(100deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 62%) 130% 0/260% 100% no-repeat;opacity:0}
+.irl{position:absolute;left:0;right:0;bottom:-4%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:50% 50%;opacity:0}
+@keyframes iglow{0%{opacity:0}50%{opacity:1}100%{opacity:.55}}
+.js-intro .top .logo{opacity:0}
+.js-intro .top .nav,.js-intro .top .rt{opacity:0;transform:translateY(-10px)}
+.top .nav,.top .rt{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js-intro .hero .split .w>i{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.js-intro .intro{display:none}html.js-intro{overflow:auto}.js-intro .top .logo,.js-intro .top .nav,.js-intro .top .rt{opacity:1;transform:none}}
