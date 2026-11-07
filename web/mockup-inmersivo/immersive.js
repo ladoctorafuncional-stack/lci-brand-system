@@ -285,7 +285,7 @@ if(RM) scrubs.forEach(function(ws){ws.forEach(function(w){w.classList.add('lit')
 })();
 
 /* ---------- scroll loop ---------- */
-var diveSec=$('.dive'),win=$('.dive .win'),dcap=$('.dive .cap'),dchip=$('.dive .chip'),beats=$$('.beat'),ringsSec=$('.rings-s'),rgs=$$('.rg i'),top_=$('.top'),prog=$('.prog'),wm=$('.wm'),misSec=$('.mis'),travBg=$('.trav .bg'),travSec=$('.trav'),slides=$$('.slide .im'),ticking=false;
+var diveSec=$('.dive'),win=$('.dive .win'),cvs=$('#cells'),dcap=$('.dive .cap'),dchip=$('.dive .chip'),beats=$$('.beat'),ringsSec=$('.rings-s'),rgs=$$('.rg i'),top_=$('.top'),prog=$('.prog'),wm=$('.wm'),misSec=$('.mis'),travBg=$('.trav .bg'),travSec=$('.trav'),slides=$$('.slide .im'),ticking=false;
 function queue(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
 function frame(){
   ticking=false;
@@ -302,9 +302,10 @@ function frame(){
     if(diveSec){
       var dr=diveSec.getBoundingClientRect(),p=clamp(-dr.top/(dr.height-vh),0,1);
       var e=clamp(p/.42,0,1);e=e<.5?4*e*e*e:1-Math.pow(-2*e+2,3)/2;
-      var nar=window.innerWidth<900,tt=nar?28:31,ss=nar?9:30,rad=28;
+      var nar=window.innerWidth<900;
       if(window.__setFrames)window.__setFrames(p);
-      win.style.clipPath='inset('+lerp(tt,0,e).toFixed(2)+'% '+lerp(ss,0,e).toFixed(2)+'% '+lerp(tt,0,e).toFixed(2)+'% '+lerp(ss,0,e).toFixed(2)+'% round '+lerp(rad,0,e).toFixed(1)+'px)';
+      win.style.clipPath='none';
+      cvs.style.transform='scale('+lerp(1.22,1,e).toFixed(4)+')';
       dcap.style.opacity=clamp(1-p/.14,0,1);dchip.style.opacity=clamp(1-p/.1,0,1);
       var segs=[[.5,.66],[.68,.84],[.86,1.02]];
       beats.forEach(function(b,i){var o=clamp((p-segs[i][0])/.05,0,1)*clamp((segs[i][1]-p)/.05,0,1);b.style.opacity=o;b.style.transform='translate(-50%,-50%) scale('+(.94+o*.06)+')'});

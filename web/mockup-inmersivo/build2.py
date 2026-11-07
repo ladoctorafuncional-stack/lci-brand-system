@@ -34,7 +34,6 @@ IMGS = {
     'hall': img(f'{FOT}/clinica/pasillo-luces-doradas.jpg', 760, 74, cool={}),
     'adn': img(f'{FOT}/clinica/sala-medicion-adn.jpg', 760, 74, cool={}),
     'consul': img(f'{FOT}/clinica/consultorio-calido.jpg', 760, 74, cool={}),
-    'cerebro': img(f'{FOT}/cientificas/cerebro-cristal-azul.jpg', 760, 72),
     'sillon': img(f'{FOT}/clinica/sillon-terapia-claro.jpg', 700, 72, cool={}),
     'noche': img(f'{FOT}/clinica/sala-terapia-noche-ciudad.jpg', 700, 72, cool={}),
     'viaje': img(f'{FOT}/clinica-real/real-salas-terapia-dobles.jpg', 1500, 70, cool={}),

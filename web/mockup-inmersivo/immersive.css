@@ -136,7 +136,7 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 .archwrap{position:relative;width:min(100%,430px);height:600px;border-radius:215px 215px 28px 28px;overflow:hidden;background:var(--navy);box-shadow:0 60px 120px -50px #000}
 .ph{position:absolute;inset:0;background:center/cover;opacity:0;transform:scale(1.12);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
 .ph.on{opacity:1;transform:scale(1)}
-.p0,.m0{background-image:url({{IMG:adn}})}.p1,.m1{background-image:url({{IMG:consul}})}.p2,.m2{background-image:url({{IMG:cerebro}})}.p3,.m3{background-image:url({{IMG:hall}})}
+.p0,.m0{background-image:url({{IMG:adn}})}.p1,.m1{background-image:url({{IMG:consul}})}.p2,.m2{background-image:url({{IMG:noche}})}.p3,.m3{background-image:url({{IMG:hall}})}
 .archwrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,20,30,0) 55%,rgba(12,20,30,.65))}
 .vnum{position:absolute;left:-6%;bottom:6%;font:800 clamp(80px,10vw,150px)/1 var(--serif);color:var(--cream);mix-blend-mode:difference;pointer-events:none}
 .vnum small{font:400 18px var(--sans);letter-spacing:.1em;margin-left:10px;opacity:.8}
@@ -386,4 +386,42 @@ em .w>i{font-family:var(--serifi);font-weight:800}
   .beat{position:static;transform:none;opacity:1!important;margin:30px auto;display:block;text-shadow:none}
   .dive .cap,.dive .chip{display:none}
   .rg{animation:none}
+}
+
+
+/* ================= IMÁGENES A ANCHO COMPLETO (regla de la Dra.) ================= */
+/* inmersión: sin recuadro, el video ocupa todo el ancho desde el primer momento */
+.dive .cap{text-shadow:0 6px 40px rgba(0,0,0,.55)}
+.dive .cap h2,.dive .cap .eyebrow{color:var(--cream)}
+.dive .cap .eyebrow{color:var(--ice)}
+#cells{transform-origin:50% 50%;will-change:transform}
+/* capítulos: la foto es un fondo fijo de borde a borde y el texto va encima */
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.vis{grid-area:1/1;align-self:start;position:sticky;top:0;height:100svh;width:100vw;max-width:none;margin-left:calc(50% - 50vw);display:block;z-index:0}
+.rings{display:none}
+.archwrap{position:absolute;inset:0;width:100%;height:100%;border-radius:0;box-shadow:none}
+.archwrap::after{background:linear-gradient(90deg,rgba(12,20,30,.15) 0%,rgba(12,20,30,.55) 45%,rgba(12,20,30,.82) 100%)}
+.vnum{left:max(24px,4vw);bottom:7%;font-size:clamp(90px,12vw,200px)}
+.steps{grid-area:1/1;position:relative;z-index:1;padding-block:0 0}
+.step{max-width:560px;margin-left:auto;padding-right:max(0px,2vw)}
+.step h3,.step p{text-shadow:0 4px 30px rgba(0,0,0,.5)}
+/* galería: cada foto ocupa todo el ancho de la pantalla */
+.rail{gap:0;padding-inline:0;scroll-snap-type:x mandatory}
+.slide,.slide.t,.slide.wd{width:100vw;height:min(90svh,860px);border-radius:0}
+.slide .im{inset:0 -6%}
+.slide figcaption{left:max(24px,4vw);right:max(24px,4vw);bottom:34px}
+/* La Dra.: foto de borde a borde en la mitad izquierda */
+.dra{padding-block:0}
+.dra .dgrid{max-width:none;padding-inline:0;gap:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.dra .tilt{perspective:none}
+.dra .portrait{border-radius:0;aspect-ratio:auto;height:100%;min-height:92svh;max-width:none;width:100%;box-shadow:none;background-position:center 18%;transform:none!important}
+.dra .portrait::after{border-radius:0}
+.dra .dgrid>div:last-child{padding:clamp(70px,9vw,130px) max(24px,6vw);align-self:center}
+@media (max-width:1000px){
+  .vis{display:none}
+  .step .mph{width:100vw;max-width:none;margin-left:-64px;border-radius:0;aspect-ratio:4/3}
+  .slide,.slide.t,.slide.wd{height:min(80svh,640px)}
+  .dra .dgrid{grid-template-columns:minmax(0,1fr)}
+  .dra .portrait{min-height:0;height:78svh;max-width:none;width:100%}
+  .dra .dgrid>div:last-child{padding:60px max(24px,env(safe-area-inset-left,0px))}
 }

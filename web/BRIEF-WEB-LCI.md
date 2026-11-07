@@ -160,6 +160,9 @@ Reglas:
 
 Referencia de estilo y de movimiento aprobada por la Dra.: la página del Longevity Research Institute. Análisis y traducción a LCI en `web/REFERENCIA-LRI.md`.
 
+### Regla de la Dra.: imágenes a todo el ancho
+Las imágenes y los videos ocupan **todo el ancho de la página, de borde a borde**, para que el sitio se vea imponente. Nada de recuadros pequeños, arcos, esquinas redondeadas ni fotos en una columna. El texto va encima, sobre un degradado de lectura. Las excepciones son los retratos de personas, que ocupan la mitad de la pantalla también de borde a borde. Para que no se pixelen, las imágenes de sección se entregan en **16:9 de 2560×1440 como mínimo (ideal 3840×2160)** y los videos en 1920×1080 como mínimo.
+
 ## 10. Calidad
 
 - Accesibilidad WCAG 2.1 AA: teclado, foco visible, alt en imágenes, `lang` correcto por página.

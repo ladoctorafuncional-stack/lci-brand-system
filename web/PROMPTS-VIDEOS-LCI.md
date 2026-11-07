@@ -30,6 +30,7 @@ Siguen las lecciones del documento de fotos de LCI (`PROMPTS_FOTOS_LCI_NanoBanan
 | Fotos de clínica y personas (F6–F9) | **4:5**; la de clínica también **16:9** | 1080×1350 / 1920×1080 | Fondo real | |
 | Retratos del equipo | **4:5** | 2160×2700 | Natural | Reales, no generadas |
 
+- **Todas las imágenes y videos de sección se muestran a todo el ancho de la página.** Por eso las imágenes se piden en 16:9 de **2560×1440 como mínimo (ideal 3840×2160)** y los videos de 1920×1080 como mínimo; las de menor resolución se verán pixeladas.
 - Videos en MP4, sin audio, a 24 o 30 fps. Imágenes en PNG o JPG de máxima calidad, sin comprimir.
 - Para la web los videos se convierten a secuencias de fotogramas: 1280×720 en escritorio y 720×1280 en móvil.
 - Si el generador no da la proporción exacta, pide la más cercana (16:9, 9:16, 3:4, 1:1) y se recorta.
