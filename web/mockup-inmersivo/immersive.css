@@ -441,3 +441,18 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 /* textos sobre fotos de los capítulos */
 .step h3,.step p,.step .k{text-shadow:0 2px 16px rgba(25,34,46,.95),0 0 3px rgba(25,34,46,.7)}
 .step p{color:#fff}
+
+
+/* ---- v8: sombra discreta; el título inicial al centro ---- */
+.beat::before,.dive .cap::before{display:none}
+.beat{font-weight:700;text-shadow:0 1px 16px rgba(25,34,46,.42),0 0 2px rgba(25,34,46,.35)}
+.beat em{font-weight:800}
+.dive .cap{top:50%;transform:translate(-50%,-50%);text-shadow:0 1px 16px rgba(25,34,46,.42),0 0 2px rgba(25,34,46,.35)}
+.dive .cap h2{font-weight:700}
+.dive .cap h2 em{font-weight:800}
+.dive .chip{background:rgba(25,34,46,.32);text-shadow:0 1px 8px rgba(25,34,46,.5)}
+.dive .ill{background:rgba(25,34,46,.3);text-shadow:0 1px 8px rgba(25,34,46,.5)}
+.dive .vg{background:linear-gradient(rgba(25,34,46,.16),rgba(25,34,46,.16)),radial-gradient(70% 70% at 50% 50%,rgba(26,5,8,0) 55%,rgba(26,5,8,.35))}
+.step h3,.step p,.step .k{text-shadow:0 1px 12px rgba(25,34,46,.5)}
+
+.dive .cap .eyebrow{color:#fff;font-weight:500;text-shadow:0 1px 10px rgba(25,34,46,.6)}
