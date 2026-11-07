@@ -19,7 +19,7 @@ Base: el video de referencia de la Dra. (Nervana y Cascaid) y la dirección inme
 | P11 | Pie con wordmark gigante | Nervana ("Nervana" a ancho completo) | Texto enorme recortado por el borde, que se revela al llegar |
 | P12 | Tipografía serif de alto contraste con cursiva en el acento + etiquetas en mayúscula espaciada | Cascaid | Ya es nuestro lenguaje: Mencken + Poppins |
 
-Lo que NO copiamos: paletas (verde, marrón, naranja), logotipos, textos ni fotos. Tomamos el tipo de movimiento y lo vestimos de navy, azul acero, crema y el oro puntual de LCI.
+Lo que NO copiamos: paletas (verde, marrón, naranja), logotipos, textos ni fotos. Tomamos el tipo de movimiento y lo vestimos de navy, azul claro, crema y el oro puntual de LCI.
 
 ## 2. Guion de scroll de LCI (de arriba hacia abajo)
 
@@ -58,7 +58,7 @@ Global: scroll suave (Lenis), cursor propio, botones magnéticos, barra de progr
 Especificaciones de entrega:
 - **Scroll-scrub**: MP4 H.264 con un fotograma clave en cada cuadro (`-g 1`), 1920×1080 en escritorio y 1080×1920 en móvil. Alternativa: secuencia de 120–240 imágenes WebP. Peso objetivo: ≤ 6 MB por clip.
 - **Fondo en loop**: MP4 + WebM, sin audio, ≤ 4 MB, con póster en WebP.
-- **Color**: gradación a la paleta (navy #2A3649, azul acero #94B4CC, crema #EDE5DA) con el oro #D2B58A solo en puntos de luz.
+- **Color**: gradación a la paleta (navy #2A3649, azul claro #CAD3DD, crema #EDE5DA) con el oro #D2B58A solo en puntos de luz.
 - **Carga**: cada video se carga al acercarse la sección. Con "reducir movimiento" se muestra el póster.
 
 ## 4. Tres formas de producir las escenas celulares
@@ -92,7 +92,7 @@ Toda pieza, escena y componente web se construye con estas reglas. Se verificó 
 |---|---|
 | Solo Poppins y Mencken Std / Mencken Std Head | Prohibidos los glifos que no existen en ellas (✦ ◦ ▸ ₂ emojis): se dibujan en SVG. Auditoría de glifos antes de cada entrega |
 | Titular: recta + acento en cursiva Mencken, mismo tamaño, interlineado 1.0, sin margen entre líneas | Hero y títulos de sección; el acento se distingue por cursiva y color |
-| Oro mínimo (1–2 elementos por página) | Solo peldaños de la hélice y el filete de la misión. El resto en navy, azul acero y crema |
+| Oro mínimo (1–2 elementos por página) | Solo peldaños de la hélice y el filete de la misión. El resto en navy, azul claro y crema |
 | Contraste ≥ 4,5:1 y titulares ≥ 7:1; en fondo claro, navy | Textos y acentos sobre crema y blanco van en navy; el azul medio queda para líneas y detalles. Estados atenuados con contraste suficiente |
 | Eyebrows en versales con tracking ~.10em, pegados a su titular | Aplicado |
 | Foto de clínica y ciencia: fría con color real (`treat_cool`); la comida, cálida | Todas las fotos de clínica pasan por `treat_cool`; el retrato con `tint=0` |
@@ -132,7 +132,7 @@ Video de la Dra. (13 s, 720×720): una web conceptual de biotecnología mostrada
 | P16 | **Cierre con wordmark enorme y regla de puntos** | Logo gigante centrado con un botón y una línea punteada tipo regla | Pie con "Longevity" a ancho completo y regla de puntos como progreso |
 | P17 | **Etiquetas pequeñas en mono y numeración "01"** | Micro-rótulos y contador de sección | Poppins en versales con tracking, nunca por debajo del piso legible |
 
-Mantiene la regla de marca: paleta navy, azul acero, cream y oro mínimo. Del video solo se toma el comportamiento.
+Mantiene la regla de marca: paleta navy, azul claro, cream y oro mínimo. Del video solo se toma el comportamiento.
 
 ## 6e. Cómo responde el video al scroll (sin trucos en el video)
 

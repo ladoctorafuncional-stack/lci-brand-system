@@ -38,10 +38,10 @@ Siguen las lecciones del documento de fotos de LCI (`PROMPTS_FOTOS_LCI_NanoBanan
 ## 2. Bloque de estilo fijo (se pega SIEMPRE al final de cada prompt)
 
 ```
-Cinematic scientific visualization with a high-end documentary look. Color world: deep navy blue shadows (#2A3649), steel-blue (#94B4CC) and pale ice-blue highlights, soft cream light (#EDE5DA), and only tiny champagne-gold sparks (#D2B58A) as a rare accent. Low saturation, elegant, calm and precise. Shallow depth of field with soft bokeh particles, gentle volumetric light, subtle film grain. Photoreal translucent and glassy materials with soft subsurface scattering. One slow, smooth, continuous camera move with no cuts. Pure imagery with no text, no letters, no logos, no people, silent. Avoid: cartoon look, neon colors, purple, watermark.
+Cinematic scientific visualization with a high-end documentary look. Color world: deep navy blue shadows (#2A3649), light blue (#CAD3DD) and pale ice-blue highlights, soft cream light (#EDE5DA), and only tiny champagne-gold sparks (#D2B58A) as a rare accent. Low saturation, elegant, calm and precise. Shallow depth of field with soft bokeh particles, gentle volumetric light, subtle film grain. Photoreal translucent and glassy materials with soft subsurface scattering. One slow, smooth, continuous camera move with no cuts. Pure imagery with no text, no letters, no logos, no people, silent. Avoid: cartoon look, neon colors, purple, watermark.
 ```
 
-ES: mundo de color navy, azul acero, crema, con chispas doradas mínimas; elegante, calmado, cámara lenta y continua, sin texto ni personas.
+ES: mundo de color navy, azul claro, crema, con chispas doradas mínimas; elegante, calmado, cámara lenta y continua, sin texto ni personas.
 
 ---
 
@@ -58,11 +58,11 @@ Photorealistic medical-animation visualization in the quality of a top science d
 ### B1 · Cerebro principal (hero, loop de 8 s)
 **Imagen clave:**
 ```
-Ultra-detailed scientific render of a translucent human brain floating in a dark navy void, placed on the right 60% of a 16:9 frame, left third darker and empty. Inside the glassy brain, fine neurons and synaptic connections glow in pale steel-blue and cream light, a few tiny champagne-gold sparks at the synapses. Crisp, anatomically accurate cortical folds, soft rim light from behind, volumetric haze, drifting luminous dust. [BLOQUE DE ESTILO]
+Ultra-detailed scientific render of a translucent human brain floating in a dark navy void, placed on the right 60% of a 16:9 frame, left third darker and empty. Inside the glassy brain, fine neurons and synaptic connections glow in pale light blue and cream light, a few tiny champagne-gold sparks at the synapses. Crisp, anatomically accurate cortical folds, soft rim light from behind, volumetric haze, drifting luminous dust. [BLOQUE DE ESTILO]
 ```
 **Video:**
 ```
-Use the attached image as the first frame. A slow cinematic push-in with a gentle 20-degree orbit to the right around the translucent brain. Electrical impulses travel along the neural fibers in slow waves of steel-blue and cream light; a few tiny gold sparks flash at the synapses. The brain gently breathes with light, rim light shifts softly, luminous dust drifts in the foreground. The left third of the frame stays dark and calm. [BLOQUE DE ESTILO]
+Use the attached image as the first frame. A slow cinematic push-in with a gentle 20-degree orbit to the right around the translucent brain. Electrical impulses travel along the neural fibers in slow waves of light blue and cream light; a few tiny gold sparks flash at the synapses. The brain gently breathes with light, rim light shifts softly, luminous dust drifts in the foreground. The left third of the frame stays dark and calm. [BLOQUE DE ESTILO]
 ```
 ES: cerebro translúcido con neuronas que se encienden, cámara que avanza y rodea lentamente; el tercio izquierdo queda oscuro para el texto.
 
@@ -104,11 +104,11 @@ Use the attached image as the first frame. The camera orbits slowly around the c
 ### V4 · Del núcleo al ADN (10 s, se mueve con el scroll)
 **Imagen clave:**
 ```
-Extreme close-up of the surface of a translucent cell, the nucleus faintly visible behind the membrane, steel-blue and cream light, dark navy surroundings. [BLOQUE DE ESTILO]
+Extreme close-up of the surface of a translucent cell, the nucleus faintly visible behind the membrane, light blue and cream light, dark navy surroundings. [BLOQUE DE ESTILO]
 ```
 **Imagen final (si tu plan permite fotograma final):**
 ```
-A luminous DNA double helix filling the frame diagonally, centered to the right, fine base-pair rungs glowing steel-blue and cream, a few rungs in champagne gold, dark navy void with soft bokeh. [BLOQUE DE ESTILO]
+A luminous DNA double helix filling the frame diagonally, centered to the right, fine base-pair rungs glowing light blue and cream, a few rungs in champagne gold, dark navy void with soft bokeh. [BLOQUE DE ESTILO]
 ```
 **Video:**
 ```
@@ -154,11 +154,11 @@ Inspirado en el video de referencia de la Dra.: una forma orgánica, translúcid
 
 **Imagen clave:**
 ```
-Hyper-realistic 3D render of a single translucent, iridescent organic form resembling a blooming cluster of stem cells, with ruffled petal-like membranes folding over each other, glass-like surfaces with soft subsurface scattering and a delicate fresnel rim glow, steel-blue, ice-blue and cream tones with tiny champagne-gold glints along the edges, a deep hollow at its center. Isolated on a pure black background for compositing, centered, shallow depth of field. [BLOQUE DE ESTILO]
+Hyper-realistic 3D render of a single translucent, iridescent organic form resembling a blooming cluster of stem cells, with ruffled petal-like membranes folding over each other, glass-like surfaces with soft subsurface scattering and a delicate fresnel rim glow, light blue, ice-blue and cream tones with tiny champagne-gold glints along the edges, a deep hollow at its center. Isolated on a pure black background for compositing, centered, shallow depth of field. [BLOQUE DE ESTILO]
 ```
 **Video:**
 ```
-Use the attached image as the first frame. The organic form slowly rotates and gently breathes, its ruffled membranes undulating in slow waves, light sliding across the glassy surfaces, the iridescent rim shifting between steel-blue and cream. The camera drifts a few degrees to the left and back so the clip loops seamlessly. Pure black background throughout. [BLOQUE DE ESTILO]
+Use the attached image as the first frame. The organic form slowly rotates and gently breathes, its ruffled membranes undulating in slow waves, light sliding across the glassy surfaces, the iridescent rim shifting between light blue and cream. The camera drifts a few degrees to the left and back so the clip loops seamlessly. Pure black background throughout. [BLOQUE DE ESTILO]
 ```
 ES: forma celular translúcida que respira y gira; fondo negro para mezclarla con la página y animarla de sección en sección.
 
@@ -204,12 +204,12 @@ Photorealistic render of a cluster of about ten human stem cells, round and pale
 
 ### F3 · Doble hélice de ADN (16:9)
 ```
-A luminous DNA double helix running diagonally across the frame, isolated on a pure black background for compositing, fine base-pair rungs glowing steel-blue and cream, a few rungs in champagne gold, soft bokeh particles, razor-sharp center and gently blurred ends. [BLOQUE DE ESTILO]
+A luminous DNA double helix running diagonally across the frame, isolated on a pure black background for compositing, fine base-pair rungs glowing light blue and cream, a few rungs in champagne gold, soft bokeh particles, razor-sharp center and gently blurred ends. [BLOQUE DE ESTILO]
 ```
 
 ### F4 · Red de neuronas en macro (16:9)
 ```
-Macro scientific render of a network of neurons with glowing dendrites and synapses, pale steel-blue and cream light, a few tiny champagne-gold sparks at the synapses, dark navy background, shallow depth of field, drifting luminous dust. [BLOQUE DE ESTILO]
+Macro scientific render of a network of neurons with glowing dendrites and synapses, pale light blue and cream light, a few tiny champagne-gold sparks at the synapses, dark navy background, shallow depth of field, drifting luminous dust. [BLOQUE DE ESTILO]
 ```
 
 ### F5 · Tubos de muestra en el laboratorio (16:9)
@@ -275,29 +275,29 @@ Textos propuestos sobre las escenas del líquido (la Dra. los aprueba): "Célula
 
 ### G1 · Descenso a la superficie del líquido (9:16, 5 s)
 ```
-Vertical 9:16 macro cinematic shot. The camera slowly descends toward the surface of a perfectly clear liquid inside a glass vial and breaks through it, concentric ripples spreading outward and catching the light. Monochrome palette of ice-blue, steel-blue and deep abyssal navy, soft white highlights, no red, no purple. Shallow depth of field, tiny bokeh particles, volumetric light, subtle film grain. One slow continuous camera move, no cuts, no text, no people, silent.
+Vertical 9:16 macro cinematic shot. The camera slowly descends toward the surface of a perfectly clear liquid inside a glass vial and breaks through it, concentric ripples spreading outward and catching the light. Monochrome palette of ice-blue, light blue and deep abyssal navy, soft white highlights, no red, no purple. Shallow depth of field, tiny bokeh particles, volumetric light, subtle film grain. One slow continuous camera move, no cuts, no text, no people, silent.
 ```
 
 ### G2 · Células madre en suspensión (9:16, 6 s)
 ```
-Vertical 9:16 macro cinematic shot inside a clear liquid. A cluster of round, translucent stem cells with faintly visible nuclei and delicate glossy membranes drifts slowly among tiny floating particles; one cell gently divides in two. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light rays, subtle film grain. Slow orbiting camera, no cuts, no text, no people, silent.
+Vertical 9:16 macro cinematic shot inside a clear liquid. A cluster of round, translucent stem cells with faintly visible nuclei and delicate glossy membranes drifts slowly among tiny floating particles; one cell gently divides in two. Monochrome palette of ice-blue, light blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light rays, subtle film grain. Slow orbiting camera, no cuts, no text, no people, silent.
 ```
 
 ### G3 · Exosomas alrededor de una célula (9:16, 6 s)
 ```
-Vertical 9:16 macro cinematic shot inside a clear liquid. A large translucent cell in the center; many tiny extracellular vesicles (exosomes) of different sizes bud from its membrane and drift away, each a glossy sphere with a visible lipid bilayer and faint particles inside, some merging softly with each other. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light, subtle film grain. Slow push-in, no cuts, no text, no people, silent.
+Vertical 9:16 macro cinematic shot inside a clear liquid. A large translucent cell in the center; many tiny extracellular vesicles (exosomes) of different sizes bud from its membrane and drift away, each a glossy sphere with a visible lipid bilayer and faint particles inside, some merging softly with each other. Monochrome palette of ice-blue, light blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light, subtle film grain. Slow push-in, no cuts, no text, no people, silent.
 ```
 
 ### G4 · Estallido de luz y partículas (9:16, 4 s)
 ```
-Vertical 9:16 macro cinematic shot inside a clear liquid. A burst of tiny translucent vesicles and bubbles radiates outward from a bright point of white-blue light, lens flare blooming softly, particles trailing in slow motion. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with white highlights, no red, no purple. Shallow depth of field, subtle film grain. One continuous move, no cuts, no text, no people, silent.
+Vertical 9:16 macro cinematic shot inside a clear liquid. A burst of tiny translucent vesicles and bubbles radiates outward from a bright point of white-blue light, lens flare blooming softly, particles trailing in slow motion. Monochrome palette of ice-blue, light blue and deep abyssal navy with white highlights, no red, no purple. Shallow depth of field, subtle film grain. One continuous move, no cuts, no text, no people, silent.
 ```
 
 > La etiqueta se vuelve a hacer siempre en 3D. Nunca pidas a Gemini que dibuje el vial con el texto.
 
 ## 6. Video publicitario cinematográfico (web e Instagram/Meta)
 
-Referencia: un anuncio deportivo vertical de 11 s. Mismo tinte que la marca: **sombras azul grafito, luz de borde azul acero, bruma, color frío con tonos de piel reales**. Estructura del anuncio: detalles en macro (pie, mano, balón) → barrido borroso → figura completa que aparece de la oscuridad → primerísimo primer plano del rostro, serio → pantalla negra con logo y llamado a la acción.
+Referencia: un anuncio deportivo vertical de 11 s. Mismo tinte que la marca: **sombras azul grafito, luz de borde azul claro, bruma, color frío con tonos de piel reales**. Estructura del anuncio: detalles en macro (pie, mano, balón) → barrido borroso → figura completa que aparece de la oscuridad → primerísimo primer plano del rostro, serio → pantalla negra con logo y llamado a la acción.
 
 ### Guion para LCI (15 s, 9:16)
 | Seg. | Toma | Origen |
@@ -311,19 +311,19 @@ Referencia: un anuncio deportivo vertical de 11 s. Mismo tinte que la marca: **s
 
 ### Bloque de estilo cinematográfico (se pega al final de P1–P5)
 ```cine
-Cinematic low-key commercial look: deep navy-graphite shadows, a cool steel-blue rim light, soft volumetric haze, desaturated cool color grade with true-to-life natural skin tones, shallow depth of field, fine film grain. Slow, smooth camera move. Serious, composed and elegant mood. No text, no logos, no watermark, silent. Avoid: smiling, looking at the camera, bright colors, neon, cartoon look.
+Cinematic low-key commercial look: deep navy-graphite shadows, a cool light blue rim light, soft volumetric haze, desaturated cool color grade with true-to-life natural skin tones, shallow depth of field, fine film grain. Slow, smooth camera move. Serious, composed and elegant mood. No text, no logos, no watermark, silent. Avoid: smiling, looking at the camera, bright colors, neon, cartoon look.
 ```
 
 ### P1 · Manos en el dinamómetro (9:16, 8 s)
 Adjunta `lifestyle/dinamometro.jpg`.
 ```
-Extreme macro of a 48-year-old man's hands gripping a hand dynamometer, tendons and fine skin texture visible, a slow push-in, dark background with a thin steel-blue rim light on the knuckles. [BLOQUE CINEMATOGRÁFICO]
+Extreme macro of a 48-year-old man's hands gripping a hand dynamometer, tendons and fine skin texture visible, a slow push-in, dark background with a thin light blue rim light on the knuckles. [BLOQUE CINEMATOGRÁFICO]
 ```
 
 ### P2 · Pies en la plataforma de medición (9:16, 8 s)
 Adjunta `clinica-real/real-sala-medicion-inbody.jpg`.
 ```
-Use the attached photo as the exact location reference. Extreme macro of bare feet stepping slowly onto the body-composition scale platform, the camera low to the floor, warm wood slats softly out of focus behind, a thin steel-blue rim light on the ankles. [BLOQUE CINEMATOGRÁFICO]
+Use the attached photo as the exact location reference. Extreme macro of bare feet stepping slowly onto the body-composition scale platform, the camera low to the floor, warm wood slats softly out of focus behind, a thin light blue rim light on the ankles. [BLOQUE CINEMATOGRÁFICO]
 ```
 
 ### P3 · Figura al fondo del pasillo (9:16, 8 s)
@@ -334,7 +334,7 @@ Use the attached photo as the exact location reference: keep the same corridor a
 
 ### P4 · Primerísimo primer plano, de perfil (9:16, 6 s)
 ```
-Extreme close-up of the profile of a 47-year-old Colombian woman from Medellín, Latin American mestizo features, chestnut hair pulled back, serious and composed, eyes focused on something out of frame, not smiling, not looking at the camera, natural skin texture with fine pores, a thin steel-blue rim light along her cheekbone. A very slow push-in. [BLOQUE CINEMATOGRÁFICO]
+Extreme close-up of the profile of a 47-year-old Colombian woman from Medellín, Latin American mestizo features, chestnut hair pulled back, serious and composed, eyes focused on something out of frame, not smiling, not looking at the camera, natural skin texture with fine pores, a thin light blue rim light along her cheekbone. A very slow push-in. [BLOQUE CINEMATOGRÁFICO]
 ```
 
 ### P5 · Pantalla con la hélice de ADN (9:16, 6 s)
@@ -357,7 +357,7 @@ Use the attached photo as the exact location reference. A macro shot of the vert
 
 ## 5. Lo que hago yo con tus archivos
 
-1. Gradúo el color a la paleta de LCI (navy, azul acero, crema y oro mínimo) con el mismo tratamiento frío de las fotos.
+1. Gradúo el color a la paleta de LCI (navy, azul claro, crema y oro mínimo) con el mismo tratamiento frío de las fotos.
 2. Quito el audio y estabilizo el recorte para texto.
 3. Codifico para el scroll (fotograma clave en cada cuadro) y creo la versión móvil y el póster.
 4. Integro cada escena en la página con la transición que corresponda (ventana que se expande, anillos, frases que se iluminan).

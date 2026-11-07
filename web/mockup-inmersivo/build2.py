@@ -175,7 +175,7 @@ for r in _TOUR_ROOMS:
     for h in r['hs']: h['les']=_names[h['to']]['es']; h['len']=_names[h['to']]['en']
 TOURJSON=_j.dumps(dict(rooms=_TOUR_ROOMS),ensure_ascii=False)
 TOUR = f"""<section class="tour" id="clinica" aria-label="{A('Recorrido por la clínica', 'Clinic walkthrough')}"><canvas id="tourgl" aria-hidden="true"></canvas><div id="hots"></div>
-<div class="thead"><div class="eyebrow">{T('La clínica', 'The clinic')}</div><h2 class="mag rv">{T('<span class="m1">Recorre la</span><span class="m2"><em>clínica</em></span>', '<span class="m1">Walk through the</span><span class="m2"><em>clinic</em></span>')}</h2><p class="tip">{T('Arrastra para mirar · toca los puntos para avanzar', 'Drag to look around · tap the dots to move')}</p></div>
+<div class="thead"><div class="eyebrow">{T('La clínica', 'The clinic')}</div><h2 class="mag rv">{T('<span class="mg1">Recorre la</span><span class="mg2"><em>clínica</em></span>', '<span class="mg1">Walk through the</span><span class="mg2"><em>clinic</em></span>')}</h2><p class="tip">{T('Arrastra para mirar · toca los puntos para avanzar', 'Drag to look around · tap the dots to move')}</p></div>
 <ol class="tlist" id="tlist"></ol><p class="tcap" id="tcap"></p>
 <script type="application/json" id="tourdata">{TOURJSON}</script></section>"""
 
@@ -202,7 +202,7 @@ DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Im
   <p class="beat">{T('Evidencia científica <em>rigurosa</em>', '<em>Rigorous</em> scientific evidence')}</p>
   <p class="beat">{T('Atención diseñada alrededor de tu <em>biología</em>', 'Care designed around your <em>biology</em>')}</p>
   <span class="ill">{T('Ilustración · células madre y exosomas', 'Illustration · stem cells and exosomes')}</span></div>
-  <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2 class="mag">{T('<span class="m1">Todo empieza en tu</span><span class="m2"><em>biología</em></span>', '<span class="m1">It all starts in your</span><span class="m2"><em>biology</em></span>')}</h2></div>
+  <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2 class="mag">{T('<span class="mg1">Todo empieza en tu</span><span class="mg2"><em>biología</em></span>', '<span class="mg1">It all starts in your</span><span class="mg2"><em>biology</em></span>')}</h2></div>
   <div class="chip">{T('Desplaza para sumergirte', 'Scroll to dive in')}<i></i></div></div></section>
 '''
 RINGS = f'''<section class="rings-s" id="edad"><div class="rg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><div class="core"><b></b></div></div>
@@ -263,7 +263,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
 
 {TOUR}
 
-{BIG}<section class="trav"><div class="bg" aria-hidden="true"></div><div class="in"><div class="box">
+<section class="trav"><div class="bg" aria-hidden="true"></div><div class="in"><div class="box">
   <div class="eyebrow">{T('Pacientes internacionales', 'International patients')}</div>
   <h2 class="h2 rv">{T('Pensado también para quien <em>viaja a Medellín</em>', 'Also designed for patients <em>who travel to Medellín</em>')}</h2>
   <p class="lead">{T('Recogida en el aeropuerto, hotel y transporte organizados por el equipo, que está pendiente de ti durante tu estadía. Atención bilingüe en inglés y español.', 'Airport pickup, hotel and transportation arranged by our team, who stay in touch with you throughout your stay. Care in English and Spanish.')}</p>

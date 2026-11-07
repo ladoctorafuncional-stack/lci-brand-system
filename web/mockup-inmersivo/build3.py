@@ -6,7 +6,7 @@ with contextlib.redirect_stdout(io.StringIO()):
 IM=B.IMGS; T=B.T
 css_fonts=B.FONTS
 CSS=r'''
-:root{--ink:#0C141E;--deep:#19222E;--navy:#2A3649;--azul:#5D768C;--steel:#94B4CC;--lb:#CAD3DD;--ice:#E3EBF3;--gold:#D2B58A;--cream:#EDE5DA;--paper:#FBF9F6;
+:root{--ink:#0C141E;--deep:#19222E;--navy:#2A3649;--azul:#5D768C;--steel:#CAD3DD;--lb:#CAD3DD;--ice:#E3EBF3;--gold:#D2B58A;--cream:#EDE5DA;--paper:#FBF9F6;
 --serif:"Mencken Std",Georgia,serif;--serifi:"Mencken Std Head","Mencken Std",Georgia,serif;--sans:"Poppins","Helvetica Neue",Arial,sans-serif;--ease:cubic-bezier(.2,.7,.1,1);color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--cream);font:300 17px/1.55 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}

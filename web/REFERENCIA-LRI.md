@@ -53,7 +53,7 @@ Fuente: el artifact "Longevity Research Institute" (versión del 7-nov-2026), he
 | LRI | LCI |
 |---|---|
 | Poppins Light + Instrument Serif + IBM Plex Mono | **Mencken Std (titulares) + Mencken Head cursiva (acento) + Poppins (cuerpo y etiquetas).** Sin fuentes externas: solo las de la marca |
-| Paleta Platino Glacial | **Navy `#2A3649`, azul acero `#94B4CC`, light blue `#CAD3DD`, cream `#EDE5DA`**, oro `#D2B58A` solo como chispa. El hielo y el platino de LRI no se copian |
+| Paleta Platino Glacial | **Navy `#2A3649`, azul medio `#5D768C`, azul claro `#CAD3DD`, cream `#EDE5DA`**, oro `#D2B58A` solo como chispa. El hielo y el platino de LRI no se copian |
 | Planeta con horizonte | LCI necesita **su propio motivo**: el arco, la hélice y los anillos concéntricos que ya aparecen en el mockup. No se reutiliza el planeta de LRI, para no confundir las dos marcas |
 | Vial y moléculas | Células, sangre, ADN, cerebro y laboratorio (los videos de `PROMPTS-VIDEOS-LCI`) |
 | Textos | Solo datos confirmados de LCI. Nada del contenido de LRI (productos, aliados, afirmaciones) se traslada |
