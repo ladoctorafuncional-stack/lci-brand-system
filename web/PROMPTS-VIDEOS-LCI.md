@@ -196,6 +196,52 @@ Use the attached photo as the exact location and lighting reference: keep the sa
 - Recorrido de la clínica en video (ver V6).
 - Íconos de órganos: los dibujo yo en SVG con el estilo de la marca.
 
+## 5. Video del vial LRI (referencia: anuncio de un vial de lujo, 16 s, vertical 9:16)
+
+El anuncio de referencia alterna **tomas del vial** (macro de la etiqueta, vial flotando, plataforma hexagonal con luz) con **tomas dentro del líquido** (ondas, partículas y vesículas con una explosión de luz). Todo en un solo color. Para LRI el color es **hielo, acero y azul abisal** (paleta Platino Glacial), nunca rojo.
+
+### Cómo se reparte el trabajo
+| Toma | Quién | Por qué |
+|---|---|---|
+| Vial en plataforma, macro de la etiqueta, vial que flota y gira, cierre | **Yo, en 3D** con tus etiquetas reales | Los generadores de video **deforman el texto**. Si la etiqueta la hace Gemini, saldrá con letras mal. En 3D el texto es exacto |
+| Dentro del líquido: ondas, partículas, células madre, exosomas, estallido de luz | **Tú, en Gemini/Veo** con los prompts de abajo | Es donde la IA luce más y no hay texto que se rompa |
+| Textos que aparecen, tarjeta final con el logo LRI | **Yo**, al montar | Tipografía exacta |
+
+### Guion (16 s)
+| Seg. | Toma | Origen |
+|---|---|---|
+| 0–1 | Vial pequeño en plataforma, empuje lento de cámara | 3D |
+| 1–4 | Macro de la etiqueta con el logo, y luego el vial inclinado en el aire | 3D |
+| 4–6 | La cámara cae a la superficie del líquido: ondas concéntricas | Gemini (G1) |
+| 6–9 | Partículas, células madre y exosomas en suspensión | Gemini (G2, G3) |
+| 9–11 | Estallido de luz y partículas | Gemini (G4) |
+| 11–13 | Salida: macro del vial inclinado | 3D |
+| 13–16 | Vial en la plataforma hexagonal y tarjeta final con el logo LRI | 3D + montaje |
+
+Textos propuestos sobre las escenas del líquido (la Dra. los aprueba): "Células madre", "Exosomas", "Trazabilidad por lote", "Control independiente". Sin promesas de eficacia. Tarjeta final: "Uso exclusivo en investigación clínica".
+
+### G1 · Descenso a la superficie del líquido (9:16, 5 s)
+```
+Vertical 9:16 macro cinematic shot. The camera slowly descends toward the surface of a perfectly clear liquid inside a glass vial and breaks through it, concentric ripples spreading outward and catching the light. Monochrome palette of ice-blue, steel-blue and deep abyssal navy, soft white highlights, no red, no purple. Shallow depth of field, tiny bokeh particles, volumetric light, subtle film grain. One slow continuous camera move, no cuts, no text, no people, silent.
+```
+
+### G2 · Células madre en suspensión (9:16, 6 s)
+```
+Vertical 9:16 macro cinematic shot inside a clear liquid. A cluster of round, translucent stem cells with faintly visible nuclei and delicate glossy membranes drifts slowly among tiny floating particles; one cell gently divides in two. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light rays, subtle film grain. Slow orbiting camera, no cuts, no text, no people, silent.
+```
+
+### G3 · Exosomas alrededor de una célula (9:16, 6 s)
+```
+Vertical 9:16 macro cinematic shot inside a clear liquid. A large translucent cell in the center; many tiny extracellular vesicles (exosomes) of different sizes bud from its membrane and drift away, each a glossy sphere with a visible lipid bilayer and faint particles inside, some merging softly with each other. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with soft white highlights, no red, no purple. Shallow depth of field, volumetric light, subtle film grain. Slow push-in, no cuts, no text, no people, silent.
+```
+
+### G4 · Estallido de luz y partículas (9:16, 4 s)
+```
+Vertical 9:16 macro cinematic shot inside a clear liquid. A burst of tiny translucent vesicles and bubbles radiates outward from a bright point of white-blue light, lens flare blooming softly, particles trailing in slow motion. Monochrome palette of ice-blue, steel-blue and deep abyssal navy with white highlights, no red, no purple. Shallow depth of field, subtle film grain. One continuous move, no cuts, no text, no people, silent.
+```
+
+> La etiqueta se vuelve a hacer siempre en 3D. Nunca pidas a Gemini que dibuje el vial con el texto.
+
 ## 4. Revisión de calidad antes de enviármelos
 
 - Glóbulos rojos con forma de disco bicóncavo, sin deformarse ni fundirse entre sí.
