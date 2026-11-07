@@ -105,6 +105,21 @@ Toda pieza, escena y componente web se construye con estas reglas. Se verificó 
 | Interlineado de párrafos 1.32–1.50 y aire entre bloques | Aplicado en cuerpos y pasos |
 | Contenido: respetar el original, sin claims de mercadeo ("pionera", "100 %", "resultados inmediatos") | Todos los textos usan datos confirmados; los claims nuevos pasan por la Dra. |
 
+## 6c. Efectos de motion ya construidos en el mockup (v3)
+
+| Efecto | Patrón | Estado |
+|---|---|---|
+| Ventana que se expande y nos sumerge en un torrente sanguíneo, con tres frases que aparecen por scroll | P2 | Hecho en canvas (provisional hasta tener el video V2) |
+| Anillos concéntricos en relieve que laten y crecen con el scroll, en la sección de edad biológica | P3 | Hecho |
+| Marquesina gigante "LONGEVITY ✱ MEDELLÍN" cuya velocidad sube con el scroll | P8 | Hecho |
+| Nombre "Longevity" gigante en el pie, recortado como en Nervana | P11 | Hecho |
+| Hélice 3D, capítulos con scroll fijado, mapa orbital, misión que se ilumina, retrato que se inclina, galería arrastrable | P1, P4, P7 | Hecho (v1–v2) |
+| Cuadrícula de íconos lineales de órganos que se dibujan | P9 | Pendiente (los dibujo yo) |
+| Mosaico de fotos alrededor de un marco con titular encima | P10 | Pendiente (necesita fotos reales) |
+| Efectos del reel de Instagram que mencionó la Dra. | por definir | Pendiente: falta ver el video |
+
+Cuando lleguen los videos de V2–V4, la escena de glóbulos rojos en canvas se reemplaza por el video, sin cambiar la transición.
+
 ## 7. Orden de trabajo propuesto
 
 1. **Prototipo de inmersión** (artifact): hero → ventana que se expande → vaso sanguíneo → células madre → ADN, con frases por scroll, anillos y etiquetas flotantes.

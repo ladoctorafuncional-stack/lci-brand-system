@@ -46,6 +46,7 @@ IMGS = {
     'bg_noche': img(f'{R}/brand/fondos/degradados-clasicos/02-noche-espejo.jpg', 900, 60),
     'bg_claro': img(f'{R}/brand/fondos/mesh-claro/22-mesh-claro-1.jpg', 900, 60),
     'sello': logo('sello_beige', 360),
+    'sello_navy': logo('sello_navy', 360),
     'logo_w': logo('principal_blanco', 640),
     'logo_n': logo('principal_navy', 640),
 }
@@ -152,6 +153,24 @@ BOOK = f'''<div class="book" data-book>
   <button type="button" class="btn navy" data-mag>{T('Continuar', 'Continue')} {ARW}</button>
   <p class="fine">{T('La primera consulta dura mínimo 2 horas.', 'The first visit lasts at least 2 hours.')}</p></div>'''
 
+
+STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
+DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><div class="vg"></div>
+  <p class="beat">{T('Medición de <em>grado clínico</em>', '<em>Clinical-grade</em> measurement')}</p>
+  <p class="beat">{T('Evidencia científica <em>rigurosa</em>', '<em>Rigorous</em> scientific evidence')}</p>
+  <p class="beat">{T('Atención diseñada alrededor de tu <em>biología</em>', 'Care designed around your <em>biology</em>')}</p>
+  <span class="ill">{T('Ilustración · torrente sanguíneo', 'Illustration · bloodstream')}</span></div>
+  <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2>{T('Todo empieza en tu <em>biología</em>', 'It all starts in your <em>biology</em>')}</h2></div>
+  <div class="chip">{T('Desplaza para sumergirte', 'Scroll to dive in')}<i></i></div></div></section>
+'''
+RINGS = f'''<section class="rings-s" id="edad"><div class="rg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><div class="core"><b></b></div></div>
+  <div class="in"><div class="eyebrow">{T('Edad biológica', 'Biological age')}</div>
+  <h2 class="rv">{T('Estimados preliminares con <em>varios relojes biológicos</em>', 'Preliminary estimates from <em>several biological clocks</em>')}</h2>
+  <p class="s">{T('Parte de la evaluación de longevidad, interpretada con IA clínica y revisada por el médico.', 'Part of the longevity assessment, interpreted with clinical AI and reviewed by the physician.')}</p></div></section>
+'''
+_G = f'<div class="g"><span>LONGEVITY</span>{STAR}<span class="o">MEDELLÍN</span>{STAR}</div>'
+BIG = f'<section class="bigmq" aria-hidden="true"><div class="tr">{_G*4}</div></section>\n'
+
 BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header class="top"><div class="in">
   <a href="#top" aria-label="Longevity Clinical Institute"><span class="logo w" role="img" aria-label="Longevity Clinical Institute"></span></a>
@@ -175,7 +194,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
 
 <section class="marq" aria-label="{A('En breve', 'At a glance')}"><div class="mq">{MQ}</div></section>
 
-<section class="chap" id="metodo"><div class="in">
+{DIVE}<section class="chap" id="metodo"><div class="in">
   <div class="head rv"><div class="eyebrow">{T('Cómo trabajamos', 'How we work')}</div>
   <h2 class="h2">{T('Medición, ciencia y un plan <em>hecho a tu medida</em>', 'Measurement, science and a plan <em>built around you</em>')}</h2></div>
   <div class="cgrid">
@@ -184,7 +203,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
     <div class="steps">{STEPS}</div>
   </div></div></section>
 
-<section class="const" id="ciencia"><div class="in">
+{RINGS}<section class="const" id="ciencia"><div class="in">
   <div class="eyebrow">{T('Ciencia y tecnología', 'Science and technology')}</div>
   <h2 class="h2 rv" style="margin-top:20px;max-width:12em">{T('Lo que medimos y <em>cómo lo interpretamos</em>', 'What we measure and <em>how we read it</em>')}</h2>
   <div class="cwrap">
@@ -215,7 +234,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
   <div class="arrows"><button type="button" data-rail="prev" aria-label="{A('Anterior', 'Previous')}">{ARWL}</button><button type="button" data-rail="next" aria-label="{A('Siguiente', 'Next')}">{ARW}</button></div></div>
   <div class="rail" tabindex="0" aria-label="{A('Galería de la clínica', 'Clinic gallery')}">{GAL}</div></section>
 
-<section class="trav"><div class="bg" aria-hidden="true"></div><div class="in"><div class="box">
+{BIG}<section class="trav"><div class="bg" aria-hidden="true"></div><div class="in"><div class="box">
   <div class="eyebrow">{T('Pacientes internacionales', 'International patients')}</div>
   <h2 class="h2 rv">{T('Pensado también para quien <em>viaja a Medellín</em>', 'Also designed for patients <em>who travel to Medellín</em>')}</h2>
   <p class="lead">{T('Recogida en el aeropuerto, hotel y transporte organizados por el equipo, que está pendiente de ti durante tu estadía. Atención bilingüe en inglés y español.', 'Airport pickup, hotel and transportation arranged by our team, who stay in touch with you throughout your stay. Care in English and Spanish.')}</p>
@@ -236,7 +255,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
   <div><h4>{T('Ubicación', 'Location')}</h4><ul><li>Medellín, Colombia</li><li>{T('Atención en español e inglés', 'Care in English and Spanish')}</li></ul></div></div>
   <div class="bot"><span>© 2026 Longevity Clinical Institute</span>
   <span>{T('Contenido informativo. No reemplaza la consulta médica.', 'Informational content. It does not replace a medical consultation.')}</span>
-  <span>{T('Mockup de dirección visual: fotos del banco LCI (varias generadas con IA) y widget de reserva de ejemplo.', 'Visual direction mockup: LCI photo bank (several AI-generated) and a sample booking widget.')}</span></div></div></footer>
+  <span>{T('Mockup de dirección visual: fotos del banco LCI (varias generadas con IA) y widget de reserva de ejemplo.', 'Visual direction mockup: LCI photo bank (several AI-generated) and a sample booking widget.')}</span></div><div class="wmk rv" aria-hidden="true">Longevity</div></footer>
 <div class="sticky"><a class="btn cream" href="#agenda">{T('Agendar valoración', 'Book an assessment')}</a><a class="wa" href="#agenda" aria-label="WhatsApp">{WA}</a></div>'''
 
 HTML = f'''<title>LCI Web Inmersiva</title>
