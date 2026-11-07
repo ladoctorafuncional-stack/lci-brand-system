@@ -136,6 +136,19 @@ Use the attached photo as the exact location and lighting reference: keep the sa
 ```
 Foto de referencia: `clinica/sala-terapia-noche-ciudad.jpg`.
 
+### V9 · Células madre y exosomas, versión realista (10 s, escena principal de la web)
+La escena que abre la web. Un solo clip de 10 s a **16:9, 1920×1080 como mínimo**. No necesita loop: la página lo mueve con el scroll.
+
+**Imagen clave:**
+```
+Ultra-realistic scientific macro visualization inside a warm amber culture medium: a cluster of about twelve human stem cells, round and pale pearl-white with a faint pink-grey cytoplasm, each with a clearly visible nucleus with nucleoli, delicate membranes with fine microvilli and a wet glossy sheen. Around them, hundreds of tiny extracellular vesicles (exosomes) of varied sizes, glossy translucent spheres with a visible lipid bilayer, drifting and catching the light. Luminous warm backlight from behind, soft volumetric haze, shallow depth of field, tiny suspended particles. True-to-life natural colors with a warm, living look, subtle film grain, top science documentary quality. 16:9, 1920×1080 or higher. No text, no logos, no people. Avoid: cartoon or plastic look, grey or blue-grey tones, neon colors, watermark.
+```
+**Video:**
+```
+Use the attached image as the first frame, same look and colors throughout. The camera pushes in slowly and steadily through the cluster of stem cells. Exosomes bud from the membrane of one stem cell and drift outward toward the camera, some passing very close in soft focus, one stem cell gently divides in a smooth realistic mitosis, light ripples across the glossy membranes. One continuous forward move, no cuts, 10 seconds, no text, no logos, silent.
+```
+ES: macro realista de células madre en medio ámbar, con exosomas que se desprenden y viajan hacia la cámara.
+
 ### V8 · Organismo celular que viaja por toda la página (loop de 8–10 s, **nuevo**)
 Inspirado en el video de referencia de la Dra.: una forma orgánica, translúcida e iridiscente, tipo cúmulo de células madre con pétalos de membrana, que vive en el hero y se mueve de una sección a otra. Va sobre **fondo negro puro** para mezclarla con la página sin recortar.
 

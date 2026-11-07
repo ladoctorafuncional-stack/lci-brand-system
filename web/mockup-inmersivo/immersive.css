@@ -456,3 +456,13 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 .step h3,.step p,.step .k{text-shadow:0 1px 12px rgba(25,34,46,.5)}
 
 .dive .cap .eyebrow{color:#fff;font-weight:500;text-shadow:0 1px 10px rgba(25,34,46,.6)}
+
+
+/* ---- v9: título inicial grande y legible; fondo cálido de la escena ---- */
+.dive .win{background:#220B06}
+.dive .vg{background:linear-gradient(rgba(34,11,6,.14),rgba(34,11,6,.14)),radial-gradient(70% 70% at 50% 50%,rgba(34,11,6,0) 55%,rgba(34,11,6,.4))}
+.dive .cap{width:min(94%,1200px)}
+.dive .cap .eyebrow{font-size:clamp(16px,1.5vw,22px);letter-spacing:.16em;margin-bottom:22px;color:#fff;font-weight:500}
+.dive .cap h2{font-size:clamp(46px,7.4vw,118px);line-height:1.0}
+.dive .chip{font-size:clamp(14px,1.1vw,16px)}
+@media (max-width:1000px){.dive .cap h2{font-size:clamp(42px,12vw,72px)}.dive .cap .eyebrow{font-size:15px}}

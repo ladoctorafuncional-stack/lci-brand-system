@@ -154,14 +154,14 @@ BOOK = f'''<div class="book" data-book>
 
 
 import json as _json
-_FR=sorted(glob.glob('/tmp/claude-0/-home-user-lci-brand-system/90311451-3058-5964-b625-4f30819e3e03/scratchpad/vf2/f*.jpg'))
+_FR=[]  # sin video: escena de células madre provisional hasta recibir el clip nuevo
 FRAMES=_json.dumps(['data:image/jpeg;base64,'+b64(open(f,'rb').read()) for f in _FR])
 STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
 DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><script type="application/json" id="zframes">{FRAMES}</script><div class="vg"></div>
   <p class="beat">{T('Medición de <em>grado clínico</em>', '<em>Clinical-grade</em> measurement')}</p>
   <p class="beat">{T('Evidencia científica <em>rigurosa</em>', '<em>Rigorous</em> scientific evidence')}</p>
   <p class="beat">{T('Atención diseñada alrededor de tu <em>biología</em>', 'Care designed around your <em>biology</em>')}</p>
-  <span class="ill">{T('Ilustración · torrente sanguíneo', 'Illustration · bloodstream')}</span></div>
+  <span class="ill">{T('Ilustración · células madre y exosomas', 'Illustration · stem cells and exosomes')}</span></div>
   <div class="cap"><div class="eyebrow">{T('Entra', 'Step inside')}</div><h2>{T('Todo empieza en tu <em>biología</em>', 'It all starts in your <em>biology</em>')}</h2></div>
   <div class="chip">{T('Desplaza para sumergirte', 'Scroll to dive in')}<i></i></div></div></section>
 '''

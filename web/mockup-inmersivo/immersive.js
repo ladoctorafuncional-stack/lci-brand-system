@@ -153,42 +153,50 @@ if(FINE&&!RM){
   if(RM){cur=tgt=imgs.length*.4;} else requestAnimationFrame(loop);
 })();
 
-/* ---------- bloodstream tunnel (canvas) ---------- */
+/* ---------- células madre y exosomas (canvas provisional, colores naturales) ---------- */
 (function(){
   var cv=$('#cells'); if(!cv||window.__vframes) return;
   var ctx=cv.getContext('2d'),W=0,H=0,narrow=false,cells=[],dust=[],on=false,last=0,t0=performance.now();
-  function mk(c){c.a=Math.random()*6.2832;c.r=.12+Math.pow(Math.random(),.7)*.88;c.z=c.z===undefined?Math.random():1;c.rot=Math.random()*3.14;c.tilt=Math.random()*3.14;c.sp=.6+Math.random()*.8;c.s=.8+Math.random()*.7}
+  function mk(c){c.a=Math.random()*6.2832;c.r=.1+Math.pow(Math.random(),.75)*.9;c.z=c.z===undefined?Math.random():1;c.kind=Math.random()<.16?1:0;c.sp=.6+Math.random()*.8;c.s=c.kind?(1.5+Math.random()*.7):(.22+Math.random()*.42);c.ph=Math.random()*6.28}
   function size(){var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);narrow=W<900;
-    cells=[];for(var i=0;i<(narrow?70:140);i++){var c={};mk(c);cells.push(c)}
-    dust=[];for(i=0;i<(narrow?50:110);i++)dust.push({a:Math.random()*6.28,r:Math.random(),z:Math.random(),p:Math.random()*6.28});
+    cells=[];for(var i=0;i<(narrow?110:230);i++){var c={};mk(c);cells.push(c)}
+    dust=[];for(i=0;i<(narrow?50:120);i++)dust.push({a:Math.random()*6.28,r:Math.random(),z:Math.random()});
     if(RM)draw(t0+3000,.016)}
   function proj(a,r,z){var p=1/(z*3+.2);return {x:W/2+Math.cos(a)*r*p*W*.17,y:H/2+Math.sin(a)*r*p*H*.24,p:p}}
   function draw(now,dt){
     var t=(now-t0)/1000;
     var g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*.65);
-    g.addColorStop(0,'#F6C79A');g.addColorStop(.16,'#D4694F');g.addColorStop(.42,'#8A2229');g.addColorStop(.75,'#3F0B12');g.addColorStop(1,'#1A0508');
+    g.addColorStop(0,'#FFE6C0');g.addColorStop(.16,'#F0B070');g.addColorStop(.4,'#B8662C');g.addColorStop(.72,'#5A2410');g.addColorStop(1,'#220B06');
     ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
     ctx.globalCompositeOperation='lighter';
     dust.forEach(function(d){d.z-=dt*.05;if(d.z<.03){d.z=1;d.a=Math.random()*6.28}var q=proj(d.a,d.r,d.z);
-      ctx.fillStyle='rgba(255,214,180,'+(.35*Math.min(1,(1-d.z)*2)).toFixed(3)+')';ctx.beginPath();ctx.arc(q.x,q.y,Math.min(2.4,.5+q.p*.5),0,6.28);ctx.fill()});
+      ctx.fillStyle='rgba(255,226,190,'+(.3*Math.min(1,(1-d.z)*2)).toFixed(3)+')';ctx.beginPath();ctx.arc(q.x,q.y,Math.min(2,.4+q.p*.4),0,6.28);ctx.fill()});
     ctx.globalCompositeOperation='source-over';
     cells.sort(function(a,b){return b.z-a.z});
     cells.forEach(function(c){
-      c.z-=dt*.085*c.sp; if(c.z<.025){mk(c)}
-      var q=proj(c.a,c.r,c.z), sz=c.s*q.p*H*.036; if(sz<1.5||q.p>3.9) return;
+      c.z-=dt*.075*c.sp; if(c.z<.025){mk(c)}
+      var q=proj(c.a,c.r,c.z), sz=c.s*q.p*H*.034; if(sz<1.2||q.p>3.9) return;
       var fade=Math.min(1,(1-c.z)*3.2)*Math.min(1,(4.3-q.p)*1.6);
-      ctx.save();ctx.translate(q.x,q.y);ctx.rotate(c.rot+t*.18*c.sp);
-      var sy=.5+.5*Math.abs(Math.cos(c.tilt+t*.35*c.sp));ctx.scale(1,Math.max(.32,sy));
-      ctx.globalAlpha=Math.max(0,fade*.95);
-      var rg=ctx.createRadialGradient(0,0,sz*.08,0,0,sz);
-      rg.addColorStop(0,'#6E0E17');rg.addColorStop(.4,'#A9121E');rg.addColorStop(.82,'#D9283A');rg.addColorStop(1,'#EE5A63');
-      ctx.fillStyle=rg;ctx.beginPath();ctx.arc(0,0,sz,0,6.2832);ctx.fill();
-      ctx.lineWidth=Math.max(1,sz*.07);ctx.strokeStyle='rgba(255,214,190,.38)';ctx.beginPath();ctx.arc(0,0,sz*.94,3.6,5.3);ctx.stroke();
+      var wob=1+Math.sin(t*1.3+c.ph)*.025;
+      ctx.save();ctx.translate(q.x,q.y);ctx.globalAlpha=Math.max(0,fade*.95);
+      if(c.kind){ /* célula madre: esfera perlada con núcleo */
+        var rg=ctx.createRadialGradient(-sz*.3,-sz*.35,sz*.05,0,0,sz*wob);
+        rg.addColorStop(0,'rgba(255,248,238,.96)');rg.addColorStop(.55,'rgba(238,208,188,.9)');rg.addColorStop(.9,'rgba(214,166,146,.88)');rg.addColorStop(1,'rgba(255,236,220,.95)');
+        ctx.fillStyle=rg;ctx.beginPath();ctx.arc(0,0,sz*wob,0,6.2832);ctx.fill();
+        var ng=ctx.createRadialGradient(sz*.04,sz*.02,0,0,0,sz*.4);ng.addColorStop(0,'rgba(176,118,104,.85)');ng.addColorStop(.7,'rgba(196,140,124,.55)');ng.addColorStop(1,'rgba(214,166,146,0)');
+        ctx.fillStyle=ng;ctx.beginPath();ctx.arc(0,0,sz*.4,0,6.2832);ctx.fill();
+        ctx.lineWidth=Math.max(1,sz*.05);ctx.strokeStyle='rgba(255,252,246,.55)';ctx.beginPath();ctx.arc(0,0,sz*.97*wob,3.5,5.4);ctx.stroke();
+      } else { /* exosoma: vesícula translúcida con borde brillante */
+        var eg=ctx.createRadialGradient(-sz*.25,-sz*.3,sz*.05,0,0,sz);
+        eg.addColorStop(0,'rgba(255,246,232,.85)');eg.addColorStop(.7,'rgba(246,214,184,.45)');eg.addColorStop(1,'rgba(255,240,224,.8)');
+        ctx.fillStyle=eg;ctx.beginPath();ctx.arc(0,0,sz,0,6.2832);ctx.fill();
+        ctx.lineWidth=Math.max(.8,sz*.12);ctx.strokeStyle='rgba(255,252,244,.7)';ctx.beginPath();ctx.arc(0,0,sz*.94,0,6.2832);ctx.stroke();
+      }
       ctx.restore();
     });
     ctx.globalAlpha=1;
   }
-  function loop(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;if(on&&!document.hidden)draw(now,dt);requestAnimationFrame(loop)}
+  function loop(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;var sv=window.__sv||0;window.__sv=sv*.93;if(on&&!document.hidden)draw(now,dt*(1+Math.min(8,sv)));requestAnimationFrame(loop)}
   new IntersectionObserver(function(es){on=es[0].isIntersecting}).observe(cv);
   window.addEventListener('resize',size);size();
   if(!RM)requestAnimationFrame(loop);
