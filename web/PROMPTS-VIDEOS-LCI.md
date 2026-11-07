@@ -98,6 +98,19 @@ Use the attached photo as the exact location and lighting reference: keep the sa
 ```
 Foto de referencia: `clinica/sala-terapia-noche-ciudad.jpg`.
 
+### V8 · Organismo celular que viaja por toda la página (loop de 8–10 s, **nuevo**)
+Inspirado en el video de referencia de la Dra.: una forma orgánica, translúcida e iridiscente, tipo cúmulo de células madre con pétalos de membrana, que vive en el hero y se mueve de una sección a otra. Va sobre **fondo negro puro** para mezclarla con la página sin recortar.
+
+**Imagen clave:**
+```
+Hyper-realistic 3D render of a single translucent, iridescent organic form resembling a blooming cluster of stem cells, with ruffled petal-like membranes folding over each other, glass-like surfaces with soft subsurface scattering and a delicate fresnel rim glow, steel-blue, ice-blue and cream tones with tiny champagne-gold glints along the edges, a deep hollow at its center. Isolated on a pure black background for compositing, centered, shallow depth of field. [BLOQUE DE ESTILO]
+```
+**Video:**
+```
+Use the attached image as the first frame. The organic form slowly rotates and gently breathes, its ruffled membranes undulating in slow waves, light sliding across the glassy surfaces, the iridescent rim shifting between steel-blue and cream. The camera drifts a few degrees to the left and back so the clip loops seamlessly. Pure black background throughout. [BLOQUE DE ESTILO]
+```
+ES: forma celular translúcida que respira y gira; fondo negro para mezclarla con la página y animarla de sección en sección.
+
 ---
 
 ## 3b. Qué fotos adjuntar en cada video

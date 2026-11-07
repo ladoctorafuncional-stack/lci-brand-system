@@ -120,6 +120,20 @@ Toda pieza, escena y componente web se construye con estas reglas. Se verificó 
 
 Cuando lleguen los videos de V2–V4, la escena de glóbulos rojos en canvas se reemplaza por el video, sin cambiar la transición.
 
+## 6d. Referencia 3: video "IOCO · Creating a Biocomputer"
+
+Video de la Dra. (13 s, 720×720): una web conceptual de biotecnología mostrada dentro de una tarjeta flotante sobre un fondo degradado. Solo tomamos el movimiento. Colores, marca y textos no se copian.
+
+| # | Patrón | Qué se ve | Aplicación en LCI |
+|---|---|---|---|
+| P13 | **Objeto 3D orgánico persistente** | Una forma translúcida e iridiscente, tipo pétalos o cúmulo de células, vive en el hero y **viaja** de posición entre pantallas (centro → arriba → vuelve) | Un "organismo celular" en WebGL (Three.js con un shader de membrana) que acompaña toda la página y cambia de lugar por sección. Es la imagen perfecta para células madre. Prompt: V8 |
+| P14 | **Transición por barrido de color con el logo** | Un bloque de color entra desde abajo con el logo al centro y revela la siguiente pantalla | Barrido navy o cream con el sello LCI entre actos y entre páginas (ES/EN, Evaluación, Protocolos) |
+| P15 | **Acordeón horizontal de paneles** | Franjas verticales (Product / Performance / Media) que se desplazan y una se ensancha mostrando icono, texto y botón | Sección "Programas y evaluación": Evaluación · Ciencia · Protocolos · Equipo, con la lista de programas que defina la Dra. |
+| P16 | **Cierre con wordmark enorme y regla de puntos** | Logo gigante centrado con un botón y una línea punteada tipo regla | Pie con "Longevity" a ancho completo y regla de puntos como progreso |
+| P17 | **Etiquetas pequeñas en mono y numeración "01"** | Micro-rótulos y contador de sección | Poppins en versales con tracking, nunca por debajo del piso legible |
+
+Mantiene la regla de marca: paleta navy, azul acero, cream y oro mínimo. Del video solo se toma el comportamiento.
+
 ## 7. Orden de trabajo propuesto
 
 1. **Prototipo de inmersión** (artifact): hero → ventana que se expande → vaso sanguíneo → células madre → ADN, con frases por scroll, anillos y etiquetas flotantes.
