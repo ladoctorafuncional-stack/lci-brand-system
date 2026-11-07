@@ -121,6 +121,68 @@ Rutas dentro de `plugins/lci-fotos/skills/lci-banco-fotos/fotos/`. Se adjunta co
 
 Las fotos del banco `clinica/…` son de la serie generada con IA. Para el sitio final lo ideal es reemplazarlas por fotos y video reales de la clínica.
 
+## 3c. Imágenes fijas para el sitio
+
+Se generan en Gemini (imagen / Nano Banana) o ChatGPT (imágenes). Las de células y ADN se piden **sobre fondo negro puro**: así se mezclan con el fondo navy de la página en modo "screen" y no necesitan recorte. Las escenas de clínica llevan una **foto real adjunta** (ver 3b). Las de personas usan la fórmula v3 del documento de fotos de LCI.
+
+### F1 · Glóbulos rojos aislados (formato 16:9)
+```
+Hyper-realistic 3D render of five biconcave red blood cells floating at different depths, isolated on a pure black background for compositing, accurate disc shape with soft concave centers, muted deep crimson with a subtle steel-blue rim light, glossy translucent membrane, shallow depth of field with the nearest cell softly out of focus, left third of the frame empty. [BLOQUE DE ESTILO]
+```
+ES: glóbulos rojos 3D sobre fondo negro, para mezclar con la página.
+
+### F2 · Células madre aisladas (16:9)
+```
+Hyper-realistic 3D render of a cluster of about ten round, translucent, pearl-like stem cells with faintly visible nuclei and delicate shimmering membranes, isolated on a pure black background for compositing, steel-blue and cream light with subtle champagne-gold glints, shallow depth of field. [BLOQUE DE ESTILO]
+```
+
+### F3 · Doble hélice de ADN (16:9)
+```
+A luminous DNA double helix running diagonally across the frame, isolated on a pure black background for compositing, fine base-pair rungs glowing steel-blue and cream, a few rungs in champagne gold, soft bokeh particles, razor-sharp center and gently blurred ends. [BLOQUE DE ESTILO]
+```
+
+### F4 · Red de neuronas en macro (16:9)
+```
+Macro scientific render of a network of neurons with glowing dendrites and synapses, pale steel-blue and cream light, a few tiny champagne-gold sparks at the synapses, dark navy background, shallow depth of field, drifting luminous dust. [BLOQUE DE ESTILO]
+```
+
+### F5 · Tubos de muestra en el laboratorio (16:9)
+```
+Macro photograph of a rack of clear glass blood-collection tubes with deep red plasma and a few with pale straw-colored serum, softly backlit on a cream and navy laboratory bench, a precise automated analyzer softly out of focus behind with a faint blue indicator light. No readable text on any label. [BLOQUE DE ESTILO]
+```
+
+### F6 · Sala de medición con ángulo de cine (16:9 o 4:5)
+Adjunta `clinica-real/real-sala-medicion-inbody.jpg`.
+```
+Use the attached photo as the exact location and lighting reference: keep the same room, walls, furniture, equipment, materials and lighting exactly as they are. Do not add windows, doors, plants or views that are not in the photo. A cinematic, slightly low camera angle with the warm LED cove light glowing along the wood slats, no people, no readable text on screens. Candid documentary photograph, Leica M10-R 50mm f/2.8, Kodak Portra 400 palette, fine film grain. Avoid: CGI look, text, logos, watermark.
+```
+
+### F7 · Medellín al atardecer (16:9)
+Adjunta `clinica-real/real-sala-terapia-noche-ciudad.jpg`.
+```
+Use the attached photo as the exact location and lighting reference: keep the same room, furniture and window exactly as they are. Dusk over Medellín seen through the window, the first city lights turning on, a deep blue sky, the room light warm and still. No people, no readable text. Candid documentary photograph, Leica M10-R 50mm f/2.8, Kodak Portra 400 palette, fine film grain. Avoid: CGI look, text, logos, watermark.
+```
+
+### F8 · Paciente ejecutivo en el consultorio (4:5 vertical)
+Adjunta `lifestyle/consultorio-cafe-IA-4x5.jpg` o `clinica/consultorio-calido.jpg`. Sigue la fórmula v3 de `PROMPTS_FOTOS_LCI_NanoBanana.md`.
+```
+Use the attached photo as the exact location and lighting reference: keep the same room, walls, furniture, materials and lighting exactly as they are. Do not add windows, doors, plants or views that are not in the photo. A 52-year-old Colombian man from Medellín (paisa), Latin American mestizo features, medium-brown skin, dark brown hair with grey at the temples, dark eyes, serious, composed and elegant expression of a high-profile, affluent person, absorbed in what he is doing, not smiling, not looking at the camera, reviewing a printed lab report seated on the patient side of the desk. The keyboard and monitor face the physician's side of the desk, opposite the patient. Navy sweater, no prints, no logos. The lighting on him is soft and natural, matching the indoor ambient spotlighting, with subtle shadows from the overhead LED cove. Candid documentary photograph, Leica M10-R 50mm f/2.8, Kodak Portra 400 palette, fine natural film grain, visible skin texture and fine lines. Avoid: CGI look, airbrushed skin, text, logos, watermark.
+```
+ES: el mismo molde sirve para otras escenas: cambia edad, acción y ropa, y mantén la frase de expresión seria.
+
+### F9 · Paciente en la sala de terapias (4:5 vertical)
+Adjunta `clinica-real/real-sala-terapia-noche-ciudad.jpg`.
+```
+Use the attached photo as the exact location and lighting reference: keep the same room, furniture and window exactly as they are. A 47-year-old Colombian woman from Medellín (paisa), Latin American mestizo features, light-tan skin, chestnut hair pulled back, dark eyes, serious, composed and elegant expression of a high-profile, affluent person, absorbed in what she is doing, not smiling, not looking at the camera, resting in the reclining chair with her eyes closed, hands relaxed. Cream linen top, no prints, no logos. Soft natural light matching the room, subtle shadows, city lights glowing outside. Candid documentary photograph, Leica M10-R 50mm f/2.8, Kodak Portra 400 palette, fine natural film grain, visible skin texture. Avoid: CGI look, airbrushed skin, text, logos, watermark.
+```
+
+### Fotos que NO se generan: se hacen reales
+- Retratos de la Dra. y del equipo: serios, concentrados, de perfil o de tres cuartos, en el consultorio con luz natural. Las fotos de los médicos son siempre reales.
+- La Dra. en consulta con una paciente real, con su autorización por escrito.
+- Detalle de manos y equipos de la sala de medición, y del laboratorio de procesamiento.
+- Recorrido de la clínica en video (ver V6).
+- Íconos de órganos: los dibujo yo en SVG con el estilo de la marca.
+
 ## 4. Revisión de calidad antes de enviármelos
 
 - Glóbulos rojos con forma de disco bicóncavo, sin deformarse ni fundirse entre sí.
