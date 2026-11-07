@@ -154,7 +154,7 @@ BOOK = f'''<div class="book" data-book>
 
 
 import json as _json
-_FR=[]  # sin video hasta tener el nuevo clip realista
+_FR=sorted(glob.glob('/tmp/claude-0/-home-user-lci-brand-system/90311451-3058-5964-b625-4f30819e3e03/scratchpad/vf2/f*.jpg'))
 FRAMES=_json.dumps(['data:image/jpeg;base64,'+b64(open(f,'rb').read()) for f in _FR])
 STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
 DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><script type="application/json" id="zframes">{FRAMES}</script><div class="vg"></div>

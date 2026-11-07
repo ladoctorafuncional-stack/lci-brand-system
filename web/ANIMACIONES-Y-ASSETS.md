@@ -134,6 +134,17 @@ Video de la Dra. (13 s, 720×720): una web conceptual de biotecnología mostrada
 
 Mantiene la regla de marca: paleta navy, azul acero, cream y oro mínimo. Del video solo se toma el comportamiento.
 
+## 6e. Cómo responde el video al scroll (sin trucos en el video)
+
+El video de Veo **no necesita acelerarse solo**. Se entrega como un clip normal y la página hace el resto:
+1. El clip se convierte en una **secuencia de fotogramas** (64 cuadros).
+2. La posición del scroll decide qué cuadro se ve. Scroll rápido, el video corre rápido; scroll lento, corre lento; sin scroll, queda casi quieto con una respiración mínima.
+3. Entre cuadros se mezcla un fotograma con el siguiente, para que se vea fluido.
+4. Al ir hacia atrás con el scroll, el video también va hacia atrás.
+5. Un leve zoom extra sube con la velocidad del scroll.
+
+Es la misma técnica de la página del LRI. Por eso basta con **un solo clip normal de 8–10 s**, sin loop especial. Resolución mínima del clip: 1920×1080, porque se ve a todo el ancho.
+
 ## 7. Orden de trabajo propuesto
 
 1. **Prototipo de inmersión** (artifact): hero → ventana que se expande → vaso sanguíneo → células madre → ADN, con frases por scroll, anillos y etiquetas flotantes.

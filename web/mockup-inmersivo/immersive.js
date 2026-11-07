@@ -138,15 +138,13 @@ if(FINE&&!RM){
   function ready(im){return im&&im.complete&&im.naturalWidth}
   function size(){var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,1.5);W=Math.round(r.width*d);H=Math.round(r.height*d);cv.width=W;cv.height=H;lastI=-1;paint(true)}
   function paint(force){
-    var sv=window.__sv||0,t=(performance.now()-t0)/1000;
-    var f=cur+Math.sin(t*.45)*1.4; /* respiración mínima cuando no hay scroll */
-    var i=Math.max(0,Math.min(imgs.length-1,Math.round(f)));
-    var k=0;while(!ready(imgs[i])&&k<imgs.length){k++;if(ready(imgs[i-k])){i=i-k;break}if(ready(imgs[i+k])){i=i+k;break}}
-    var im=imgs[i];if(!ready(im))return;
+    var sv=window.__sv||0,t=(performance.now()-t0)/1000,N=imgs.length;
+    var f=Math.max(0,Math.min(N-1,cur+Math.sin(t*.45)*1.4));
+    var i0=Math.floor(f),i1=Math.min(N-1,i0+1),a=f-i0;
+    var A=imgs[i0],B=imgs[i1];if(!ready(A))return;
     var z=1+Math.min(.1,sv*.012);
-    if(!force&&i===lastI&&z===1)return;lastI=i;
-    var s=Math.max(W/im.naturalWidth,H/im.naturalHeight)*z,w=im.naturalWidth*s,h=im.naturalHeight*s;
-    ctx.drawImage(im,(W-w)/2,(H-h)/2,w,h);
+    function put(im,al){var s=Math.max(W/im.naturalWidth,H/im.naturalHeight)*z,w=im.naturalWidth*s,h=im.naturalHeight*s;ctx.globalAlpha=al;ctx.drawImage(im,(W-w)/2,(H-h)/2,w,h)}
+    put(A,1);if(a>.03&&ready(B))put(B,a);ctx.globalAlpha=1;
   }
   window.__setFrames=function(p){tgt=Math.max(0,Math.min(1,p))*(imgs.length-1)};
   function loop(){cur+=(tgt-cur)*.14;window.__sv=(window.__sv||0)*.93;if(on)paint(false);requestAnimationFrame(loop)}
