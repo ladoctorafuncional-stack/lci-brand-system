@@ -335,7 +335,7 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 }
 
 /* ---------- dive: expanding window into the bloodstream ---------- */
-.dive{height:320svh;background:var(--ink)}
+.dive{height:500svh;background:var(--ink)}
 .dive .stk{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--ink)}
 .dive .win{position:absolute;inset:0;background:#1A0508}
 #cells{position:absolute;inset:0;width:100%;height:100%}
@@ -375,7 +375,7 @@ em .w>i{font-family:var(--serifi);font-weight:800}
 .wmk{font:800 clamp(80px,17.5vw,330px)/.8 var(--serif);text-align:center;letter-spacing:-.02em;margin-top:30px;height:.62em;background:linear-gradient(180deg,rgba(148,180,204,.6),rgba(148,180,204,.04));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
 
 @media (max-width:1000px){
-  .dive{height:300svh}
+  .dive{height:440svh}
   .rings-s{padding-block:90px 340px}
   .rg{right:auto;left:50%;top:auto;bottom:-120px;margin:0 0 0 -41vw;width:82vw;animation:none}
   .bigmq{padding-block:44px}
@@ -425,3 +425,19 @@ em .w>i{font-family:var(--serifi);font-weight:800}
   .dra .portrait{min-height:0;height:78svh;max-width:none;width:100%}
   .dra .dgrid>div:last-child{padding:60px max(24px,env(safe-area-inset-left,0px))}
 }
+
+
+/* ---- legibilidad del texto sobre el video: sombra navy debajo, texto claro ---- */
+.beat{isolation:isolate;color:#fff;text-shadow:0 2px 18px rgba(25,34,46,.9),0 0 3px rgba(25,34,46,.8)}
+.beat::before{content:"";position:absolute;inset:-26% -12%;z-index:-1;background:radial-gradient(ellipse at center,rgba(25,34,46,.9) 0%,rgba(25,34,46,.74) 42%,rgba(25,34,46,.36) 66%,rgba(25,34,46,0) 82%);filter:blur(10px)}
+.beat em{color:#fff;font-weight:800}
+.dive .cap{isolation:isolate;text-shadow:0 2px 18px rgba(25,34,46,.9),0 0 3px rgba(25,34,46,.8)}
+.dive .cap::before{content:"";position:absolute;inset:-40% -25%;z-index:-1;background:radial-gradient(ellipse at center,rgba(25,34,46,.88) 0%,rgba(25,34,46,.6) 50%,rgba(25,34,46,0) 80%);filter:blur(10px)}
+.dive .cap h2,.dive .cap h2 em{color:#fff}
+.dive .cap .eyebrow{color:var(--ice)}
+.dive .chip,.dive .ill{color:#fff;text-shadow:0 2px 12px rgba(25,34,46,.95);font-weight:500}
+.dive .chip{padding:12px 20px;border-radius:999px;background:rgba(25,34,46,.62)}
+.dive .ill{padding:8px 14px;border-radius:999px;background:rgba(25,34,46,.6)}
+/* textos sobre fotos de los capítulos */
+.step h3,.step p,.step .k{text-shadow:0 2px 16px rgba(25,34,46,.95),0 0 3px rgba(25,34,46,.7)}
+.step p{color:#fff}

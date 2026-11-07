@@ -304,9 +304,9 @@ function frame(){
       if(window.__setFrames)window.__setFrames(p);
       win.style.clipPath='none';
       cvs.style.transform='scale('+lerp(1.22,1,e).toFixed(4)+')';
-      dcap.style.opacity=clamp(1-p/.14,0,1);dchip.style.opacity=clamp(1-p/.1,0,1);
-      var segs=[[.5,.66],[.68,.84],[.86,1.02]];
-      beats.forEach(function(b,i){var o=clamp((p-segs[i][0])/.05,0,1)*clamp((segs[i][1]-p)/.05,0,1);b.style.opacity=o;b.style.transform='translate(-50%,-50%) scale('+(.94+o*.06)+')'});
+      dcap.style.opacity=clamp(1-p/.11,0,1);dchip.style.opacity=clamp(1-p/.08,0,1);
+      var segs=[[.14,.40],[.42,.68],[.70,.97]];
+      beats.forEach(function(b,i){var o=clamp((p-segs[i][0])/.04,0,1)*clamp((segs[i][1]-p)/.04,0,1);b.style.opacity=o;b.style.transform='translate(-50%,-50%) scale('+(.94+o*.06)+')'});
     }
     if(ringsSec){
       var rr2=ringsSec.getBoundingClientRect(),q=clamp((vh-rr2.top)/(vh+rr2.height),0,1);
