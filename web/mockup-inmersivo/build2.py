@@ -284,7 +284,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
   <div><h4>{T('Ubicación', 'Location')}</h4><ul><li>Medellín, Colombia</li><li>{T('Atención en español e inglés', 'Care in English and Spanish')}</li></ul></div></div>
   <div class="bot"><span>© 2026 Longevity Clinical Institute</span>
   <span>{T('Contenido informativo. No reemplaza la consulta médica.', 'Informational content. It does not replace a medical consultation.')}</span>
-  <span>{T('Mockup de dirección visual: fotos del banco LCI (varias generadas con IA) y widget de reserva de ejemplo.', 'Visual direction mockup: LCI photo bank (several AI-generated) and a sample booking widget.')}</span></div><div class="wmk rv" aria-hidden="true">Longevity</div></footer>
+  <span>{T('Mockup de dirección visual: fotos del banco LCI (varias generadas con IA) y widget de reserva de ejemplo.', 'Visual direction mockup: LCI photo bank (several AI-generated) and a sample booking widget.')}</span></div></footer>
 <div class="sticky"><a class="btn cream" href="#agenda">{T('Agendar valoración', 'Book an assessment')}</a><a class="wa" href="#agenda" aria-label="WhatsApp">{WA}</a></div>'''
 
 HTML = f'''<title>LCI Web Inmersiva</title>
