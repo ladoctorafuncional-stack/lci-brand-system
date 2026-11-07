@@ -12,7 +12,7 @@ CSS=r'''
 body{margin:0;background:var(--ink);color:var(--cream);font:300 17px/1.55 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:90}
 h1,h2,p{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
-em{font-family:var(--serifi);font-style:italic;font-weight:800;font-size:.95em}
+em{font-family:var(--serifi);font-style:italic;font-weight:800}
 :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 [data-lang="es"] .en,[data-lang="en"] .es{display:none!important}
 .pad{padding-left:max(24px,4vw,env(safe-area-inset-left,0px));padding-right:max(24px,4vw,env(safe-area-inset-right,0px))}
@@ -27,11 +27,17 @@ em{font-family:var(--serifi);font-style:italic;font-weight:800;font-size:.95em}
 .opts button[aria-pressed="true"]{background:var(--cream);color:var(--navy)}
 .opts .sep{width:1px;background:rgba(202,211,221,.25);margin:4px 4px}
 .view[hidden]{display:none}
+/* jerarquía de revista */
+.hk .es,.hk .en{display:flex;flex-direction:column;align-items:flex-start}
+.hk .k1,.hk .k3{font:400 clamp(28px,4.4vw,74px)/1.08 var(--serif)}
+.hk .k2{display:block;font:400 clamp(72px,15.2vw,244px)/.84 var(--serif);margin:.02em 0 .06em -.03em}
+.hk .k2 em{font-weight:800}
+.hk .k3{display:block}.hk .k3 em.k4{font-size:1.6em;font-weight:800;line-height:.9}
 /* ============ OPCIÓN 1 ============ */
 .h1o{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--ink) url({{IMG:viaje}}) center/cover;isolation:isolate;overflow:hidden}
 .h1o::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,20,30,.35) 0%,rgba(12,20,30,.28) 45%,rgba(12,20,30,.78) 100%)}
 .h1o .in{width:100%;padding-block:150px 90px}
-.h1o h1{font:700 clamp(46px,8.6vw,138px)/1 var(--serif);letter-spacing:-.012em;margin:26px 0 38px;max-width:12em;text-shadow:0 1px 18px rgba(12,20,30,.4)}
+.h1o h1{letter-spacing:-.01em;margin:26px 0 38px;line-height:1;color:var(--cream);text-shadow:0 1px 18px rgba(12,20,30,.4)}.h1o .k2 em{color:#fff}.h1o .k4{color:var(--steel)}
 .h1o .cta{display:flex;flex-wrap:wrap;gap:14px}
 .walk{position:relative;height:520svh;background:var(--ink)}
 .walk .stk{position:sticky;top:0;height:100svh;overflow:hidden}
@@ -49,7 +55,7 @@ em{font-family:var(--serifi);font-style:italic;font-weight:800;font-size:.95em}
 .v2{background:var(--paper);color:var(--navy)}
 .h2o{padding-top:150px}
 .h2o .eyebrow{color:var(--navy)}
-.h2o h1{font:700 clamp(46px,9.4vw,152px)/1 var(--serif);letter-spacing:-.015em;margin:26px 0 44px;color:var(--navy)}
+.h2o h1{letter-spacing:-.01em;margin:26px 0 44px;line-height:1;color:var(--navy)}.h2o .k4{color:var(--azul)}
 .h2o .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;align-items:center;padding-bottom:44px}
 .h2o .row p{max-width:34em;font-size:clamp(17px,1.5vw,21px);color:#34445A}
 .h2o .band{height:min(72svh,720px);background:var(--navy) url({{IMG:hall}}) center 40%/cover;position:relative}
@@ -74,6 +80,7 @@ em{font-family:var(--serifi);font-style:italic;font-weight:800;font-size:.95em}
   .cl2::after{background:linear-gradient(0deg,rgba(12,20,30,.75) 0%,rgba(12,20,30,.1) 60%,rgba(12,20,30,0) 100%)}
   .cl2 .head{top:100px}
 }
+@media (max-width:1000px){.hk .k2{font-size:clamp(56px,15.2vw,150px)}}
 @media (max-width:600px){.opts button{padding:8px 10px;font-size:11px;white-space:nowrap}.opts{gap:2px;padding:4px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cl2 .ph{transition:none}}
 '''
@@ -88,7 +95,7 @@ RMS=''.join(f'<section class="room" style="background-image:url({IM[k]})"><div c
 LIST=''.join(f'<li><button type="button" data-i="{i}" aria-pressed="{"true" if i==0 else "false"}"><span class="k">0{i+1}</span><span class="t">{t}</span></button></li>' for i,(k,t,d) in enumerate(rooms))
 PHS=''.join(f'<div class="ph{" on" if i==0 else ""}" style="background-image:url({IM[k]})"></div>' for i,(k,t,d) in enumerate(rooms))
 CAPS=''.join(f'<p class="cap" data-c="{i}"{"" if i==0 else " hidden"}>{d}</p>' for i,(k,t,d) in enumerate(rooms))
-H1=T('Más años <em>saludables</em>, diseñados desde tu <em>biología</em>.','More <em>healthy</em> years, designed around your <em>biology</em>.')
+H1=T('<span class="k1">Más años</span><span class="k2"><em>saludables</em>,</span><span class="k3">diseñados desde tu <em class="k4">biología</em>.</span>','<span class="k1">More</span><span class="k2"><em>healthy</em></span><span class="k3">years, designed around your <em class="k4">biology</em>.</span>')
 LOGO=f'<span class="logo" style="background-image:url({IM["logo_w"]})" role="img" aria-label="Longevity Clinical Institute"></span>'
 LOGON=f'<span class="logo" style="background-image:url({IM["logo_n"]})" role="img" aria-label="Longevity Clinical Institute"></span>'
 BODY=f'''<div class="opts" role="group" aria-label="Opciones de diseño">
@@ -99,14 +106,14 @@ BODY=f'''<div class="opts" role="group" aria-label="Opciones de diseño">
 <div class="view" id="v1">
 <header class="pad" style="position:absolute;z-index:5;left:0;right:0;top:calc(66px + env(safe-area-inset-top,0px))">{LOGO}</header>
 <section class="h1o"><div class="in pad"><div class="eyebrow">{T('Medellín · Longevity Clinical Institute','Medellín · Longevity Clinical Institute')}</div>
-<h1>{H1}</h1><div class="cta"><a class="btn cream" href="#">{T('Agendar valoración','Book an assessment')} {ARW}</a><a class="btn ghost" href="#rec1">{T('Recorre la clínica','Walk through the clinic')}</a></div></div></section>
+<h1 class="hk">{H1}</h1><div class="cta"><a class="btn cream" href="#">{T('Agendar valoración','Book an assessment')} {ARW}</a><a class="btn ghost" href="#rec1">{T('Recorre la clínica','Walk through the clinic')}</a></div></div></section>
 <section class="walk" id="rec1"><div class="stk"><div class="lab">{T('La clínica · recorrido','The clinic · walkthrough')}</div><div class="tr" id="tr">{RMS}</div><div class="bar"><i id="bar"></i></div></div></section>
 </div>
 
 <div class="view v2" id="v2" hidden>
 <section class="h2o"><div class="pad"><div style="margin-bottom:60px">{LOGON}</div>
 <div class="eyebrow">{T('Medellín · Longevity Clinical Institute','Medellín · Longevity Clinical Institute')}</div>
-<h1>{H1}</h1>
+<h1 class="hk">{H1}</h1>
 <div class="row"><p>{T('Medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de tu biología.','Precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around your biology.')}</p>
 <a class="btn navy" href="#">{T('Agendar valoración','Book an assessment')} {ARW}</a></div></div><div class="band" role="img" aria-label=""></div></section>
 <section class="cl2"><div class="head"><div class="eyebrow">{T('La clínica','The clinic')}</div><h2>{T('Elige un espacio','Choose a space')}</h2></div>{PHS}<ol>{LIST}</ol>{CAPS}</section>
@@ -115,10 +122,12 @@ JS=r'''
 (function(){
 var root=document.documentElement;function $(s,c){return (c||document).querySelector(s)}function $$(s,c){return [].slice.call((c||document).querySelectorAll(s))}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-document.addEventListener('click',function(e){var b=e.target.closest('[data-view]');if(b){var v=b.getAttribute('data-view');$$('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});$('#v1').hidden=v!=='1';$('#v2').hidden=v!=='2';window.scrollTo(0,0);return}
- b=e.target.closest('[data-lang]');if(b){var l=b.getAttribute('data-lang');root.setAttribute('data-lang',l);root.lang=l;$$('[data-lang]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});return}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-view]');if(b){var v=b.getAttribute('data-view');$$('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});$('#v1').hidden=v!=='1';$('#v2').hidden=v!=='2';window.scrollTo(0,0);setTimeout(fitH,60);return}
+ b=e.target.closest('[data-lang]');if(b){var l=b.getAttribute('data-lang');root.setAttribute('data-lang',l);root.lang=l;setTimeout(fitH,30);$$('[data-lang]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});return}
  b=e.target.closest('.cl2 li button');if(b)sel(+b.getAttribute('data-i'));if(e.target.closest('a[href="#"]'))e.preventDefault()});
 root.setAttribute('data-lang','es');
+function fitH(){$$('.hk').forEach(function(h){var el=[].slice.call(h.children).filter(function(c){return getComputedStyle(c).display!=='none'})[0];if(!el)return;var k1=el.querySelector('.k1'),k2=el.querySelector('.k2'),k3=el.querySelector('.k3');if(!k2||!k3)return;var host=h.parentElement,cs=getComputedStyle(host),avail=host.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);[k1,k2,k3].forEach(function(k){if(k){k.style.display='inline-block';k.style.whiteSpace='nowrap';k.style.alignSelf='flex-start'}});k3.style.fontSize='';var s3=parseFloat(getComputedStyle(k3).fontSize),w3=k3.getBoundingClientRect().width,lim=Math.min(avail,innerWidth*(innerWidth<1000?.9:.62));if(w3>lim){s3=s3*lim/w3;k3.style.fontSize=s3+'px';w3=k3.getBoundingClientRect().width}if(k1)k1.style.fontSize=s3+'px';k2.style.fontSize='200px';var w2=k2.getBoundingClientRect().width;k2.style.fontSize=(200*w3/w2)+'px'})}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitH);addEventListener('resize',fitH);setTimeout(fitH,200);
 function sel(i){$$('.cl2 .ph').forEach(function(p,k){p.classList.toggle('on',k===i)});$$('.cl2 li button').forEach(function(x,k){x.setAttribute('aria-pressed',String(k===i))});$$('.cl2 .cap').forEach(function(c,k){c.hidden=k!==i})}
 $$('.cl2 li button').forEach(function(b){b.addEventListener('mouseenter',function(){sel(+b.getAttribute('data-i'))})});
 var tr=$('#tr'),bar=$('#bar'),walk=$('.walk'),tk=false;

@@ -163,6 +163,19 @@ Referencia de estilo y de movimiento aprobada por la Dra.: la página del Longev
 ### Regla de la Dra.: imágenes a todo el ancho
 Las imágenes y los videos ocupan **todo el ancho de la página, de borde a borde**, para que el sitio se vea imponente. Nada de recuadros pequeños, arcos, esquinas redondeadas ni fotos en una columna. El texto va encima, sobre un degradado de lectura. Las excepciones son los retratos de personas, que ocupan la mitad de la pantalla también de borde a borde. Para que no se pixelen, las imágenes de sección se entregan en **16:9 de 2560×1440 como mínimo (ideal 3840×2160)** y los videos en 1920×1080 como mínimo.
 
+### Recorrido virtual de la clínica (estilo Google Street View)
+El mockup ya incluye el visor: pantalla completa, lista de espacios, puntos de avance y una transición que entra en un espacio y sale en el siguiente. **Hoy usa las fotos planas del banco**, así que no se puede girar 360°. Para el recorrido real hacen falta **fotos 360° de la clínica** (panorámicas equirrectangulares):
+
+| Tema | Especificación |
+|---|---|
+| Cámara | 360° tipo Insta360 X4 o Ricoh Theta Z1, sobre trípode a 1,5 m de altura. También sirve el modo panorámica del celular, con peor resultado |
+| Resolución | **6000×3000 como mínimo (ideal 11 000×5500)**, JPG, proporción 2:1 |
+| Posiciones | Una por espacio y varias por el pasillo: recepción, sala de espera, pasillo (3 puntos), consultorio, sala de medición, sala de terapias (varias), zona de café. ~12–15 en total |
+| Escena | Sin personas, con la luz de la clínica encendida, pantallas apagadas, sin carteles con texto visible |
+| Entrega | Un JPG por posición, nombrado `01-recepcion.jpg`, `02-pasillo-a.jpg`… y un croquis con las posiciones unidas por flechas |
+
+Con eso agrego el modo esférico al visor: girar y mirar en 360° arrastrando, zoom, puntos de avance entre posiciones y salto con la misma transición. Alternativas con visor de terceros: un escaneo 3D tipo Matterport (con suscripción) o Street View Studio de Google. El visor propio permite mantener el diseño de marca.
+
 ## 10. Calidad
 
 - Accesibilidad WCAG 2.1 AA: teclado, foco visible, alt en imágenes, `lang` correcto por página.

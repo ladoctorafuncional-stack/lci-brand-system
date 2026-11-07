@@ -64,6 +64,7 @@ FONTS = '\n'.join([
 css = open(f'{OUT}/immersive.css').read().replace('/*FONTS*/', FONTS)
 css = re.sub(r'\{\{IMG:(\w+)\}\}', lambda m: f'"{IMGS[m.group(1)]}"', css)
 js = open(f'{OUT}/immersive.js').read()
+THREEJS = open('/tmp/claude-0/-home-user-lci-brand-system/90311451-3058-5964-b625-4f30819e3e03/scratchpad/vial/node_modules/three/build/three.min.js').read()
 
 
 def A(es, en): return f'{es} / {en}'
@@ -156,6 +157,25 @@ BOOK = f'''<div class="book" data-book>
 import json as _json
 _FR=[]  # sin video: escena de células madre provisional hasta recibir el clip nuevo
 FRAMES=_json.dumps(['data:image/jpeg;base64,'+b64(open(f,'rb').read()) for f in _FR])
+
+import json as _j
+_TOUR_ROOMS=[
+ dict(k='noche',es='Sala de terapias',en='Therapy room',ces='Un espacio de descanso con vista a Medellín.',cen='A resting space with a view of Medellín.',hs=[dict(u=.51,v=.54,to='adn')]),
+ dict(k='adn',es='Sala de medición',en='Measurement room',ces='Mediciones de grado clínico.',cen='Clinical-grade measurements.',hs=[dict(u=.51,v=.54,to='consul'),dict(u=.29,v=.58,to='noche')]),
+ dict(k='consul',es='Consultorio',en='Consulting room',ces='Evaluación médica en una primera consulta de mínimo 2 horas.',cen='Medical evaluation in a first visit of at least 2 hours.',hs=[dict(u=.51,v=.54,to='hall'),dict(u=.29,v=.58,to='adn')]),
+ dict(k='hall',es='Pasillo',en='Hallway',ces='Cada espacio, pensado alrededor del paciente.',cen='Every space, designed around the patient.',hs=[dict(u=.47,v=.47,to='espera'),dict(u=.29,v=.58,to='consul')]),
+ dict(k='espera',es='Sala de espera',en='Waiting room',ces='Atención bilingüe en español e inglés.',cen='Bilingual care in Spanish and English.',hs=[dict(u=.36,v=.52,to='hall')]),
+]
+_names={r['k']:r for r in _TOUR_ROOMS}
+for r in _TOUR_ROOMS:
+    r['src']=IMGS[r['k']]
+    for h in r['hs']: h['les']=_names[h['to']]['es']; h['len']=_names[h['to']]['en']
+TOURJSON=_j.dumps(dict(rooms=_TOUR_ROOMS),ensure_ascii=False)
+TOUR = f"""<section class="tour" id="clinica" aria-label="{A('Recorrido por la clínica', 'Clinic walkthrough')}"><canvas id="tourgl" aria-hidden="true"></canvas><div id="hots"></div>
+<div class="thead"><div class="eyebrow">{T('La clínica', 'The clinic')}</div><h2 class="h2 rv">{T('Recorre la <em>clínica</em>', 'Walk through the <em>clinic</em>')}</h2><p class="tip">{T('Arrastra para mirar · toca los puntos para avanzar', 'Drag to look around · tap the dots to move')}</p></div>
+<ol class="tlist" id="tlist"></ol><p class="tcap" id="tcap"></p>
+<script type="application/json" id="tourdata">{TOURJSON}</script></section>"""
+
 STAR = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>'
 DIVE = f'''<section class="dive" id="inmersion" aria-label="{A('Inmersión', 'Immersion')}"><div class="stk"><div class="win"><canvas id="cells" aria-hidden="true"></canvas><script type="application/json" id="zframes">{FRAMES}</script><div class="vg"></div>
   <p class="beat">{T('Medición de <em>grado clínico</em>', '<em>Clinical-grade</em> measurement')}</p>
@@ -188,7 +208,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
   <div class="tag t1"><b>{T('Edad biológica', 'Biological age')}</b>{T('Estimados preliminares con varios relojes biológicos', 'Preliminary estimates with several biological clocks')}</div>
   <div class="tag t2"><b>{T('Laboratorio', 'Laboratory')}</b>{T('In house · Colombia y EE. UU.', 'In house · Colombia and U.S.')}</div>
   <div class="in"><div class="eyebrow"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="currentColor"/></svg>THE MEDICINE OF THE FUTURE.</div>
-    <h1 class="split">{T('Más años <em>saludables</em>, diseñados desde tu <em>biología</em>.', 'More <em>healthy</em> years, designed around your <em>biology</em>.')}</h1>
+    <h1 class="split">{T('<span class="k1">Más años</span><span class="k2"><em>saludables</em>,</span><span class="k3">diseñados desde tu <em class="k4">biología</em>.</span>', '<span class="k1">More</span><span class="k2"><em>healthy</em></span><span class="k3">years, designed around your <em class="k4">biology</em>.</span>')}</h1>
     <p class="lead">{T('Medicina de precisión: medición de grado clínico, evidencia científica rigurosa y una atención diseñada alrededor de tu biología.', 'Precision medicine: clinical-grade measurement, rigorous scientific evidence and care designed around your biology.')}</p>
     <div class="cta"><a class="btn cream" href="#agenda" data-mag>{T('Agendar valoración', 'Book an assessment')} {ARW}</a><a class="btn ghost" href="#metodo" data-mag>{T('Cómo trabajamos', 'How we work')}</a></div>
     <p class="micro">{T('Medellín, Colombia · Atención bilingüe', 'Medellín, Colombia · Bilingual care')}</p></div>
@@ -231,10 +251,7 @@ BODY = f'''<div class="prog" aria-hidden="true"></div><div class="grain" aria-hi
     <div><b style="font-size:clamp(28px,2.6vw,38px)">LAI</b><span>{T('Cofundadora, Longevity Academic Institute', 'Co-founder, Longevity Academic Institute')}</span></div></div>
   <a class="btn navy" href="#agenda" data-mag>{T('Agendar con la Dra.', 'Book with the doctor')} {ARW}</a></div></div></section>
 
-<section class="gal" id="clinica"><div class="in ghead"><div><div class="eyebrow">{T('La clínica', 'The clinic')}</div>
-  <h2 class="h2 rv">{T('Un espacio <em>diseñado para medir</em>', 'A space <em>designed to measure</em>')}</h2></div>
-  <div class="arrows"><button type="button" data-rail="prev" aria-label="{A('Anterior', 'Previous')}">{ARWL}</button><button type="button" data-rail="next" aria-label="{A('Siguiente', 'Next')}">{ARW}</button></div></div>
-  <div class="rail" tabindex="0" aria-label="{A('Galería de la clínica', 'Clinic gallery')}">{GAL}</div></section>
+{TOUR}
 
 {BIG}<section class="trav"><div class="bg" aria-hidden="true"></div><div class="in"><div class="box">
   <div class="eyebrow">{T('Pacientes internacionales', 'International patients')}</div>
@@ -267,6 +284,9 @@ HTML = f'''<title>LCI Web Inmersiva</title>
 {css}
 </style>
 {BODY}
+<script>
+{THREEJS}
+</script>
 <script>
 {js}
 </script>
